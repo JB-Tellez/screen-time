@@ -48,14 +48,12 @@ button:hover {
   margin-left: 25%;
   text-align:center;
   width:550px;
-
 }
 
 h1 {
   position: relative;
   text-transform: uppercase;
   top: 40%;
-
 }
 
 .circle-anchor {
@@ -69,29 +67,94 @@ h1 {
   font-size:20px;
   height:80px;
   line-height:100px;
-  margin-top: 7vh;
-  margin-left: 46%;
+  margin-top: 12vh;
+  margin-left: 45%;
   text-align:center;
   width:80px;
 }
 
-/* 1SECTION */
-div.jumbotron.firs-section {
-  padding-top: 0px;
-  padding-bottom: 0px;
+.flag-circle {
+  background-color: black;
+  border-radius: 20px;
+  color: white;
+  height: 40px;
+  position: relative;
+  top: 49px;
+  left: 20px;
+  width: 40px;
 }
 
+.flag {
+  margin: 0px;
+  position: relative;
+  bottom: 30px;
+}
+
+/* 1SECTION */
+div.jumbotron.first-section {
+  background-color: #F79432;
+  height: 100vh;  
+  padding-top: 0px;
+  padding-bottom: 0px;
+  width:100vw;
+}
+
+/* polygon shape 
 .shaped { 
   background-image: -webkit-linear-gradient(bottom, #0cb49b 0%, #4f73b8 50%, #120720 100%);
   background-image: -moz-linear-gradient(bottom, #0cb49b 0%, #4f73b8 50%, #120720 100%);
   background-image: -o-linear-gradient(bottom, #0cb49b 0%, #4f73b8 50%, #120720 100%);
   background-image: linear-gradient(to top, #0cb49b 0%, #4f73b8 50%, #120720 100%);
   float:left;
-  height:100vh;
+  height:10git st0vh;
   width:100vw;
   shape-outside: polygon(0 0, 100 120%, 100% 70%, 100% 0);
   clip-path: polygon(0 0, 0 120%, 100% 70%, 100% 0);
   margin: 0px;
   padding: 0px;
+} */
 
+div.row {
+  margin-top: 300px;
+}
+
+
+.circle-icon {
+  border-radius:80px;
+  color:#fff;
+  font-size:20px;
+  height:160px;
+  line-height:100px;
+  margin-left: 25%;
+  text-align:center;
+  width:160px;
+}
+
+.circle1 {
+  background-color: #F37055;
+}
+
+.circle2 {
+  background-color: #EF4D7B;
+}
+
+.circle3 {
+  background-color: #A166AB;
+}
+
+.circle-anchor-pink {
+  background-image: -webkit-linear-gradient(#FEE140 0%, #ef4d7b 100%);
+  background-image: -moz-linear-gradient(#FEE140 0%, #ef4d7b 100%);
+  background-image: -o-linear-gradient(#FEE140 0%, #ef4d7b 100%);
+  background-image: linear-gradient(#FEE140 0%, #ef4d7b 100%);
+  border: none;
+  border-radius:40px;
+  color:#fff;
+  font-size:20px;
+  height:80px;
+  line-height:100px;
+  margin-top: 17vh;
+  margin-left: 45%;
+  text-align:center;
+  width:80px;
 }
