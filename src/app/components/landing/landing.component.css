@@ -1,0 +1,48 @@
+/* NAVBAR */
+nav {
+  background-image: -webkit-linear-gradient(bottom, #1c0b2f 0%, #ef4d7b 46%, #f79432 100%);
+  background-image: -moz-linear-gradient(bottom, #1c0b2f 0%, #ef4d7b 46%, #f79432 100%);
+  background-image: -o-linear-gradient(bottom, #1c0b2f 0%, #ef4d7b 46%, #f79432 100%);
+  background-image: linear-gradient(to top, #1c0b2f 0%, #ef4d7b 46%, #f79432 100%);
+  border: none;
+  height: 10vh;
+  margin: 0px;
+  width: 100vw;
+}
+
+button {
+  border: none;
+  background-image: -webkit-linear-gradient(bottom, #f37055 0%, #ffda6a 100%);
+  background-image: -moz-linear-gradient(bottom, #f37055 0%, #ffda6a 100%);
+  background-image: -o-linear-gradient(bottom, #f37055 0%, #ffda6a 100%);
+  background-image: linear-gradient(to top, #f37055 0%, #ffda6a 100%);
+  color: white;
+  margin-left: 20px;
+  margin-top: 30px;
+}
+
+/* JUMBOTRON */
+.jumbotron {
+  background-color: #1C0B2F;
+  height: 90vh;
+  margin: 0px;
+  width: 100vw;
+}
+
+.circle{
+  height:550px;
+  width:550px;
+  border-radius:275px;
+  font-size:20px;
+  color:#fff;
+  line-height:100px;
+  text-align:center;
+  background-color: #A166AB;
+  margin-left: 25%;
+}
+
+h1 {
+  position: relative;
+  top: 40%;
+  text-transform: uppercase;
+}
