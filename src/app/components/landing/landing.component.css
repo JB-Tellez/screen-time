@@ -1,3 +1,8 @@
+/* mediafix */
+
+
+
+
 /* NAVBAR */
 nav {
   background-image: -webkit-linear-gradient(bottom, #1c0b2f 0%, #ef4d7b 46%, #f79432 100%);
@@ -5,44 +10,88 @@ nav {
   background-image: -o-linear-gradient(bottom, #1c0b2f 0%, #ef4d7b 46%, #f79432 100%);
   background-image: linear-gradient(to top, #1c0b2f 0%, #ef4d7b 46%, #f79432 100%);
   border: none;
-  height: 10vh;
+  height: 12vh;
   margin: 0px;
   width: 100vw;
 }
 
 button {
-  border: none;
   background-image: -webkit-linear-gradient(bottom, #f37055 0%, #ffda6a 100%);
   background-image: -moz-linear-gradient(bottom, #f37055 0%, #ffda6a 100%);
   background-image: -o-linear-gradient(bottom, #f37055 0%, #ffda6a 100%);
   background-image: linear-gradient(to top, #f37055 0%, #ffda6a 100%);
+  border: none;
   color: white;
   margin-left: 20px;
   margin-top: 30px;
 }
 
+button:hover {
+  color: #2EF9A0;
+}
+
 /* JUMBOTRON */
-.jumbotron {
-  background-color: #1C0B2F;
+.unlock-logo {
+  background-color: #120720;
   height: 90vh;
   margin: 0px;
   width: 100vw;
 }
 
 .circle{
-  height:550px;
-  width:550px;
-  border-radius:275px;
-  font-size:20px;
-  color:#fff;
-  line-height:100px;
-  text-align:center;
   background-color: #A166AB;
+  border-radius:275px;
+  color:#fff;
+  font-size:20px;
+  height:550px;
+  line-height:100px;
   margin-left: 25%;
+  text-align:center;
+  width:550px;
+
 }
 
 h1 {
   position: relative;
-  top: 40%;
   text-transform: uppercase;
+  top: 40%;
+
+}
+
+.circle-anchor {
+  background-image: -webkit-linear-gradient(bottom, #f37055 0%, #ffda6a 100%);
+  background-image: -moz-linear-gradient(bottom, #f37055 0%, #ffda6a 100%);
+  background-image: -o-linear-gradient(bottom, #f37055 0%, #ffda6a 100%);
+  background-image: linear-gradient(to top, #f37055 0%, #ffda6a 100%);
+  border: none;
+  border-radius:40px;
+  color:#fff;
+  font-size:20px;
+  height:80px;
+  line-height:100px;
+  margin-top: 7vh;
+  margin-left: 46%;
+  text-align:center;
+  width:80px;
+}
+
+/* 1SECTION */
+div.jumbotron.firs-section {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.shaped { 
+  background-image: -webkit-linear-gradient(bottom, #0cb49b 0%, #4f73b8 50%, #120720 100%);
+  background-image: -moz-linear-gradient(bottom, #0cb49b 0%, #4f73b8 50%, #120720 100%);
+  background-image: -o-linear-gradient(bottom, #0cb49b 0%, #4f73b8 50%, #120720 100%);
+  background-image: linear-gradient(to top, #0cb49b 0%, #4f73b8 50%, #120720 100%);
+  float:left;
+  height:100vh;
+  width:100vw;
+  shape-outside: polygon(0 0, 100 120%, 100% 70%, 100% 0);
+  clip-path: polygon(0 0, 0 120%, 100% 70%, 100% 0);
+  margin: 0px;
+  padding: 0px;
+
 }
