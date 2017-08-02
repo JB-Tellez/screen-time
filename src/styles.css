@@ -8,13 +8,16 @@ Tags: Ironhack Final Project - Full Stack Javascript App + Angularjs for the Fro
 /* Fonts
 ---headings
 font-family: 'Montserrat Alternates', sans-serif;
+font-family: 'Merriweather Sans', sans-serif;
 --paragraphs
 font-family: 'Montserrat', sans-serif; 
+font-family: 'Merriweather', serif;
 */
 
-html, body { 
-  background-color: #2E154C;
-  font-family: 'Montserrat', sans-serif; 
+/* ---- reset ---- */
+html, body, canvas { 
+  background-color: #15131B;
+  font-family: 'Merriweather Sans', sans-serif;
   margin: 0;
   padding: 0;
   color: #EF4D7B;
@@ -23,3 +26,5 @@ html, body {
 *:before *:after {
   box-sizing: border-box;
 }
+
+
