@@ -11,6 +11,8 @@ import { KidTimeComponent } from './components/kid-time/kid-time.component';
 import { ParentSettingsComponent } from './components/parent-settings/parent-settings.component';
 import { MovieComponent } from './components/movie/movie.component';
 import { LandingComponent } from './components/landing/landing.component';
+import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
+import { StoreModule } from '@ngrx/store';
 
 const routes:Routes = [
   {path: '', component: LandingComponent},
@@ -35,7 +37,9 @@ const routes:Routes = [
   imports: [
     BrowserModule,
     HttpModule,
+    StoreModule.forRoot({ routerReducer: routerReducer }),
     RouterModule.forRoot(routes),
+    StoreRouterConnectingModule,
   ],
   providers: [MoviesService],
   bootstrap: [AppComponent]
