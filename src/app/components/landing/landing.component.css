@@ -1,29 +1,27 @@
-/* mediafix */
-
-
-
-
 /* NAVBAR */
 nav {
-  background-image: -webkit-linear-gradient(bottom, #1c0b2f 0%, #ef4d7b 46%, #f79432 100%);
-  background-image: -moz-linear-gradient(bottom, #1c0b2f 0%, #ef4d7b 46%, #f79432 100%);
-  background-image: -o-linear-gradient(bottom, #1c0b2f 0%, #ef4d7b 46%, #f79432 100%);
-  background-image: linear-gradient(to top, #1c0b2f 0%, #ef4d7b 46%, #f79432 100%);
-  border: none;
-  height: 12vh;
+  background-image: -webkit-linear-gradient(right, #220d3a 0%, #1f1a28 100%);
+  background-image: -moz-linear-gradient(right, #220d3a 0%, #1f1a28 100%);
+  background-image: -o-linear-gradient(right, #220d3a 0%, #1f1a28 100%);
+  background-image: linear-gradient(to left, #220d3a 0%, #1f1a28 100%);
+  -moz-box-shadow: 0 8px 30px 3px #000000;
+  -webkit-box-shadow: 0 8px 30px 3px #000000;
+  box-shadow: 0 8px 30px 3px #000000;
+  border: 1px solid black;
+  height: 69px;
   margin: 0px;
   width: 100vw;
 }
 
 button {
-  background-image: -webkit-linear-gradient(bottom, #f37055 0%, #ffda6a 100%);
-  background-image: -moz-linear-gradient(bottom, #f37055 0%, #ffda6a 100%);
-  background-image: -o-linear-gradient(bottom, #f37055 0%, #ffda6a 100%);
-  background-image: linear-gradient(to top, #f37055 0%, #ffda6a 100%);
+  background-image: -webkit-linear-gradient(top left, #0cb49b 0%, #1d99ae 100%);
+  background-image: -moz-linear-gradient(top left, #0cb49b 0%, #1d99ae 100%);
+  background-image: -o-linear-gradient(top left, #0cb49b 0%, #1d99ae 100%);
+  background-image: linear-gradient(to bottom right, #0cb49b 0%, #1d99ae 100%);
   border: none;
   color: white;
   margin-left: 20px;
-  margin-top: 30px;
+  margin-top: 18px;
 }
 
 button:hover {
@@ -31,23 +29,27 @@ button:hover {
 }
 
 /* JUMBOTRON */
+/* main logo */
 .unlock-logo {
-  background-color: #120720;
-  height: 90vh;
+  background-image: -webkit-linear-gradient(bottom, #220d3a 0%, #1f1a28 100%);
+  background-image: -moz-linear-gradient(bottom, #220d3a 0%, #1f1a28 100%);
+  background-image: -o-linear-gradient(bottom, #220d3a 0%, #1f1a28 100%);
+  background-image: linear-gradient(to top, #220d3a 0%, #1f1a28 100%);
+  height: 95vh;
   margin: 0px;
   width: 100vw;
 }
 
 .circle{
-  background-color: #A166AB;
-  border-radius:275px;
+  background-color: #1D99AE;
+  border-radius:300px;
   color:#fff;
   font-size:20px;
-  height:550px;
+  height:600px;
   line-height:100px;
-  margin-left: 25%;
+  margin: 0 auto;
   text-align:center;
-  width:550px;
+  width:600px;
 }
 
 h1 {
@@ -56,39 +58,38 @@ h1 {
   top: 40%;
 }
 
-.circle-anchor {
-  background-image: -webkit-linear-gradient(bottom, #f37055 0%, #ffda6a 100%);
-  background-image: -moz-linear-gradient(bottom, #f37055 0%, #ffda6a 100%);
-  background-image: -o-linear-gradient(bottom, #f37055 0%, #ffda6a 100%);
-  background-image: linear-gradient(to top, #f37055 0%, #ffda6a 100%);
-  border: none;
-  border-radius:40px;
-  color:#fff;
-  font-size:20px;
-  height:80px;
-  line-height:100px;
-  margin-top: 12vh;
-  margin-left: 45%;
-  text-align:center;
-  width:80px;
+/* family scrolling icon */
+a.family-anchor {
+  color: #337ab7;
+  position: absolute;
+  left: 47%;
+  bottom: 2%;  
+  text-decoration: none;
+  height: 100px;
+  width: 100px;
 }
 
-.flag-circle {
+.arrow-circle {
   background-color: black;
   border-radius: 20px;
+  margin: 0 auto;
+  position: relative;
+  right: 6%;
+  bottom: 16%;
   color: white;
   height: 40px;
-  position: relative;
-  top: 49px;
-  left: 20px;
+  opacity: 0.6;
   width: 40px;
 }
 
-.flag {
-  margin: 0px;
+.arrow {
   position: relative;
-  bottom: 30px;
+  left: 33%;
+  top: 26%;
 }
+
+
+
 
 /* 1SECTION */
 div.jumbotron.first-section {
@@ -158,3 +159,4 @@ div.row {
   text-align:center;
   width:80px;
 }
+
