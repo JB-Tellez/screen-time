@@ -1,3 +1,4 @@
+import { KidsService } from './services/kids.service';
 import { MoviesService } from './services/movies.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -41,7 +42,7 @@ const routes:Routes = [
     RouterModule.forRoot(routes),
     StoreRouterConnectingModule,
   ],
-  providers: [MoviesService],
+  providers: [MoviesService, KidsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
