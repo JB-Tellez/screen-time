@@ -12,7 +12,7 @@ nav {
   margin: 0px;
   width: 100vw;
   z-index: 1;
-  justify-content: center;
+  text-align: center;
 }
 
 /* BUTTON CSS
@@ -26,9 +26,9 @@ a {
   color: white;
   margin: 25px;
   position: relative;
-  left: 38%;
   top: 20px;
   font-size: 16px;
+  text-transform: uppercase;
 }
 
 button:hover {
