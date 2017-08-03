@@ -25,4 +25,8 @@ export class ParentComponent implements OnInit {
     });
   }
 
+  public addKid() {
+    alert('add kid');
+  }
+
 }
