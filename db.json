@@ -1,8 +1,18 @@
 {
-  "adults": [
-      {"_id":1, "name":"Heidi Jean","password":"pass", "kids":[
-        {"_id":1,"name":"Mercy", "password":"pass", "minutesPerWeek":"400","bedTimes":["21:00","21:30"],"viewings":[]}
-      ] },
-      {"_id":2, "name":"Hector","password":"pass", "kids":[]}
-  ]
+  "adults": [{
+    "_id": 1,
+    "name": "Heidi Jean",
+    "password": "pass",
+    "kids": [{
+      "_id": 1,
+      "name": "Mercy",
+      "password": "pass",
+      "minutesPerWeek": "400",
+      "bedTimes": ["21:00", "21:00", "21:00", "21:00", "21:00", "21:00", "21:30"],
+      "viewings": [
+        { "id": 1, "showId": 1, "startTime":1501774697, "endTime":1501778297 },
+        { "id": 2, "showId": 2, "startTime": 1501774697, "endTime":1501778297 }
+      ]
+    }]
+  }]
 }

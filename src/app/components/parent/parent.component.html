@@ -1,20 +1,23 @@
 <h1>
    Name: {{ adult.name }} 
 </h1>
-  <button type="btn btn-primary" (click)="addKid()">Add Kid</button>
+  
+  <button class="btn btn-primary" (click)="addKid()">Add Kid</button>
   <ul>
     <li *ngFor="let kid of adult.kids">
       <p>{{ kid.name }}</p>
       <p>{{ kid.minutesPerWeek }} minutes per week</p>
+      <p>Minutes spent: {{getMinutesSpent(kid)}}</p>
+      <button class="btn btn-primary" (click)="showDetails = !showDetails">details</button>
+      
+      <div *ngIf="showDetails">
       <ul>
-        <li *ngFor="let bedTime of kid.bedTimes">
-          {{ bedTime }}
+        <li *ngFor="let bedTime of kid.bedTimes; let i = index">
+          {{ getDay(i) }}
+          <timepicker [(ngModel)]="times[i]" minuteStep="1"></timepicker>
         </li>
       </ul>
-      <ul>
-        <li *ngFor="let viewing of kid.viewings">
-          <p>minutes spent: {{ viewing.minutesSpent }}</p>
-        </li>
-      </ul>
+      </div>
+      
     </li>
   </ul>

@@ -2,7 +2,7 @@ import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { State, Adult } from '../../store/model';
+import { State, Adult, Kid } from '../../store/model';
 
 @Component({
   selector: 'app-parent',
@@ -12,6 +12,8 @@ import { State, Adult } from '../../store/model';
 export class ParentComponent implements OnInit {
 
   adult: Adult;
+  public times:Date[] = [new Date(),new Date(),new Date(),new Date(),new Date(),new Date(), new Date()]
+  public showDetails: false;
 
   constructor(private route: ActivatedRoute, private store: Store<State>) { }
 
@@ -27,6 +29,25 @@ export class ParentComponent implements OnInit {
 
   public addKid() {
     alert('add kid');
+  }
+
+  public getDay(index) {
+    return ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][index];
+  }
+
+  public getMinutesSpent(kid:Kid) {
+
+    // TODO: handle missing endTime
+    
+    return kid.viewings.reduce( (acc, cur) => {
+      
+      const secondsSpent = cur.endTime - cur.startTime;
+
+      const minutesSpent = Math.floor(secondsSpent / 60);
+
+      return acc + minutesSpent;
+
+    }, 0)
   }
 
 }

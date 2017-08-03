@@ -7,6 +7,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
+import { TimepickerModule } from 'ngx-bootstrap/timepicker';
 
 import { AppComponent } from './app.component';
 import { MoviesComponent } from './components/movies/movies.component';
@@ -43,9 +45,11 @@ const routes:Routes = [
   imports: [
     BrowserModule,
     HttpModule,
+    FormsModule,
     RouterModule.forRoot(routes),
     StoreModule.forRoot(<any>{app: appReducer}, {initialState}),
-    StoreRouterConnectingModule
+    StoreRouterConnectingModule,
+    TimepickerModule.forRoot(),
   ],
   providers: [MoviesService, KidsService, BackendService],
   bootstrap: [AppComponent]
