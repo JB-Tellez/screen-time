@@ -1,0 +1,29 @@
+/* NAVBAR */
+nav {
+  background-image: -webkit-linear-gradient(right, #220d3a 0%, #1f1a28 100%);
+  background-image: -moz-linear-gradient(right, #220d3a 0%, #1f1a28 100%);
+  background-image: -o-linear-gradient(right, #220d3a 0%, #1f1a28 100%);
+  background-image: linear-gradient(to left, #220d3a 0%, #1f1a28 100%);
+  -moz-box-shadow: 0 8px 30px 3px #000000;
+  -webkit-box-shadow: 0 8px 30px 3px #000000;
+  box-shadow: 0 8px 30px 3px #000000;
+  border: 1px solid black;
+  height: 69px;
+  margin: 0px;
+  width: 100vw;
+}
+
+button {
+  background-image: -webkit-linear-gradient(top left, #0cb49b 0%, #1d99ae 100%);
+  background-image: -moz-linear-gradient(top left, #0cb49b 0%, #1d99ae 100%);
+  background-image: -o-linear-gradient(top left, #0cb49b 0%, #1d99ae 100%);
+  background-image: linear-gradient(to bottom right, #0cb49b 0%, #1d99ae 100%);
+  border: none;
+  color: white;
+  margin-left: 20px;
+  margin-top: 18px;
+}
+
+button:hover {
+  color: #2EF9A0;
+}

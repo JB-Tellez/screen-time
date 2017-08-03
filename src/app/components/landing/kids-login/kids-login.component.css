@@ -1,0 +1,18 @@
+/* main logo */
+.circle{
+  background-color: #1D99AE;
+  border-radius:300px;
+  color:#fff;
+  font-size:20px;
+  height:600px;
+  line-height:100px;
+  margin: 0 auto;
+  text-align:center;
+  width:600px;
+}
+
+h1 {
+  position: relative;
+  text-transform: uppercase;
+  top: 40%;
+}

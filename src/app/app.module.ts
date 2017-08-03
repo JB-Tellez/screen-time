@@ -11,6 +11,8 @@ import { KidTimeComponent } from './components/kid-time/kid-time.component';
 import { ParentSettingsComponent } from './components/parent-settings/parent-settings.component';
 import { MovieComponent } from './components/movie/movie.component';
 import { LandingComponent } from './components/landing/landing.component';
+import { KidsLoginComponent } from './components/landing/kids-login/kids-login.component';
+import { NavbarComponent } from './components/landing/navbar/navbar.component';
 
 const routes:Routes = [
   {path: '', component: LandingComponent},
@@ -30,7 +32,9 @@ const routes:Routes = [
     KidTimeComponent,
     ParentSettingsComponent,
     MovieComponent,
-    LandingComponent
+    LandingComponent,
+    KidsLoginComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

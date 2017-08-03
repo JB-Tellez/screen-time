@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NavbarComponent } from './navbar/navbar.component';
+import { KidsLoginComponent } from './kids-login/kids-login.component';
 
-//declare const particlesJS: any;
+//disabled --> declare const particlesJS: any;
 
 
 @Component({
@@ -14,7 +16,7 @@ export class LandingComponent implements OnInit {
   constructor(private router:Router) { }
 
   ngOnInit() {
-    //particlesJS.load('../../../assets/javascripts/particles.js', '../../../assets/particles.json', null); 
+    //disabled --> particlesJS.load('../../../assets/javascripts/particles.js', '../../../assets/particles.json', null); 
   }
 
   gotoHome() {
