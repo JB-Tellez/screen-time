@@ -1,3 +1,4 @@
+import { BackendService } from './services/backend.service';
 import { ParentComponent } from './components/parent/parent.component';
 import { AllUserData } from './../../shared/to/all-user-data';
 import { KidsService } from './services/kids.service';
@@ -46,7 +47,7 @@ const routes:Routes = [
     StoreModule.forRoot(<any>{app: appReducer}, {initialState}),
     StoreRouterConnectingModule
   ],
-  providers: [MoviesService, KidsService],
+  providers: [MoviesService, KidsService, BackendService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
