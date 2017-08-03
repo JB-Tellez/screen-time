@@ -3,6 +3,7 @@ import { Store } from '@ngrx/store';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { State, Adult, Kid } from '../../store/model';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-parent',
@@ -12,7 +13,7 @@ import { State, Adult, Kid } from '../../store/model';
 export class ParentComponent implements OnInit {
 
   adult: Adult;
-  public times:Date[] = [new Date(),new Date(),new Date(),new Date(),new Date(),new Date(), new Date()]
+  public times: Date[] = [new Date(), new Date(), new Date(), new Date(), new Date(), new Date(), new Date()]
   public showDetails: false;
 
   constructor(private route: ActivatedRoute, private store: Store<State>) { }
@@ -32,18 +33,26 @@ export class ParentComponent implements OnInit {
   }
 
   public getDay(index) {
-    return ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][index];
+    return ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][index];
   }
 
-  public getMinutesSpent(kid:Kid) {
+  public getMinutesSpent(kid: Kid) {
 
     // TODO: handle missing endTime
-    
-    return kid.viewings.reduce( (acc, cur) => {
-      
-      const secondsSpent = cur.endTime - cur.startTime;
 
-      const minutesSpent = Math.floor(secondsSpent / 60);
+
+    const sunday = moment().startOf('week');
+
+    return kid.viewings.reduce( (acc, cur) => {
+
+      let minutesSpent = 0;
+
+      if (moment.unix(cur.startTime).isAfter(sunday)) {
+
+        const secondsSpent = cur.endTime - cur.startTime;
+
+        minutesSpent = Math.floor(secondsSpent / 60);
+      }
 
       return acc + minutesSpent;
 
