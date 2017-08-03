@@ -147,12 +147,21 @@ div.section-one-row-one {
   height: 100px
 }
 
+.what-section-title {
+  color: #0CB49B;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif; 
+  font-weight: 300;
+  text-align: center;
+}
+
+
 p.what-section-p {
   color: white;
   font-family: 'Montserrat', sans-serif; 
   font-size: 30px !important;
   font-weight: 500;
-  margin-top: 40px; 
+  margin-top: 70px; 
   text-align: center;
 
 }
@@ -162,6 +171,7 @@ p.what-section-p {
   -webkit-column-span: all;
   -moz-column-span: all;
   column-span: all;
+  margin-top: 50px;
 }
 
 .icons {
