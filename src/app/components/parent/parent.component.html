@@ -11,10 +11,19 @@
       <button class="btn btn-primary" (click)="showDetails = !showDetails">details</button>
       
       <div *ngIf="showDetails">
+        <h2>Viewings:</h2>
+        <ul>
+          <li *ngFor="let viewing of kid.viewings">
+            <span>{{ viewing.title }}</span>
+            <span>{{ viewing.startTime * 1000 | date }}</span>
+            <span>{{ getViewingDuration(viewing) }} minutes</span>
+          </li>
+        </ul>
+        <h2>Bedtimes:</h2>
       <ul>
         <li *ngFor="let bedTime of kid.bedTimes; let i = index">
           {{ getDay(i) }}
-          <timepicker [(ngModel)]="times[i]" minuteStep="1"></timepicker>
+           <timepicker [(ngModel)]="times[i]" minuteStep="1"></timepicker> 
         </li>
       </ul>
       </div>

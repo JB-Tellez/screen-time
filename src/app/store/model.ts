@@ -2,9 +2,9 @@ import { RouterAction, ROUTER_NAVIGATION, RouterNavigationAction } from '@ngrx/r
 import { Actions, Effect } from '@ngrx/effects';
 
 // state
-export type Kid = { id: number, name: string, password: string, minutesPerWeek: number, bedTimes: string[], viewings:Viewing[] };
+export type Kid = { id: number, name: string, password: string, minutesPerWeek: number, bedTimes: number[], viewings:Viewing[] };
 export type Adult = { id: number, name: string, password: string, kids: Kid[] }
-export type Viewing = { id: number, showId: number, startTime: number, endTime: number };
+export type Viewing = { id: number, showId: number, title: string, startTime: number, endTime: number };
 export type AppState = { adult: Adult, kids: Kid[], adults: Adult[] };
 export type State = { app: AppState };
 
