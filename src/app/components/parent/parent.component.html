@@ -1,0 +1,14 @@
+<h1>
+   Name: {{ adult.name }} 
+</h1>
+  <ul>
+    <li *ngFor="let kid of adult.kids">
+      <p>{{ kid.name }}</p>
+      <p>{{ kid.minutesPerWeek }} minutes per week</p>
+      <ul>
+        <li *ngFor="let viewing of kid.viewings">
+          <p>minutes spent: {{ viewing.minutesSpent }}</p>
+        </li>
+      </ul>
+    </li>
+  </ul>
