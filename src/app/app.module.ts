@@ -19,7 +19,8 @@ import { MovieComponent } from './components/movie/movie.component';
 import { LandingComponent } from './components/landing/landing.component';
 import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
 import { StoreModule, Action } from '@ngrx/store';
-import { appReducer, initialState, State } from './store/model';
+import { appReducer, initialState, State, ScreenEffects } from './store/model';
+import { EffectsModule } from "@ngrx/effects";
 
 const routes:Routes = [
   {path: '', component: LandingComponent},
@@ -48,10 +49,13 @@ const routes:Routes = [
     FormsModule,
     RouterModule.forRoot(routes),
     StoreModule.forRoot(<any>{app: appReducer}, {initialState}),
+    EffectsModule.forRoot([
+      ScreenEffects
+    ]),
     StoreRouterConnectingModule,
     TimepickerModule.forRoot(),
   ],
-  providers: [MoviesService, KidsService, BackendService],
+  providers: [MoviesService, KidsService, BackendService, ScreenEffects],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
