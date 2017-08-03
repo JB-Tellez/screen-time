@@ -1,9 +1,9 @@
 /* NAVBAR */
 nav {
-  background-image: -webkit-linear-gradient(right, #220d3a 0%, #1f1a28 100%);
-  background-image: -moz-linear-gradient(right, #220d3a 0%, #1f1a28 100%);
-  background-image: -o-linear-gradient(right, #220d3a 0%, #1f1a28 100%);
-  background-image: linear-gradient(to left, #220d3a 0%, #1f1a28 100%);
+  background-image: -webkit-linear-gradient(right, #01132A 0%, #1f1a28 100%);
+  background-image: -moz-linear-gradient(right, #01132A 0%, #1f1a28 100%);
+  background-image: -o-linear-gradient(right, #01132A 0%, #1f1a28 100%);
+  background-image: linear-gradient(to left, #01132A 0%, #1f1a28 100%);
   -moz-box-shadow: 0 8px 30px 3px #000000;
   -webkit-box-shadow: 0 8px 30px 3px #000000;
   box-shadow: 0 8px 30px 3px #000000;
@@ -11,17 +11,24 @@ nav {
   height: 69px;
   margin: 0px;
   width: 100vw;
+  z-index: 1;
+  justify-content: center;
 }
 
-button {
+/* BUTTON CSS
   background-image: -webkit-linear-gradient(top left, #0cb49b 0%, #1d99ae 100%);
   background-image: -moz-linear-gradient(top left, #0cb49b 0%, #1d99ae 100%);
   background-image: -o-linear-gradient(top left, #0cb49b 0%, #1d99ae 100%);
-  background-image: linear-gradient(to bottom right, #0cb49b 0%, #1d99ae 100%);
-  border: none;
-  color: white;
+  background-image: linear-gradient(to bottom right, #0cb49b 0%, #1d99ae 100%); 
   margin-left: 20px;
-  margin-top: 18px;
+  margin-top: 18px; */
+a {
+  color: white;
+  margin: 25px;
+  position: relative;
+  left: 38%;
+  top: 20px;
+  font-size: 16px;
 }
 
 button:hover {
