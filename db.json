@@ -1,0 +1,6 @@
+{
+  "adults": [
+      {"_id":1, "name":"Heidi","password":"pass", "kids":[] },
+      {"_id":2, "name":"Hector","password":"pass", "kids":[]}
+  ]
+}
