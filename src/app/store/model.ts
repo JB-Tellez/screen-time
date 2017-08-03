@@ -2,21 +2,15 @@ import { RouterAction, ROUTER_NAVIGATION, RouterNavigationAction } from '@ngrx/r
 import { Actions, Effect } from '@ngrx/effects';
 
 // state
-export type Kid = { id: number, name: string, password: string, minutesPerWeek: number, bedTimes: Date[], viewings:Viewing[] };
+export type Kid = { id: number, name: string, password: string, minutesPerWeek: number, bedTimes: string[], viewings:Viewing[] };
 export type Adult = { id: number, name: string, password: string, kids: Kid[] }
 export type Viewing = { id: number, showId: number, minutesSpent: number };
-export type AppState = { adult: Adult, kids: Kid[] };
+export type AppState = { adult: Adult, kids: Kid[], adults: Adult[] };
 export type State = { app: AppState };
 
 export const initialState = {
     app: {
-        adult: {id:1,name:'Heidi',password:'pass', kids:[
-            {id:1, name:'Mercy', password:'pass', minutesPerWeek:420, bedTimes:[], viewings:[
-                {id:1,showId:1,minutesSpent:45},
-                {id:2,showId:2,minutesSpent:100},
-            ]},
-            {id:2, name:'Ramona', password:'pass', minutesPerWeek:420, bedTimes:[], viewings:[]},
-        ]},
+        adult: {},
         kids: {}
     }
 }
@@ -24,8 +18,10 @@ export const initialState = {
 // actions
 export type KidUpdated = { type: 'KID_UPDATED', payload: Kid };
 export type KidAdded = { type: 'KID_ADDED', payload: Kid };
+export type LoadAdults = { type: 'LOAD_ADULTS', payload: Adult[] };
+export type LoadAdult = { type: 'LOAD_ADULT', payload: Adult };
 
-type Action = RouterAction<State> | KidUpdated | KidAdded;
+type Action = RouterAction<State> | KidUpdated | KidAdded | LoadAdults | LoadAdult;
 
 // reducer
 export function appReducer(state: AppState, action: Action): AppState {
@@ -49,6 +45,20 @@ export function appReducer(state: AppState, action: Action): AppState {
             kids[action.payload.id] = action.payload;
 
             return { ...state, kids};
+
+        case 'LOAD_ADULTS' :
+
+            let adults = action.payload;
+
+            return { ...state, adults};
+
+        case 'LOAD_ADULT' :
+
+            let adult = action.payload;
+
+            return {...state, adult};
+
+
 
         default:
 
