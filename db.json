@@ -9,9 +9,46 @@
       "password": "pass",
       "minutesPerWeek": "400",
       "bedTimes": [1501785000, 1501785000, 1501785000, 1501785000, 1501785000, 1501785000, 1501785000],
-      "viewings": [
-        { "id": 1, "showId": 1, "title":"Beauty and the Beast", "startTime":1501774697, "endTime":1501778297 },
-        { "id": 2, "showId": 2, "title":"Kung Fu Hustle", "startTime": 1501774697, "endTime":1501778297 }
+      "viewings": [{
+          "id": 1,
+          "showId": 1,
+          "title": "Beauty and the Beast",
+          "startTime": 1501774697,
+          "endTime": 1501778297
+        },
+        {
+          "id": 2,
+          "showId": 2,
+          "title": "Kung Fu Hustle",
+          "startTime": 1501774697,
+          "endTime": 1501778297
+        }
+      ]
+    }]
+  },{
+    "_id": 2,
+    "name": "Hector",
+    "password": "pass",
+    "kids": [{
+      "_id": 1,
+      "name": "Mercy",
+      "password": "pass",
+      "minutesPerWeek": "600",
+      "bedTimes": [1501785000, 1501785000, 1501785000, 1501785000, 1501785000, 1501785000, 1501785000],
+      "viewings": [{
+          "id": 1,
+          "showId": 1,
+          "title": "Gladiator",
+          "startTime": 1501774697,
+          "endTime": 1501778297
+        },
+        {
+          "id": 2,
+          "showId": 2,
+          "title": "E.T.",
+          "startTime": 1501774697,
+          "endTime": 1501778297
+        }
       ]
     }]
   }]
