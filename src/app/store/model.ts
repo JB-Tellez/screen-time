@@ -105,7 +105,7 @@ export function appReducer(state: AppState, action: Action): AppState {
 @Injectable()
 export class ScreenEffects {
 
-    @Effect() navigateToFamily = this.handleNavigation('families/:id', (r: ActivatedRouteSnapshot, state: State) => {
+    @Effect() navigateToFamily = this.handleNavigation('family/:id/dashboard', (r: ActivatedRouteSnapshot, state: State) => {
 
         const id = +r.paramMap.get('id');
 
@@ -113,7 +113,7 @@ export class ScreenEffects {
 
     });
 
-    @Effect() navigateToKid = this.handleNavigation('families/:family_id/kids/:kid_id', (r: ActivatedRouteSnapshot, state: State) => {
+    @Effect() navigateToKid = this.handleNavigation('family/:family_id/kid/:kid_id', (r: ActivatedRouteSnapshot, state: State) => {
 
         const kid_id = +r.paramMap.get('kid_id');
         const family_id = +r.paramMap.get('family_id');
@@ -131,12 +131,6 @@ export class ScreenEffects {
         
         return this.backend.fetchFamily(family_id).map(resp => ({ type: 'LOAD_FAMILY_AND_SELECT_KID', payload: {family: resp, kid_id} }));
         
-    });
-
-    @Effect() navigateToFamilies = this.handleNavigation('families', (r: ActivatedRouteSnapshot, state: State) => {
-
-        return this.backend.fetchFamilies().map(resp => ({ type: 'LOAD_FAMILIES', payload: resp }));
-
     });
 
     @Effect() addKid = this.actions.ofType('ADD_KID').
