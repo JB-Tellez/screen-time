@@ -1,162 +1,315 @@
-/* NAVBAR */
-nav {
-  background-image: -webkit-linear-gradient(right, #220d3a 0%, #1f1a28 100%);
-  background-image: -moz-linear-gradient(right, #220d3a 0%, #1f1a28 100%);
-  background-image: -o-linear-gradient(right, #220d3a 0%, #1f1a28 100%);
-  background-image: linear-gradient(to left, #220d3a 0%, #1f1a28 100%);
-  -moz-box-shadow: 0 8px 30px 3px #000000;
-  -webkit-box-shadow: 0 8px 30px 3px #000000;
-  box-shadow: 0 8px 30px 3px #000000;
-  border: 1px solid black;
-  height: 69px;
+/*
+Name: Screen Time Web App
+Description: Common Styles
+Authors: Micaela Linda Villani & JBTellez
+Tags: Ironhack Final Project - Full Stack Javascript App + Angularjs for the Front-end
+*/
+
+/* Fonts
+---headings
+font-family: 'Montserrat Alternates', sans-serif;
+font-family: 'Merriweather Sans', sans-serif;
+--paragraphs
+font-family: 'Montserrat', sans-serif; 
+font-family: 'Merriweather', serif;
+*/
+
+
+
+/* ------------------------------------------- JUMBOTRON */
+/*----------- Stars animation */
+@keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-webkit-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-moz-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-ms-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+
+@keyframes move-clouds-back {
+    from {background-position:0 0;}
+    to {background-position:10000px 0;}
+}
+@-webkit-keyframes move-clouds-back {
+    from {background-position:0 0;}
+    to {background-position:10000px 0;}
+}
+@-moz-keyframes move-clouds-back {
+    from {background-position:0 0;}
+    to {background-position:10000px 0;}
+}
+@-ms-keyframes move-clouds-back {
+    from {background-position: 0;}
+    to {background-position:10000px 0;}
+}
+
+.main-container {
+  height: 90vh;
   margin: 0px;
+  padding: 0px;
   width: 100vw;
 }
 
-button {
-  background-image: -webkit-linear-gradient(top left, #0cb49b 0%, #1d99ae 100%);
-  background-image: -moz-linear-gradient(top left, #0cb49b 0%, #1d99ae 100%);
-  background-image: -o-linear-gradient(top left, #0cb49b 0%, #1d99ae 100%);
-  background-image: linear-gradient(to bottom right, #0cb49b 0%, #1d99ae 100%);
-  border: none;
-  color: white;
-  margin-left: 20px;
-  margin-top: 18px;
+.stars, .twinkling, .clouds {
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  width:100%;
+  height:100%;
+  display:block;
 }
 
-button:hover {
-  color: #2EF9A0;
+.stars {
+  background: #010B17 url(http://img4.hostingpics.net/pics/144421stars.png) repeat top center;
+  z-index:0;
 }
 
-/* JUMBOTRON */
-/* main logo */
-.unlock-logo {
-  background-image: -webkit-linear-gradient(bottom, #220d3a 0%, #1f1a28 100%);
-  background-image: -moz-linear-gradient(bottom, #220d3a 0%, #1f1a28 100%);
-  background-image: -o-linear-gradient(bottom, #220d3a 0%, #1f1a28 100%);
-  background-image: linear-gradient(to top, #220d3a 0%, #1f1a28 100%);
-  height: 95vh;
-  margin: 0px;
-  width: 100vw;
+.twinkling{
+  background:transparent url('../../../assets/images/blur.png') repeat top center;
+  z-index:1;
+
+  -moz-animation:move-twink-back 240s linear infinite;
+  -ms-animation:move-twink-back 240s linear infinite;
+  -o-animation:move-twink-back 240s linear infinite;
+  -webkit-animation:move-twink-back 240s linear infinite;
+  animation:move-twink-back 240s linear infinite;
 }
 
-.circle{
-  background-color: #1D99AE;
-  border-radius:300px;
-  color:#fff;
-  font-size:20px;
-  height:600px;
-  line-height:100px;
-  margin: 0 auto;
-  text-align:center;
-  width:600px;
-}
-
-h1 {
-  position: relative;
-  text-transform: uppercase;
-  top: 40%;
-}
-
+/* ------------------------------------------- FAMILY ICON */
 /* family scrolling icon */
 a.family-anchor {
   color: #337ab7;
+  opacity: 0.5;
   position: absolute;
   left: 47%;
-  bottom: 2%;  
+  bottom: 5%;
   text-decoration: none;
   height: 100px;
   width: 100px;
+  text-align: center;
+}
+
+a.family-anchor:hover {
+ opacity: 1;
 }
 
 .arrow-circle {
-  background-color: black;
-  border-radius: 20px;
-  margin: 0 auto;
-  position: relative;
-  right: 6%;
-  bottom: 16%;
-  color: white;
+  background-color: white;
+  border-radius: 50% !important;
+  position: absolute;
+  left: 31px;  
+  top: 65px;
   height: 40px;
-  opacity: 0.6;
   width: 40px;
 }
 
 .arrow {
-  position: relative;
-  left: 33%;
-  top: 26%;
+  position: absolute;
+  right: 12px;
+  top: 10px;
 }
 
-
-
-
+/* ------------------------------------------- SECTION 1 */
 /* 1SECTION */
-div.jumbotron.first-section {
-  background-color: #F79432;
+ div.jumbotron.first-section {
+  background-image: linear-gradient(to top, #15131B 0%, #01132A 50%, #010B17 100%);
   height: 100vh;  
+  margin-top: 26px;
   padding-top: 0px;
   padding-bottom: 0px;
   width:100vw;
+  position: relative;
+  z-index: 1;
+  overflow: scroll;
 }
 
-/* polygon shape 
-.shaped { 
-  background-image: -webkit-linear-gradient(bottom, #0cb49b 0%, #4f73b8 50%, #120720 100%);
-  background-image: -moz-linear-gradient(bottom, #0cb49b 0%, #4f73b8 50%, #120720 100%);
-  background-image: -o-linear-gradient(bottom, #0cb49b 0%, #4f73b8 50%, #120720 100%);
-  background-image: linear-gradient(to top, #0cb49b 0%, #4f73b8 50%, #120720 100%);
-  float:left;
-  height:10git st0vh;
-  width:100vw;
-  shape-outside: polygon(0 0, 100 120%, 100% 70%, 100% 0);
-  clip-path: polygon(0 0, 0 120%, 100% 70%, 100% 0);
-  margin: 0px;
-  padding: 0px;
-} */
+.screen-section {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  
+}
 
-div.row {
-  margin-top: 300px;
+div.section-one-row-one {
+  margin: 80px 0 130px 0;
+  height: 100px
+}
+
+.what-section-title {
+  color: #0CB49B;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif; 
+  font-weight: 300;
+  text-align: center;
 }
 
 
-.circle-icon {
-  border-radius:80px;
-  color:#fff;
-  font-size:20px;
-  height:160px;
-  line-height:100px;
-  margin-left: 25%;
-  text-align:center;
-  width:160px;
+p.what-section-p {
+  color: white;
+  font-family: 'Montserrat', sans-serif; 
+  font-size: 30px !important;
+  font-weight: 500;
+  margin-top: 70px; 
+  text-align: center;
+
 }
 
-.circle1 {
-  background-color: #F37055;
+/* -------------------------------- ICONS */
+.col-md-4 {
+  -webkit-column-span: all;
+  -moz-column-span: all;
+  column-span: all;
+  margin-top: 80px;
 }
 
-.circle2 {
-  background-color: #EF4D7B;
+.icons {
+  margin: 0 auto;
 }
 
-.circle3 {
-  background-color: #A166AB;
+.icons-titles {
+  color: white;
+  font-family: 'Montserrat', sans-serif; 
+  font-weight: 500;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 20px 0;
 }
 
-.circle-anchor-pink {
-  background-image: -webkit-linear-gradient(#FEE140 0%, #ef4d7b 100%);
-  background-image: -moz-linear-gradient(#FEE140 0%, #ef4d7b 100%);
-  background-image: -o-linear-gradient(#FEE140 0%, #ef4d7b 100%);
-  background-image: linear-gradient(#FEE140 0%, #ef4d7b 100%);
+.icons-p {
+  color: white;
+  font-family: 'Montserrat', sans-serif; 
+  font-weight: 300;
+  text-align: center;
+}
+
+
+a.robot-anchor {
   border: none;
-  border-radius:40px;
-  color:#fff;
-  font-size:20px;
-  height:80px;
+  height:100px;
+  opacity: 0.5;
   line-height:100px;
-  margin-top: 17vh;
-  margin-left: 45%;
+  position: absolute;
+  left: 47%;
+  bottom: 5%;
   text-align:center;
-  width:80px;
+  width:100px;
+  z-index: 4;
 }
 
+a.robot-anchor:hover {
+  opacity: 1;
+}
+
+div.arrow-circle-section1 {
+  background-color: white;
+  border-radius: 50% !important;
+  position: absolute;
+  left: 22px;  
+  top: 67px;
+  height: 40px;
+  width: 40px;
+}
+
+.arrow-section1 {
+  position: absolute;
+  right: 12px;
+  top: 10px; 
+}
+
+/* ------------------------------------------- SECTION 2 */
+
+.second-section {
+  background-image: -webkit-linear-gradient(#15131b 0%, #1c0b2f 50%, #010913 100%);
+  background-image: -moz-linear-gradient(#15131b 0%, #1c0b2f 50%, #010913 100%);
+  background-image: -o-linear-gradient(#15131b 0%, #1c0b2f 50%, #010913 100%);
+  background-image: linear-gradient(#15131b 0%, #1c0b2f 50%, #010913 100%);
+  height: 100vh;  
+  margin-top: 26px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  width:100vw;
+  position: relative;
+  z-index: 1;
+  overflow: scroll;
+}
+
+div.section-two-row-one {
+  margin: 80px 0 60px 0;
+  height: 100px
+}
+
+.col-md-3 {
+  -webkit-column-span: all;
+  -moz-column-span: all;
+  column-span: all;
+}
+
+.why-section-title {
+  color: #EF4D7B;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif; 
+  font-weight: 300;
+  text-align: center;
+}
+
+.choose-first-row {
+  height: 250px;
+  width: 1000px;
+  text-align: center;
+  margin: 0 auto;
+  border: 2px dotted #EF4D7B;
+  padding: 40px 20px;
+}
+
+.why-icons {
+  height: 100px;
+  width: auto;
+  margin: 0 40px;
+}
+
+.first-icon {
+  border: 2px dotted #2EF9A0;
+  padding: 10px;
+}
+
+.choose-second-row {
+  height: 250px;
+  width: 1000px;
+  text-align: center;
+  margin: 80px auto;
+  border: 2px dotted #EF4D7B;
+  padding: 40px 20px;
+}
+
+.why-icons-second-row {
+  height: 100px;
+  width: auto;
+  margin: 0 25px;
+}
+
+.first-icon-second-row {
+   border: 2px dotted #2EF9A0;
+   padding: 10px;
+}
+
+.why-icons-p {
+  color: white;
+  font-family: 'Montserrat', sans-serif; 
+  font-weight: 300;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 16px;
+
+}

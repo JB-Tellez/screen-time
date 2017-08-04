@@ -7,6 +7,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpModule } from '@angular/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { MoviesComponent } from './components/movies/movies.component';
@@ -15,9 +16,14 @@ import { KidTimeComponent } from './components/kid-time/kid-time.component';
 import { ParentSettingsComponent } from './components/parent-settings/parent-settings.component';
 import { MovieComponent } from './components/movie/movie.component';
 import { LandingComponent } from './components/landing/landing.component';
+<<<<<<< HEAD
 import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
 import { StoreModule, Action } from '@ngrx/store';
 import { appReducer, initialState, State } from './store/model';
+=======
+import { KidsLoginComponent } from './components/landing/kids-login/kids-login.component';
+import { NavbarComponent } from './components/landing/navbar/navbar.component';
+>>>>>>> landingstyles
 
 const routes:Routes = [
   {path: '', component: LandingComponent},
@@ -38,14 +44,14 @@ const routes:Routes = [
     ParentSettingsComponent,
     MovieComponent,
     LandingComponent,
-    ParentComponent,
+    KidsLoginComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
     RouterModule.forRoot(routes),
-    StoreModule.forRoot(<any>{app: appReducer}, {initialState}),
-    StoreRouterConnectingModule
+    BrowserAnimationsModule 
   ],
   providers: [MoviesService, KidsService, BackendService],
   bootstrap: [AppComponent]
