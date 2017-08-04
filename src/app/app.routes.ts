@@ -8,9 +8,9 @@ import { Routes } from '@angular/router';
 
 export const routes:Routes = [
   {path: '', component: LandingComponent},
-  {path: 'families/:id', component: FamilyHomeComponent},
-  {path: 'families/:id/dashboard', component: FamilyDashboardComponent},
-  {path: 'families/:family_id/kids/:kid_id', component: KidHomeComponent},
+  {path: 'family/:id', component: FamilyHomeComponent},
+  {path: 'family/:id/dashboard', component: FamilyDashboardComponent},
+  {path: 'family/:family_id/kid/:kid_id', component: KidHomeComponent},
   {path: 'login', component:FamilyLoginComponent}, 
   {path: 'signup', component:FamilySignupComponent}, 
 
