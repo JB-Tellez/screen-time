@@ -13,8 +13,6 @@ export class LandingComponent implements OnInit {
   constructor(private router:Router) { }
 
   ngOnInit() {
-    // particlesJS.load('particles-js', this.particleJSON , null); 
-    
   }
 
   gotoHome() {
