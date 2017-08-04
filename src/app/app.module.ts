@@ -10,9 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { MoviesComponent } from './components/movies/movies.component';
-import { HomeComponent } from './components/home/home.component';
 import { KidTimeComponent } from './components/kid-time/kid-time.component';
-import { ParentSettingsComponent } from './components/parent-settings/parent-settings.component';
 import { MovieComponent } from './components/movie/movie.component';
 import { LandingComponent } from './components/landing/landing.component';
 import { FamilyLoginLinkComponent } from './components/landing/family-login-link/family-login-link.component';
@@ -24,8 +22,6 @@ import { appReducer, initialState, State, ScreenEffects } from './store/model';
 import { EffectsModule } from "@ngrx/effects";
 
 import { routes } from './app.routes';
-import { KidComponent } from './components/kid/kid.component';
-import { FamilyComponent } from './components/family/family.component';
 import { FamilyLoginComponent } from './components/family-login/family-login.component';
 import { FamilyHomeComponent } from './components/family-home/family-home.component';
 import { FamilyDashboardComponent } from './components/family-dashboard/family-dashboard.component';
@@ -37,15 +33,11 @@ import { KidHomeComponent } from './components/kid-home/kid-home.component';
   declarations: [
     AppComponent,
     MoviesComponent,
-    HomeComponent,
     KidTimeComponent,
-    ParentSettingsComponent,
     MovieComponent,
     LandingComponent,
-    KidComponent,
     FamilyLoginLinkComponent,
     NavbarComponent,
-    FamilyComponent,
     FamilyLoginComponent,
     FamilyHomeComponent,
     FamilyDashboardComponent,
