@@ -16,14 +16,8 @@ import { KidTimeComponent } from './components/kid-time/kid-time.component';
 import { ParentSettingsComponent } from './components/parent-settings/parent-settings.component';
 import { MovieComponent } from './components/movie/movie.component';
 import { LandingComponent } from './components/landing/landing.component';
-<<<<<<< HEAD
-import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
-import { StoreModule, Action } from '@ngrx/store';
-import { appReducer, initialState, State } from './store/model';
-=======
 import { KidsLoginComponent } from './components/landing/kids-login/kids-login.component';
 import { NavbarComponent } from './components/landing/navbar/navbar.component';
->>>>>>> landingstyles
 
 const routes:Routes = [
   {path: '', component: LandingComponent},
