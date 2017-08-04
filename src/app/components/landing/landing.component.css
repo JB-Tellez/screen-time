@@ -93,7 +93,7 @@ a.family-anchor {
   opacity: 0.5;
   position: absolute;
   left: 47%;
-  bottom: 5%;
+  bottom: 10%;
   text-decoration: none;
   height: 100px;
   width: 100px;
@@ -130,7 +130,6 @@ a.family-anchor:hover {
   padding-bottom: 0px;
   width:100vw;
   position: relative;
-  z-index: 1;
   overflow: scroll;
 }
 
@@ -138,7 +137,7 @@ a.family-anchor:hover {
   position: absolute;
   width: 100%;
   height: 100%;
-  z-index: 3;
+  z-index: 2;
   
 }
 
@@ -153,6 +152,8 @@ div.section-one-row-one {
   font-family: 'Montserrat', sans-serif; 
   font-weight: 300;
   text-align: center;
+  margin-top: 50px;
+  font-size: 35px !important;
 }
 
 
@@ -161,9 +162,8 @@ p.what-section-p {
   font-family: 'Montserrat', sans-serif; 
   font-size: 30px !important;
   font-weight: 500;
-  margin-top: 70px; 
+  margin-top: 30px; 
   text-align: center;
-
 }
 
 /* -------------------------------- ICONS */
@@ -171,7 +171,7 @@ p.what-section-p {
   -webkit-column-span: all;
   -moz-column-span: all;
   column-span: all;
-  margin-top: 80px;
+  margin-top: 50px;
 }
 
 .icons {
@@ -192,6 +192,7 @@ p.what-section-p {
   font-family: 'Montserrat', sans-serif; 
   font-weight: 300;
   text-align: center;
+  font-size: 18px !important;
 }
 
 
@@ -205,7 +206,7 @@ a.robot-anchor {
   bottom: 5%;
   text-align:center;
   width:100px;
-  z-index: 4;
+  z-index: 3;
 }
 
 a.robot-anchor:hover {
@@ -241,12 +242,11 @@ div.arrow-circle-section1 {
   padding-bottom: 0px;
   width:100vw;
   position: relative;
-  z-index: 1;
   overflow: scroll;
 }
 
 div.section-two-row-one {
-  margin: 80px 0 60px 0;
+  margin: 50px 0 60px 0;
   height: 100px
 }
 
@@ -262,6 +262,8 @@ div.section-two-row-one {
   font-family: 'Montserrat', sans-serif; 
   font-weight: 300;
   text-align: center;
+  margin-top: 70px;
+  font-size: 35px !important;
 }
 
 .choose-first-row {
@@ -281,14 +283,14 @@ div.section-two-row-one {
 
 .first-icon {
   border: 2px dotted #2EF9A0;
-  padding: 10px;
+  padding: 20px;
 }
 
 .choose-second-row {
   height: 250px;
   width: 1000px;
   text-align: center;
-  margin: 80px auto;
+  margin: 80px auto 40px auto;
   border: 2px dotted #EF4D7B;
   padding: 40px 20px;
 }
@@ -298,10 +300,10 @@ div.section-two-row-one {
   width: auto;
   margin: 0 25px;
 }
-
+ 
 .first-icon-second-row {
    border: 2px dotted #2EF9A0;
-   padding: 10px;
+   padding: 20px;
 }
 
 .why-icons-p {
@@ -312,4 +314,22 @@ div.section-two-row-one {
   margin-top: 20px;
   font-size: 16px;
 
+}
+
+/* REGISTER BUTTON */
+.register-button {
+  margin: 0 auto;
+  border: 2px dotted #F37055;
+  width: 200px;;
+  height: 60px;
+  text-align: center;
+}
+
+a.family-signup {
+  font-family: 'Montserrat', sans-serif; 
+  text-transform: uppercase;
+  color: white;
+  font-weight: 500;
+  font-size: 18px !important;
+  margin-top: 18px;
 }

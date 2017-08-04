@@ -11,8 +11,9 @@ nav {
   height: 69px;
   margin: 0px;
   width: 100vw;
-  z-index: 1;
   text-align: center;
+  position: fixed;
+  z-index: 4;
 }
 
 /* BUTTON CSS

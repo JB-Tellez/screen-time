@@ -11,18 +11,28 @@ import { flip } from 'ng-animate/lib/flippers';
   styleUrls: ['./kids-login.component.css'],
   animations: [
     trigger('flip', [transition('* => *', useAnimation(flip, {
-      // Set the duration to 5seconds
+      // Set the duration to 2seconds
       //params: { timing: 2 }
     }))])
   ]
 })
+
 export class KidsLoginComponent implements OnInit {
 
   flip: any;
 
-  constructor(private router:Router) { }
+ 
+
+
+  constructor(private router:Router) {
+    
+  }
 
   ngOnInit() {
+  }
+
+  runAnimation(){
+    console.log('Animating bastard !!!! '); 
   }
 
   gotoHome() {
