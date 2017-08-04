@@ -9,64 +9,64 @@ import { Observable } from "rxjs/Observable";
 import 'rxjs/add/operator/withLatestFrom';
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/switchMap';
+import 'rxjs/add/operator/concatMap';
 import 'rxjs/add/operator/catch';
 
 // state
 export type Kid = { id: number, name: string, password: string, minutesPerWeek: number, bedTimes: number[], viewings: Viewing[] };
-export type Adult = { id: number, name: string, password: string, kids: Kid[] }
+export type Family = { id: number, name: string, password: string, kids: Kid[] }
 export type Viewing = { id: number, showId: number, title: string, startTime: number, endTime: number };
-export type AppState = { adult: Adult, kids: Kid[], adults: Adult[] };
+export type AppState = { family: Family, kid: Kid };
 export type State = { app: AppState };
 
 export const initialState = {
     app: {
-        adult: {},
-        kids: {}
+        family: {},
+        kid: {}
     }
 }
 
 // actions
 export type KidUpdated = { type: 'KID_UPDATED', payload: Kid };
 export type KidAdded = { type: 'KID_ADDED', payload: Kid };
-export type LoadAdults = { type: 'LOAD_ADULTS', payload: Adult[] };
-export type LoadAdult = { type: 'LOAD_ADULT', payload: Adult };
+export type AddKid = { type: 'ADD_KID', payload: Kid };
+export type LoadFamily = { type: 'LOAD_FAMILY', payload: Family };
 
-type Action = RouterAction<State> | KidUpdated | KidAdded | LoadAdults | LoadAdult;
+type Action = RouterAction<State> | AddKid | KidUpdated | KidAdded | LoadFamily;
 
 // reducer
 export function appReducer(state: AppState, action: Action): AppState {
 
-    let kids;
+    let kid;
+    let family: Family;
 
     switch (action.type) {
 
         case 'KID_UPDATED':
 
-            kids = { ...state.kids };
+            family = { ...state.family };
 
-            kids[action.payload.id] = action.payload;
+            let newKid = action.payload;
 
-            return { ...state, kids };
+            let existingKid = family.kids.find( kid => kid.id === newKid.id );
+
+            existingKid = Object.assign(existingKid, newKid);
+
+            return { ...state, family};
 
         case 'KID_ADDED':
 
-            kids = { ...state.kids };
+            family = {...state.family};
 
-            kids[action.payload.id] = action.payload;
+            family.kids.push(action.payload);
 
-            return { ...state, kids };
+            return { ...state, family };
 
-        case 'LOAD_ADULTS':
+        case 'LOAD_FAMILY':
 
-            let adults = action.payload;
+            family = action.payload;
 
-            return { ...state, adults };
-
-        case 'LOAD_ADULT':
-
-            let adult = action.payload;
-
-            return { ...state, adult };
+            return { ...state, family };
 
         default:
 
@@ -74,47 +74,30 @@ export function appReducer(state: AppState, action: Action): AppState {
     }
 }
 
+// effects
 
 @Injectable()
 export class ScreenEffects {
 
-    @Effect() navigateToParent = this.handleNavigation('parent/:id', (r: ActivatedRouteSnapshot, state: State) => {
+    @Effect() navigateToFamily = this.handleNavigation('families/:id', (r: ActivatedRouteSnapshot, state: State) => {
 
         const id = +r.paramMap.get('id');
 
-        console.log('navigateToParent');
-
-        return this.backend.getAdult(id).map(resp => ({ type: 'LOAD_ADULT', payload: resp }));
+        return this.backend.fetchFamily(id).map(resp => ({ type: 'LOAD_FAMILY', payload: resp }));
 
     });
 
-    //   @Effect() navigateToTalks = this.handleNavigation('talks', (r: ActivatedRouteSnapshot) => {
-    //     const filters = createFilters(r.params);
-    //     return this.backend.findTalks(filters).map(resp => ({type: 'TALKS_UPDATED', payload: {...resp, filters}}));
-    //   });
+    @Effect() navigateToFamilies = this.handleNavigation('families', (r: ActivatedRouteSnapshot, state: State) => {
 
-    //   @Effect() navigateToTalk = this.handleNavigation('talk/:id', (r: ActivatedRouteSnapshot, state: State) => {
-    //     const id = +r.paramMap.get('id');
-    //     if (! state.app.talks[id]) {
-    //       return this.backend.findTalk(+r.paramMap.get('id')).map(resp => ({type: 'TALK_UPDATED', payload: resp}));
-    //     } else {
-    //       return of();
-    //     }
-    //   });
+        return this.backend.fetchFamilies().map(resp => ({ type: 'LOAD_FAMILIES', payload: resp }));
 
-    //   @Effect() rateTalk = this.actions.ofType('RATE').
-    //     switchMap((a: Rate) => {
-    //       return this.backend.rateTalk(a.payload.talkId, a.payload.rating).switchMap(() => of()).catch(e => {
-    //         console.log('Error', e);
-    //         return of({type: 'UNRATE', payload: {talkId: a.payload.talkId}});
-    //       });
-    //     });
+    });
 
-    //   @Effect() watchTalk = this.actions.ofType('WATCH').
-    //     map((a: Watch) => {
-    //       this.watch.watch(a.payload.talkId);
-    //       return {type: 'TALK_WATCHED', payload: a.payload};
-    //     });
+    @Effect() addKid = this.actions.ofType('ADD_KID').
+        concatMap((a: AddKid) => {
+            return this.backend.addKid(a.payload).
+                map(resp => ({ type: 'KID_ADDED', payload: resp }));
+        });
 
     constructor(private actions: Actions, private store: Store<State>, private backend: BackendService) { }
 
