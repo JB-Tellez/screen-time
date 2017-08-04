@@ -19,6 +19,10 @@ import { LandingComponent } from './components/landing/landing.component';
 import { KidsLoginComponent } from './components/landing/kids-login/kids-login.component';
 import { NavbarComponent } from './components/landing/navbar/navbar.component';
 
+import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
+import { StoreModule, Action } from '@ngrx/store';
+import { appReducer, initialState, State } from './store/model';
+
 const routes:Routes = [
   {path: '', component: LandingComponent},
   {path: 'home', component: HomeComponent},
@@ -39,13 +43,16 @@ const routes:Routes = [
     MovieComponent,
     LandingComponent,
     KidsLoginComponent,
-    NavbarComponent
+    NavbarComponent,
+    ParentComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
     RouterModule.forRoot(routes),
-    BrowserAnimationsModule 
+    StoreModule.forRoot(<any>{app: appReducer}, {initialState}),
+    StoreRouterConnectingModule,
+    BrowserAnimationsModule
   ],
   providers: [MoviesService, KidsService, BackendService],
   bootstrap: [AppComponent]
