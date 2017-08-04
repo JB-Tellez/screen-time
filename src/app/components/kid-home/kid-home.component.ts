@@ -1,20 +1,35 @@
+import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Component, OnInit } from '@angular/core';
 import { State } from "../../store/model";
+import { NavbarComponent } from '../landing/navbar/navbar.component';
+
 
 @Component({
-  selector: 'app-kid',
-  templateUrl: './kid.component.html',
-  styleUrls: ['./kid.component.css']
+  selector: 'app-kid-home',
+  templateUrl: './kid-home.component.html',
+  styleUrls: ['./kid-home.component.css']
 })
-export class KidComponent implements OnInit {
+export class KidHomeComponent implements OnInit {
 
   public kid$;
 
-  constructor(private store:Store<State>) { }
+  constructor(private router:Router, private store:Store<State>) { }
 
   ngOnInit() {
     this.kid$ = this.store.select('app','kid');
+  }
+
+  gotoMovies() {
+    this.router.navigate(['/movies']);
+  }
+
+  gotoKidTime() {
+    this.router.navigate(['/kid-time']);
+  }
+
+  gotoParentSettings() {
+    this.router.navigate(['/parent-settings']);
   }
 
 }
