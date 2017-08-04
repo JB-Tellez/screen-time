@@ -1,4 +1,9 @@
+import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
 import { Component, OnInit } from '@angular/core';
+import { State } from "../../store/model";
+import { NavbarComponent } from '../landing/navbar/navbar.component';
+
 
 @Component({
   selector: 'app-kid-home',
@@ -7,9 +12,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class KidHomeComponent implements OnInit {
 
-  constructor() { }
+  public kid$;
+
+  constructor(private router:Router, private store:Store<State>) { }
 
   ngOnInit() {
+    this.kid$ = this.store.select('app','kid');
+  }
+
+  gotoMovies() {
+    this.router.navigate(['/movies']);
+  }
+
+  gotoKidTime() {
+    this.router.navigate(['/kid-time']);
+  }
+
+  gotoParentSettings() {
+    this.router.navigate(['/parent-settings']);
   }
 
 }
