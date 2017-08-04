@@ -10,6 +10,7 @@ import 'rxjs/add/operator/withLatestFrom';
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/concatMap';
+import 'rxjs/add/operator/mergeMap';
 import 'rxjs/add/operator/catch';
 
 // state
@@ -28,16 +29,18 @@ export const initialState = {
 
 // actions
 export type KidUpdated = { type: 'KID_UPDATED', payload: Kid };
+export type KidSelected = { type: 'KID_SELECTED', payload: number };
 export type KidAdded = { type: 'KID_ADDED', payload: Kid };
 export type AddKid = { type: 'ADD_KID', payload: Kid };
 export type LoadFamily = { type: 'LOAD_FAMILY', payload: Family };
+export type LoadFamilyAndSelectKid = { type: 'LOAD_FAMILY_AND_SELECT_KID', payload: {}};
 
-type Action = RouterAction<State> | AddKid | KidUpdated | KidAdded | LoadFamily;
+type Action = RouterAction<State> | AddKid | KidUpdated | KidAdded | KidSelected | LoadFamily | LoadFamilyAndSelectKid;
 
 // reducer
 export function appReducer(state: AppState, action: Action): AppState {
 
-    let kid;
+    let kid: Kid;
     let family: Family;
 
     switch (action.type) {
@@ -62,11 +65,34 @@ export function appReducer(state: AppState, action: Action): AppState {
 
             return { ...state, family };
 
+        case 'KID_SELECTED':
+
+            console.log('KID_SELECTED');
+            // DANGER: state.family may be empty!!!
+
+            kid = {id:1,name:'foo',password:'pass', minutesPerWeek:0, bedTimes:[], viewings:[]}; 
+            
+            //state.family.kids.find( k => k.id === action.payload);
+
+            return {...state, kid};
+
         case 'LOAD_FAMILY':
+
+            console.log('LOAD_FAMILY');
 
             family = action.payload;
 
             return { ...state, family };
+
+        case 'LOAD_FAMILY_AND_SELECT_KID':
+
+            family = action.payload['family'];
+
+            let kid_id = action.payload['kid_id'];
+
+            kid = family.kids.find( k => k['_id'] === kid_id);
+
+            return { ...state, family, kid };
 
         default:
 
@@ -85,6 +111,26 @@ export class ScreenEffects {
 
         return this.backend.fetchFamily(id).map(resp => ({ type: 'LOAD_FAMILY', payload: resp }));
 
+    });
+
+    @Effect() navigateToKid = this.handleNavigation('families/:family_id/kids/:kid_id', (r: ActivatedRouteSnapshot, state: State) => {
+
+        const kid_id = +r.paramMap.get('kid_id');
+        const family_id = +r.paramMap.get('family_id');
+
+        console.log('navigateToKid', family_id, kid_id);
+
+        // TODO: figure out how to conditionally load family if needed
+        
+        // return of().flatMap(add => [
+        //     this.backend.fetchFamily(family_id).map(resp => ({ type: 'LOAD_FAMILY', payload: resp })),
+        //     of({type: 'KID_SELECTED', payload: kid_id}),
+        // ]);
+
+        // return of({type: 'KID_SELECTED', payload: kid_id});
+        
+        return this.backend.fetchFamily(family_id).map(resp => ({ type: 'LOAD_FAMILY_AND_SELECT_KID', payload: {family: resp, kid_id} }));
+        
     });
 
     @Effect() navigateToFamilies = this.handleNavigation('families', (r: ActivatedRouteSnapshot, state: State) => {
