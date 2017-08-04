@@ -1,3 +1,4 @@
+import { FamilyComponent } from './components/family/family.component';
 import { KidComponent } from './components/kid/kid.component';
 import { ParentsComponent } from './components/parents/parents.component';
 import { ParentComponent } from './components/parent/parent.component';
@@ -14,7 +15,7 @@ export const routes:Routes = [
   {path: 'movies', component: MoviesComponent},
   {path: 'movie/:id', component: MovieComponent},
   {path: 'kid-time', component: KidTimeComponent},
-  {path: 'families/:id', component: ParentComponent},
+  {path: 'families/:id', component: FamilyComponent},
   {path: 'families/:family_id/kids/:kid_id', component: KidComponent},
 
 ]

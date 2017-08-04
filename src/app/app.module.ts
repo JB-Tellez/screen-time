@@ -27,6 +27,7 @@ import { ParentsComponent } from './components/parents/parents.component';
 
 import { routes } from './app.routes';
 import { KidComponent } from './components/kid/kid.component';
+import { FamilyComponent } from './components/family/family.component';
 
 
 @NgModule({
@@ -43,6 +44,7 @@ import { KidComponent } from './components/kid/kid.component';
     KidComponent,
     KidsLoginComponent,
     NavbarComponent,
+    FamilyComponent,
   ],
   imports: [
     BrowserModule,
