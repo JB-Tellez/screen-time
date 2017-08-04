@@ -14,7 +14,7 @@ export class ParentsComponent implements OnInit {
   constructor(private store:Store<State>) { }
 
   ngOnInit() {
-    this.adults$ = this.store.select('app', 'families');
+    this.adults$ = this.store.select('app', 'family');
   }
 
 }
