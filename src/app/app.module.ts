@@ -50,7 +50,7 @@ import { KidComponent } from './components/kid/kid.component';
     FormsModule,
     RouterModule.forRoot(routes),
     StoreModule.forRoot(<any>{app: appReducer}, {initialState}),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
     EffectsModule.forRoot([
       ScreenEffects
     ]),
