@@ -1,7 +1,5 @@
 import { FamilyComponent } from './components/family/family.component';
 import { KidComponent } from './components/kid/kid.component';
-import { ParentsComponent } from './components/parents/parents.component';
-import { ParentComponent } from './components/parent/parent.component';
 import { KidTimeComponent } from './components/kid-time/kid-time.component';
 import { MovieComponent } from './components/movie/movie.component';
 import { MoviesComponent } from './components/movies/movies.component';

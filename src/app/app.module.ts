@@ -1,5 +1,4 @@
 import { BackendService } from './services/backend.service';
-import { ParentComponent } from './components/parent/parent.component';
 import { MoviesService } from './services/movies.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -23,7 +22,6 @@ import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
 import { StoreModule, Action } from '@ngrx/store';
 import { appReducer, initialState, State, ScreenEffects } from './store/model';
 import { EffectsModule } from "@ngrx/effects";
-import { ParentsComponent } from './components/parents/parents.component';
 
 import { routes } from './app.routes';
 import { KidComponent } from './components/kid/kid.component';
@@ -39,8 +37,6 @@ import { FamilyComponent } from './components/family/family.component';
     ParentSettingsComponent,
     MovieComponent,
     LandingComponent,
-    ParentComponent,
-    ParentsComponent,
     KidComponent,
     KidsLoginComponent,
     NavbarComponent,
