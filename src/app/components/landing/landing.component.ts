@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
-import { KidsLoginComponent } from './kids-login/kids-login.component';
+import { FamilyLoginLinkComponent } from './family-login-link/family-login-link.component';
 
 
 @Component({

@@ -6,9 +6,9 @@ import { flip } from 'ng-animate/lib/flippers';
 
 
 @Component({
-  selector: 'app-kids-login',
-  templateUrl: './kids-login.component.html',
-  styleUrls: ['./kids-login.component.css'],
+  selector: 'app-family-login-link',
+  templateUrl: './family-login-link.component.html',
+  styleUrls: ['./family-login-link.component.css'],
   animations: [
     trigger('flip', [transition('* => *', useAnimation(flip, {
       // Set the duration to 2seconds
@@ -17,7 +17,7 @@ import { flip } from 'ng-animate/lib/flippers';
   ]
 })
 
-export class KidsLoginComponent implements OnInit {
+export class FamilyLoginLinkComponent implements OnInit {
 
   flip: any;
 

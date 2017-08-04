@@ -15,7 +15,7 @@ import { KidTimeComponent } from './components/kid-time/kid-time.component';
 import { ParentSettingsComponent } from './components/parent-settings/parent-settings.component';
 import { MovieComponent } from './components/movie/movie.component';
 import { LandingComponent } from './components/landing/landing.component';
-import { KidsLoginComponent } from './components/landing/kids-login/kids-login.component';
+import { FamilyLoginLinkComponent } from './components/landing/family-login-link/family-login-link.component';
 import { NavbarComponent } from './components/landing/navbar/navbar.component';
 
 import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
@@ -43,7 +43,7 @@ import { KidHomeComponent } from './components/kid-home/kid-home.component';
     MovieComponent,
     LandingComponent,
     KidComponent,
-    KidsLoginComponent,
+    FamilyLoginLinkComponent,
     NavbarComponent,
     FamilyComponent,
     FamilyLoginComponent,
