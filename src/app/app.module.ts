@@ -26,6 +26,11 @@ import { EffectsModule } from "@ngrx/effects";
 import { routes } from './app.routes';
 import { KidComponent } from './components/kid/kid.component';
 import { FamilyComponent } from './components/family/family.component';
+import { FamilyLoginComponent } from './components/family-login/family-login.component';
+import { FamilyHomeComponent } from './components/family-home/family-home.component';
+import { FamilyDashboardComponent } from './components/family-dashboard/family-dashboard.component';
+import { FamilySignupComponent } from './components/family-signup/family-signup.component';
+import { KidHomeComponent } from './components/kid-home/kid-home.component';
 
 
 @NgModule({
@@ -41,6 +46,11 @@ import { FamilyComponent } from './components/family/family.component';
     KidsLoginComponent,
     NavbarComponent,
     FamilyComponent,
+    FamilyLoginComponent,
+    FamilyHomeComponent,
+    FamilyDashboardComponent,
+    FamilySignupComponent,
+    KidHomeComponent,
   ],
   imports: [
     BrowserModule,
