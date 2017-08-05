@@ -1,9 +1,9 @@
 /* NAVBAR */
 nav {
-  background-image: -webkit-linear-gradient(right, #01132A 0%, #1f1a28 100%);
-  background-image: -moz-linear-gradient(right, #01132A 0%, #1f1a28 100%);
-  background-image: -o-linear-gradient(right, #01132A 0%, #1f1a28 100%);
-  background-image: linear-gradient(to left, #01132A 0%, #1f1a28 100%);
+  background-image: -webkit-linear-gradient(left, #100c13 0%, #010e1d 50%, #100c13 100%);
+  background-image: -moz-linear-gradient(left, #100c13 0%, #010e1d 50%, #100c13 100%);
+  background-image: -o-linear-gradient(left, #100c13 0%, #010e1d 50%, #100c13 100%);
+  background-image: linear-gradient(to right, #100c13 0%, #010e1d 50%, #100c13 100%);
   -moz-box-shadow: 0 8px 30px 3px #000000;
   -webkit-box-shadow: 0 8px 30px 3px #000000;
   box-shadow: 0 8px 30px 3px #000000;
