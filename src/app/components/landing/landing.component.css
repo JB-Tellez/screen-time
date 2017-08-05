@@ -93,7 +93,7 @@ a.family-anchor {
   opacity: 0.5;
   position: absolute;
   left: 47%;
-  bottom: 10%;
+  bottom: 3%;
   text-decoration: none;
   height: 100px;
   width: 100px;
@@ -125,7 +125,7 @@ a.family-anchor:hover {
  div.jumbotron.first-section {
   background-image: linear-gradient(to top, #15131B 0%, #01132A 50%, #010B17 100%);
   height: 100vh;  
-  margin-top: 26px;
+  margin-top: 90px;
   padding-top: 0px;
   padding-bottom: 0px;
   width:100vw;
@@ -135,10 +135,10 @@ a.family-anchor:hover {
 
 .screen-section {
   position: absolute;
+  top: 50px;
   width: 100%;
-  height: 100%;
+  height: 95%;  
   z-index: 2;
-  
 }
 
 div.section-one-row-one {
@@ -152,7 +152,6 @@ div.section-one-row-one {
   font-family: 'Montserrat', sans-serif; 
   font-weight: 300;
   text-align: center;
-  margin-top: 50px;
   font-size: 35px !important;
 }
 
