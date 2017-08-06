@@ -24,19 +24,19 @@ export class FamilyDashboardComponent implements OnInit {
     this.family$ = this.store.select('app', 'family');
 
     // need to inject date objects
-    this.family$.forEach(family => {
-      if (family.kids) {
-        family.kids.forEach(kid => {
-          kid['bts'] = kid.bedTimes.map(bedTime => new Date(bedTime * 1000));
-        })
-      }
-    });
+    // this.family$.forEach(family => {
+    //   if (family.kids) {
+    //     family.kids.forEach(kid => {
+    //       kid['bts'] = kid.bedTimes.map(bedTime => new Date(bedTime * 1000));
+    //     })
+    //   }
+    // });
 
   }
 
   public addKid() {
     const kid: Kid = {
-      id: undefined,
+      _id: undefined,
       name: 'Johnny',
       password: 'pass',
       minutesPerWeek: 400,
@@ -52,6 +52,8 @@ export class FamilyDashboardComponent implements OnInit {
   }
 
   public getMinutesSpent(kid: Kid) {
+
+    if (true === true) return 0; // DANGER
 
     // TODO: handle missing endTime
 
@@ -75,7 +77,7 @@ export class FamilyDashboardComponent implements OnInit {
   }
 
   public getViewingDuration(viewing: Viewing) {
-    return Math.floor((viewing.endTime - viewing.startTime) / 60);
+    return 0; //Math.floor((viewing.endTime - viewing.startTime) / 60);
   }
 
 }
