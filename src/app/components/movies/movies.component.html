@@ -1,7 +1,11 @@
-<ul>
-  <li *ngFor="let movie of movies | async" (click)="movieClicked(movie)">
-    <h2>{{movie.title}}</h2>
-    <p>{{movie.overview}}</p>
-    <img [src]="getPosterPath(movie)" alt="">
-  </li>
-</ul>
+<carousel [interval]="false">
+
+  <slide *ngFor="let movie of movies | async" (click)="movieClicked(movie)">
+    <img [src]="getPosterPath(movie)" alt="First slide">
+    <div class="carousel-caption">
+      <h3>{{movie.title}}</h3>
+      <p>{{movie.overview}}</p>
+    </div>
+  </slide>
+
+</carousel>

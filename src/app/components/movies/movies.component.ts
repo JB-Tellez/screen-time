@@ -18,7 +18,7 @@ export class MoviesComponent implements OnInit {
   }
 
   getPosterPath(movie) {
-    return `https://image.tmdb.org/t/p/w92${movie.poster_path}`;
+    return `https://image.tmdb.org/t/p/w780${movie.backdrop_path}`;
   }
 
   movieClicked(movie) {

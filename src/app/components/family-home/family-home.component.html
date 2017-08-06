@@ -1,3 +1,9 @@
-<p>
-  family-home works!
-</p>
+<h1>Family Home</h1>
+<hr>
+<h2>Family: {{ (family$ | async).name }}</h2>
+<button class="btn btn-primary" (click)="gotoDashboard()">dashboard</button>
+<ul>
+    <li *ngFor="let kid of (family$ | async).kids" (click)="gotoKid(kid)">
+        <p>{{kid.name}}</p>
+    </li>
+</ul>
