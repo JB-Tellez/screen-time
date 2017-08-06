@@ -1,3 +1,5 @@
+import { MoviesComponent } from './components/movies/movies.component';
+import { AdminComponent } from './components/admin/admin.component';
 import { KidHomeComponent } from './components/kid-home/kid-home.component';
 import { FamilyDashboardComponent } from './components/family-dashboard/family-dashboard.component';
 import { FamilySignupComponent } from './components/family-signup/family-signup.component';
@@ -13,5 +15,11 @@ export const routes:Routes = [
   {path: 'family/:family_id/kid/:kid_id', component: KidHomeComponent},
   {path: 'login', component:FamilyLoginComponent}, 
   {path: 'signup', component:FamilySignupComponent}, 
+  {path: 'admin', component:AdminComponent}, 
+  
+  
+  {path: 'movies', component:MoviesComponent}, 
+
+
 
 ]

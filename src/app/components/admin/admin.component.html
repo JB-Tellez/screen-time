@@ -1,0 +1,13 @@
+<h2>Families:</h2>
+<ul>
+  <li *ngFor="let family of families$ | async" (click)="familyClicked(family)">
+    <p>{{ family.name }}</p>
+    <ul>
+      <p>Kids:</p>
+      <li *ngFor="let kid of family.kids">
+        <p>{{ kid.name }}</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
