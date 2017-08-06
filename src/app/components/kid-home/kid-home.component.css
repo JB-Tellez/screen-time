@@ -97,3 +97,43 @@ font-family: 'Merriweather', serif;
     top: 15%;
     left: 5%;
 }
+
+.greeting-row {
+    color: #0CB49B;
+}
+
+.greeting-p {
+    margin-top: 20px;
+    margin-left: 5px;
+    color:white;
+    font-family: 'Montserrat', sans-serif; 
+}
+
+.left-col {
+    float: left;
+    width: 100%;
+    display: block;
+    position: relative;
+}
+
+p.today {
+    font-size: 26px !important;
+}
+
+.recap {
+    padding-top: 18px;
+}
+
+.right-col {
+    border: 2px dotted #0CB49B;
+    padding: 5px 15px;
+    width: 30%;
+    color: white;
+    position: absolute;
+    left: 70vw;
+}
+
+.small-icon {
+    width: 65px;
+    padding-right: 20px;
+}
