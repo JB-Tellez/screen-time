@@ -9,7 +9,7 @@
           <h1>Screen Time Signup</h1>
           
           <form class="form" #signupForm = "ngForm" (ngSubmit)="onSubmit()">
-            <input type="text" placeholder="name" [(ngModel)]="model.name" name="name">
+            <input type="text" placeholder="Name" [(ngModel)]="model.name" name="name">
             <input type="password" placeholder="Password" [(ngModel)]="model.password" name="password">
             <button type="submit" id="login-button">Signup</button>
             <p class="signup"> If your family already registered. <a (click)="gotoLogin()">Login Here</a></p>
