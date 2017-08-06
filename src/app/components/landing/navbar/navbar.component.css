@@ -30,6 +30,7 @@ a {
   top: 20px;
   font-size: 16px;
   text-transform: uppercase;
+  cursor: pointer;
 }
 
 button:hover {

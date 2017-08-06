@@ -118,9 +118,22 @@ h1.title {
     z-index: 1;
 }
 
+.icon-col {
+    cursor: pointer;
+}
+
+div.icon-col:hover {
+    opacity: 1;
+    -moz-box-shadow: 0 8px 30px 3px #000000;
+    -webkit-box-shadow: 0 8px 30px 3px #000000;
+    box-shadow: 0 8px 30px 3px #000000;
+    padding-top: 20px;
+}
+
+
+
 .icons {
     height: 280px;
-    z-index: ;
 }
 
 .jumbotron p {

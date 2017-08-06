@@ -1,15 +1,16 @@
-<!-- NAVBAR -->
-<app-navbar></app-navbar>
-
-
-
-<h1>Home</h1>
-<button (click)="gotoMovies()">Movies</button>
-<button (click)="gotoKidTime()">Kid Time</button>
-<button (click)="gotoParentSettings()">Parent Settings</button>
-
-
-
-
-
-{{ (kid$ | async).name }}
+<main class="container-fluid main-container jumbotron">
+  <div class="stars">
+    <div class="twinkling">
+      <!-- NAVBAR -->
+      <app-navbar></app-navbar>
+      <!-- FUNCTIONALITIES -->
+      <div class="container old">
+       <h1>Home</h1>
+       <button (click)="gotoMovies()">Movies</button>
+       <button (click)="gotoKidTime()">Kid Time</button>
+       <button (click)="gotoParentSettings()">Parent Settings</button>
+       {{ (kid$ | async).name }}
+      </div>
+    </div>
+  </div>
+</main>
