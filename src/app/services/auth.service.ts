@@ -1,3 +1,4 @@
+import { SignUpFamilyAction, LogInFamilyAction } from './../store/actions';
 import { Store } from '@ngrx/store';
 import { Injectable } from '@angular/core';
 import { State } from "../store/model";
@@ -8,11 +9,11 @@ export class AuthService {
   constructor(private store:Store<State>) { }
 
   signup(name: string, password: string) {
-    this.store.dispatch({type:'SIGN_UP_FAMILY', payload: {name, password}});
+    this.store.dispatch(new SignUpFamilyAction({name, password}))
   }
 
   login(name: string, password: string) {
-    this.store.dispatch({type:'LOG_IN_FAMILY', payload: {name, password}});
+    this.store.dispatch(new LogInFamilyAction({name, password}));
   }
 
 }
