@@ -205,15 +205,15 @@ div.robot-row{
 
 a.robot-anchor {
   border: none;
-    height: 100px;
-    opacity: 0.5;
-    margin: 0 auto;
-    line-height: 100px;
-    position: relative;
-    left: 46%;
-    top: 20%;
-    width: 100px;
-    z-index: 3;
+  height: 100px;
+  opacity: 0.5;
+  margin: 0 auto;
+  line-height: 100px;
+  position: relative;
+  left: 46%;
+  top: 42%;
+  width: 100px;
+  z-index: 3;
 }
 
 a.robot-anchor:hover {
