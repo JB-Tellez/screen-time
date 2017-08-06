@@ -1,3 +1,4 @@
+import { AuthService } from './services/auth.service';
 import { BackendService } from './services/backend.service';
 import { MoviesService } from './services/movies.service';
 import { BrowserModule } from '@angular/platform-browser';
@@ -63,7 +64,7 @@ import { AdminComponent } from './components/admin/admin.component';
     BsDropdownModule.forRoot(),
     CarouselModule.forRoot(),
   ],
-  providers: [MoviesService, BackendService, ScreenEffects],
+  providers: [MoviesService, BackendService, ScreenEffects, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

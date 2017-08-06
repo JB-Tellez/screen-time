@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 import { Injectable } from '@angular/core';
 import { RouterAction, ROUTER_NAVIGATION, RouterNavigationAction } from '@ngrx/router-store';
 import { Actions, Effect } from '@ngrx/effects';
-import { ActivatedRouteSnapshot, Params } from "@angular/router";
+import { ActivatedRouteSnapshot, Params, Router } from "@angular/router";
 import { of } from "rxjs/observable/of";
 import { Observable } from "rxjs/Observable";
 import 'rxjs/add/operator/withLatestFrom';
@@ -19,7 +19,7 @@ import 'rxjs/add/operator/catch';
 export type Kid = { _id: string, name: string, password: string, family: Family, minutesPerWeek: number, bedTimes: number[], viewings: Viewing[] };
 export type Family = { _id: string, name: string, password: string, kids: Kid[] }
 export type Viewing = { _id: string, showId: string, title: string, startTime: number, endTime: number };
-export type AppState = { family: Family, kid: Kid, families:Family[], kids: Kid[] };
+export type AppState = { family: Family, kid: Kid, families: Family[], kids: Kid[], loggedIn: boolean };
 export type State = { app: AppState };
 
 export const initialState = {
@@ -27,7 +27,8 @@ export const initialState = {
         family: {},
         kid: {},
         families: [],
-        kids: []
+        kids: [],
+        loggedIn: false
     }
 }
 
@@ -42,14 +43,17 @@ export type FamiliesLoaded = { type: 'FAMILIES_LOADED', payload: Family[] };
 export type KidsLoaded = { type: 'KIDS_LOADED', payload: Kid[] };
 export type LoadFamilies = { type: 'LOAD_FAMILIES', payload: Family[] };
 export type LoadKids = { type: 'LOAD_KIDS', payload: Kid[] };
-export type LoadFamilyAndSelectKid = { type: 'LOAD_FAMILY_AND_SELECT_KID', payload: {}};
-export type CreateFamily = { type: 'CREATE_FAMILY', payload: Family};
-export type CreateKid = { type: 'CREATE_KID', payload: Kid};
-export type FamilyCreated = { type: 'FAMILY_CREATED', payload: Family};
-export type KidCreated = { type: 'KID_CREATED', payload: Kid};
+export type LoadFamilyAndSelectKid = { type: 'LOAD_FAMILY_AND_SELECT_KID', payload: {} };
+export type CreateFamily = { type: 'CREATE_FAMILY', payload: Family };
+export type SignUpFamily = { type: 'SIGN_UP_FAMILY', payload: Family };
+export type CreateKid = { type: 'CREATE_KID', payload: Kid };
+export type FamilyCreated = { type: 'FAMILY_CREATED', payload: Family };
+export type FamilySignedUp = { type: 'FAMILY_SIGNED_UP', payload: Family };
+export type KidCreated = { type: 'KID_CREATED', payload: Kid };
+export type TestAction = { type: 'TEST_ACTION', payload:{}};
 
 // TODO: effects only actions needed in this list?
-type Action = RouterAction<State> | FamilyCreated | KidCreated | AddKid | KidUpdated | KidAdded | KidSelected | LoadKids | FamilyLoaded | FamiliesLoaded | KidsLoaded | LoadFamilies | LoadFamilyAndSelectKid;
+type Action = RouterAction<State> | FamilyCreated | FamilySignedUp | KidCreated | AddKid | KidUpdated | KidAdded | KidSelected | LoadKids | FamilyLoaded | FamiliesLoaded | KidsLoaded | LoadFamilies | LoadFamilyAndSelectKid;
 
 // reducer
 export function appReducer(state: AppState, action: Action): AppState {
@@ -61,41 +65,59 @@ export function appReducer(state: AppState, action: Action): AppState {
 
     switch (action.type) {
 
-        case 'FAMILY_CREATED' :
+        case 'FAMILY_SIGNED_UP':
 
-            console.log('FAMILY_CREATED', action.payload);
+            console.log(action.type);
 
             families = [...state.families];
 
             families.push(action.payload);
 
-            return {...state, families};
+            family = action.payload;
 
-        case 'KID_CREATED' :
+            const loggedIn = true;
 
-            console.log('KID_CREATED', action.payload);
+            return { ...state, families, family, loggedIn };
+
+        case 'FAMILY_CREATED':
+
+            console.log(action.type);
+
+            families = [...state.families];
+
+            families.push(action.payload);
+
+            return { ...state, families };
+
+        case 'KID_CREATED':
+
+            console.log(action.type);
 
             kids = [...state.kids];
 
             kids.push(action.payload);
 
-            return {...state, kids};
+            return { ...state, kids };
 
         case 'KID_UPDATED':
+
+            console.log(action.type);
 
             family = { ...state.family };
 
             let newKid = action.payload;
 
-            let existingKid = family.kids.find( kid => kid._id === newKid._id );
+            let existingKid = family.kids.find(kid => kid._id === newKid._id);
 
             existingKid = Object.assign(existingKid, newKid);
 
-            return { ...state, family};
+            return { ...state, family };
 
         case 'KID_ADDED':
 
-            family = {...state.family};
+            console.log(action.type);
+
+            family = { ...state.family };
 
             family.kids.push(action.payload);
 
@@ -103,18 +125,19 @@ export function appReducer(state: AppState, action: Action): AppState {
 
         case 'KID_SELECTED':
 
-            console.log('KID_SELECTED');
+            console.log(action.type);
+
             // DANGER: state.family may be empty!!!
 
-            kid = {_id:"1",name:'foo',password:'pass', family:null, minutesPerWeek:0, bedTimes:[], viewings:[]}; 
-            
+            kid = { _id: "1", name: 'foo', password: 'pass', family: null, minutesPerWeek: 0, bedTimes: [], viewings: [] };
+
             //state.family.kids.find( k => k.id === action.payload);
 
-            return {...state, kid};
+            return { ...state, kid };
 
         case 'FAMILY_LOADED':
 
-            console.log('FAMILY_LOADED');
+            console.log(action.type);
 
             family = action.payload;
 
@@ -122,11 +145,15 @@ export function appReducer(state: AppState, action: Action): AppState {
 
         case 'FAMILIES_LOADED':
 
+            console.log(action.type);
+
             families = action.payload;
 
             return { ...state, families };
 
         case 'KIDS_LOADED':
+
+            console.log(action.type);
 
             kids = action.payload;
 
@@ -134,15 +161,19 @@ export function appReducer(state: AppState, action: Action): AppState {
 
         case 'LOAD_FAMILY_AND_SELECT_KID':
 
+            console.log(action.type);
+
             family = action.payload['family'];
 
             let kid_id = action.payload['kid_id'];
 
-            kid = family.kids.find( k => k['_id'] === kid_id);
+            kid = family.kids.find(k => k['_id'] === kid_id);
 
             return { ...state, family, kid };
 
         default:
+            
+            console.log(action.type);
 
             return state;
     }
@@ -154,8 +185,8 @@ export function appReducer(state: AppState, action: Action): AppState {
 export class ScreenEffects {
 
     @Effect() navigateToAdmin = this.handleNavigation('admin', (r: ActivatedRouteSnapshot, state: State) => {
-        
-        return of({type:'LOAD_FAMILIES'}, {type:'LOAD_KIDS'});
+
+        return of({ type: 'LOAD_FAMILIES' }, { type: 'LOAD_KIDS' });
     });
 
     @Effect() navigateToFamily = this.handleNavigation('family/:id', (r: ActivatedRouteSnapshot, state: State) => {
@@ -164,13 +195,13 @@ export class ScreenEffects {
         const id = r.paramMap.get('id');
 
         if (state.app.family && state.app.family._id === id) {
-            
+
             console.log('already got right family loaded');
 
             return of();
         }
 
-        return of({type:'LOAD_FAMILY', payload: id});
+        return of({ type: 'LOAD_FAMILY', payload: id });
 
     });
 
@@ -180,13 +211,13 @@ export class ScreenEffects {
         const id = r.paramMap.get('id');
 
         if (state.app.family && state.app.family._id === id) {
-            
+
             console.log('already got right family loaded');
 
             return of();
         }
 
-        return of({type:'LOAD_FAMILY', payload: id});
+        return of({ type: 'LOAD_FAMILY', payload: id });
 
     });
 
@@ -198,44 +229,61 @@ export class ScreenEffects {
         console.log('navigateToKid', family_id, kid_id);
 
         // TODO: figure out how to conditionally load family if needed
-        
-        return this.backend.fetchFamily(family_id).map(resp => ({ type: 'LOAD_FAMILY_AND_SELECT_KID', payload: {family: resp, kid_id} }));
-        
+
+        return this.backend.fetchFamily(family_id).map(resp => ({ type: 'LOAD_FAMILY_AND_SELECT_KID', payload: { family: resp, kid_id } }));
+
     });
 
     @Effect() addKid = this.actions.ofType('ADD_KID').
         concatMap((a: AddKid) => {
-            
+
             return this.backend.addKid(a.payload).
                 map(resp => ({ type: 'KID_ADDED', payload: resp }));
         });
 
     @Effect() loadFamily = this.actions.ofType('LOAD_FAMILY').switchMap((a: LoadFamily) => {
         console.log('loadFamily action', a.payload);
-        return this.backend.fetchFamily(a.payload).map( resp => ({type: 'FAMILY_LOADED', payload: resp}));
+        return this.backend.fetchFamily(a.payload).map(resp => ({ type: 'FAMILY_LOADED', payload: resp }));
     });
 
     @Effect() loadFamilies = this.actions.ofType('LOAD_FAMILIES').switchMap((a: LoadFamilies) => {
         console.log('loadFamilies action');
-        return this.backend.fetchFamilies().map( resp => ({type: 'FAMILIES_LOADED', payload: resp}));
+        return this.backend.fetchFamilies().map(resp => ({ type: 'FAMILIES_LOADED', payload: resp }));
     });
 
     @Effect() loadKids = this.actions.ofType('LOAD_KIDS').switchMap((a: LoadKids) => {
         console.log('loadKids action');
-        return this.backend.fetchKids().map( resp => ({type: 'KIDS_LOADED', payload: resp}));
+        return this.backend.fetchKids().map(resp => ({ type: 'KIDS_LOADED', payload: resp }));
     });
 
     @Effect() createFamily = this.actions.ofType('CREATE_FAMILY').switchMap((a: CreateFamily) => {
         console.log('createFamily action');
-        return this.backend.createFamily(a.payload).map( resp => ({type: 'FAMILY_CREATED', payload: resp}));
+        return this.backend.createFamily(a.payload).map(resp => ({ type: 'FAMILY_CREATED', payload: resp }));
     });
+
+    @Effect() signUpFamily = this.actions.ofType('SIGN_UP_FAMILY').switchMap((a: SignUpFamily) => {
+        
+        console.log('signUpFamily action');
+
+        return this.backend.createFamily(a.payload).concatMap(resp => {
+            return of({ type: 'FAMILY_CREATED', payload: resp }, { type: 'TEST_ACTION', payload: resp });
+        })
+
+    });
+
 
     @Effect() createKid = this.actions.ofType('CREATE_KID').switchMap((a: CreateKid) => {
         console.log('createKid action');
-        return this.backend.createKid(a.payload).map( resp => ({type: 'KID_CREATED', payload: resp}));
+        return this.backend.createKid(a.payload).map(resp => ({ type: 'KID_CREATED', payload: resp }));
     });
 
-    constructor(private actions: Actions, private store: Store<State>, private backend: BackendService) { }
+    @Effect() testAction = this.actions.ofType('TEST_ACTION').switchMap((a: TestAction) => {
+        console.log('test action payload', a.payload);
+        this.router.navigate([`/family/${a.payload['_id']}`]);
+        return of();
+    });
+
+    constructor(private actions: Actions, private store: Store<State>, private backend: BackendService, private router: Router) { }
 
     private handleNavigation(segment: string, callback: (a: ActivatedRouteSnapshot, state: State) => Observable<any>) {
         const nav = this.actions.ofType(ROUTER_NAVIGATION).
