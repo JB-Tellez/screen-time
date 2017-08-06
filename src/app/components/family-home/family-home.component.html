@@ -1,12 +1,37 @@
-<main class="main-container jumbotron">
+<main class="container-fluid main-container jumbotron">
   <div class="stars">
     <div class="twinkling">
       <!-- NAVBAR -->
       <app-navbar></app-navbar>
-      
+      <!-- TITLE -->
       <div class="row title-row">
         <h1 class="title col-sm-12 col-md-12 col-lg-12"> Welcome Family ...</h1>
       </div>
+      <!-- ICONS -->
+      <div class="row icons-row">
+        
+        <div class="col-sm-12 col-md-4 col-lg-4" >
+          <a (click)="gotoFamilyDashboard()">
+            <img class="responsive-image icons" src="../../../assets/images/family-icon-big.png">
+            <p> Family Dashboard </p>
+          </a>
+        </div>
+
+        <div class="col-sm-12 col-md-4 col-lg-4" >
+          <a (click)="gotoKidHome()">
+            <img class="responsive-image icons" src="../../../assets/images/little-girl-icon.png">
+            <p> Emma </p>
+          </a>
+        </div>
+
+        <div class="col-sm-12 col-md-4 col-lg-4" >
+          <a (click)="gotoKidHome()">
+            <img class="responsive-image icons" src="../../../assets/images/teen-boy-icon.png">
+            <p> Tom </p>
+          </a>
+        </div>
+      </div>
+
     </div>
   </div>
 </main>

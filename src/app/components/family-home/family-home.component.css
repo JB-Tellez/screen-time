@@ -94,7 +94,7 @@ font-family: 'Merriweather', serif;
 /* BODY */
 .title-row {
     position: relative;
-    top: 20%;
+    top: 30%;
     text-align: center;
 }
 
@@ -102,4 +102,15 @@ h1.title {
     font-family: 'Montserrat', sans-serif; 
     color: white;
     z-index: 1;
+}
+
+.icons-row {
+    position: relative;
+    top: 40%;
+    text-align: center;
+    color: white;
+}
+
+.icons {
+    height: 280px;
 }
