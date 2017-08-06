@@ -5,7 +5,7 @@
       <app-navbar></app-navbar>
       <!-- TITLE -->
       <div class="row title-row">
-        <h1 class="title col-sm-12 col-md-12 col-lg-12"> Welcome Family ...</h1>
+        <h1 class="title col-sm-12 col-md-12 col-lg-12"> Welcome Family {{ (family$ | async).name }}</h1>
       </div>
       <!-- ICONS -->
       <div class="wrapper">
