@@ -92,9 +92,10 @@ font-family: 'Merriweather', serif;
 }
 
 /* BODY */
+/* TITLE */
 .title-row {
     position: relative;
-    top: 30%;
+    top: 27%;
     text-align: center;
 }
 
@@ -102,15 +103,30 @@ h1.title {
     font-family: 'Montserrat', sans-serif; 
     color: white;
     z-index: 1;
+    font-size: 45px !important;
 }
 
-.icons-row {
+/* ICONS */
+.wrapper {
     position: relative;
-    top: 40%;
+    top: 34%;
     text-align: center;
     color: white;
+    padding: 30px 180px 0 180px;
+    background-color: #010F20;
+    opacity: 0.8;
+    z-index: 1;
 }
 
 .icons {
     height: 280px;
+    z-index: ;
+}
+
+.jumbotron p {
+    margin-bottom: 15px;
+    margin-top: 20px;
+    font-size: 21px;
+    font-weight: 200;
+    color: white;
 }
