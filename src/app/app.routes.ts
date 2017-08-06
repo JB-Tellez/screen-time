@@ -9,6 +9,7 @@ import { Routes } from '@angular/router';
 export const routes:Routes = [
   {path: '', component: LandingComponent},
   {path: 'family/:id', component: FamilyHomeComponent},
+  {path: 'family/1', component: FamilyHomeComponent},
   {path: 'family/:id/dashboard', component: FamilyDashboardComponent},
   {path: 'family/:family_id/kid/:kid_id', component: KidHomeComponent},
   {path: 'login', component:FamilyLoginComponent}, 

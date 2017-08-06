@@ -17,6 +17,10 @@ export class FamilyLoginComponent implements OnInit {
   gotoSignup() {
     this.router.navigate(['/signup']);
   }
+
+  gotoFamilyHome() {
+    this.router.navigate(['/family/1']);
+  }
   
 
 }
