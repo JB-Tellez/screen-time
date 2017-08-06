@@ -19,7 +19,7 @@ export class AuthService {
     //   }
     // });
 
-    family['onCompleteActions'] = {type:'TEST_ACTION'};
+    // family['onCompleteActions'] = {type:'TEST_ACTION'};
 
     this.store.dispatch({type:'SIGN_UP_FAMILY', payload: family});
   }
