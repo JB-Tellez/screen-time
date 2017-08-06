@@ -130,8 +130,6 @@ div.icon-col:hover {
     padding-top: 20px;
 }
 
-
-
 .icons {
     height: 280px;
 }
@@ -142,4 +140,8 @@ div.icon-col:hover {
     font-size: 21px;
     font-weight: 200;
     color: white;
+}
+
+a:hover {
+    text-decoration: none !important;
 }
