@@ -41,7 +41,8 @@ export class FamilyDashboardComponent implements OnInit {
       password: 'pass',
       minutesPerWeek: 400,
       bedTimes: [],
-      viewings: []
+      viewings: [],
+      family: null
     };
     this.store.dispatch({ type: 'ADD_KID', payload: kid });
 
