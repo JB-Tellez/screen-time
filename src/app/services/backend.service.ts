@@ -29,11 +29,6 @@ export class BackendService {
     return Observable.of(kid);
   }
 
-  createFamily(family:Family) {
-    console.log('createFamily', family);
-    return this.http.post(`api/families`, family).delay(2000).map( data => data.json());
-  }
-
   signUpFamily(creds:any) {
     console.log('createFamily', creds);
     return this.http.post(`auth/signup`, creds).map( data => data.json());

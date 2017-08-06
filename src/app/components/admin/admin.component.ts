@@ -31,9 +31,7 @@ export class AdminComponent implements OnInit {
 
     const familyName = 'family_' + Math.floor(Math.random() * 1000);
 
-    const family:Family = {_id: undefined, name: familyName, password:'pass', kids:[]}
-
-    this.store.dispatch({type:'CREATE_FAMILY', payload:family});
+    this.store.dispatch({type:'SIGN_UP_FAMILY', payload: {name: familyName, password: 'pass'}});
   }
 
   createKid(family:Family) {

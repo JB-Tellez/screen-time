@@ -44,18 +44,16 @@ export type KidsLoaded = { type: 'KIDS_LOADED', payload: Kid[] };
 export type LoadFamilies = { type: 'LOAD_FAMILIES', payload: Family[] };
 export type LoadKids = { type: 'LOAD_KIDS', payload: Kid[] };
 export type LoadFamilyAndSelectKid = { type: 'LOAD_FAMILY_AND_SELECT_KID', payload: {} };
-export type CreateFamily = { type: 'CREATE_FAMILY', payload: Family };
 export type SignUpFamily = { type: 'SIGN_UP_FAMILY', payload: {} };
 export type LogInFamily = { type: 'LOG_IN_FAMILY', payload: {} };
 export type FamilyLoggedIn = { type: 'FAMILY_LOGGED_IN', payload: Family };
 export type CreateKid = { type: 'CREATE_KID', payload: Kid };
-export type FamilyCreated = { type: 'FAMILY_CREATED', payload: Family };
 export type FamilySignedUp = { type: 'FAMILY_SIGNED_UP', payload: Family };
 export type KidCreated = { type: 'KID_CREATED', payload: Kid };
 export type GotoFamilyAction = { type: 'GOTO_FAMILY_ACTION', payload:{}};
 
 // TODO: effects only actions needed in this list?
-type Action = RouterAction<State> | FamilyLoggedIn  | FamilyCreated | FamilySignedUp | KidCreated | AddKid | KidUpdated | KidAdded | KidSelected | LoadKids | FamilyLoaded | FamiliesLoaded | KidsLoaded | LoadFamilies | LoadFamilyAndSelectKid;
+type Action = RouterAction<State> | FamilyLoggedIn | FamilySignedUp | KidCreated | AddKid | KidUpdated | KidAdded | KidSelected | LoadKids | FamilyLoaded | FamiliesLoaded | KidsLoaded | LoadFamilies | LoadFamilyAndSelectKid;
 
 // reducer
 export function appReducer(state: AppState, action: Action): AppState {
@@ -69,7 +67,6 @@ export function appReducer(state: AppState, action: Action): AppState {
 
         case 'FAMILY_SIGNED_UP':
         case 'FAMILY_LOGGED_IN' :
-        case 'FAMILY_CREATED':
 
             console.log(action.type);
 
@@ -248,14 +245,9 @@ export class ScreenEffects {
         return this.backend.fetchKids().map(resp => ({ type: 'KIDS_LOADED', payload: resp }));
     });
 
-    @Effect() createFamily = this.actions.ofType('CREATE_FAMILY').switchMap((a: CreateFamily) => {
-        console.log('createFamily action');
-        return this.backend.createFamily(a.payload).map(resp => ({ type: 'FAMILY_CREATED', payload: resp }));
-    });
-
     @Effect() signUpFamily = this.actions.ofType('SIGN_UP_FAMILY').switchMap((a: SignUpFamily) => {
         
-        console.log('signUpFamily action');
+        console.log(a.type);
 
         return this.backend.signUpFamily(a.payload).concatMap(resp => {
             return of({ type: 'FAMILY_CREATED', payload: resp }, { type: 'GOTO_FAMILY_ACTION', payload: resp });
@@ -268,7 +260,7 @@ export class ScreenEffects {
         console.log('logInFamily action');
 
         return this.backend.logInFamily(a.payload).concatMap(resp => {
-            return of({ type: 'FAMILY_CREATED', payload: resp }, { type: 'GOTO_FAMILY_ACTION', payload: resp });
+            return of({ type: 'FAMILY_LOGGED_IN', payload: resp }, { type: 'GOTO_FAMILY_ACTION', payload: resp });
         })
 
     });
