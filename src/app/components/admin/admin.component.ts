@@ -1,9 +1,8 @@
 import { Router } from '@angular/router';
-import { Kid } from './../../../../shared/model/kid';
 import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
 import { Component, OnInit } from '@angular/core';
-import { State, Family } from "../../store/model";
+import { State, Family, Kid } from "../../store/model";
 
 @Component({
   selector: 'app-admin',
@@ -26,6 +25,29 @@ export class AdminComponent implements OnInit {
 
   familyClicked(family:Family) {
     this.router.navigate([`/family/${family['_id']}`]);
+  }
+
+  createFamily() {
+
+    const familyName = 'family_' + Math.floor(Math.random() * 1000);
+
+    const family:Family = {_id: undefined, name: familyName, password:'pass', kids:[]}
+
+    this.store.dispatch({type:'CREATE_FAMILY', payload:family});
+  }
+
+  createKid(family:Family) {
+
+    const kidName = 'kid_' + Math.floor(Math.random() * 1000);
+
+    const kid:Kid = {_id: undefined, name:kidName, password:'pass', family:family, minutesPerWeek:400, viewings:[], bedTimes:[]}
+    
+    this.store.dispatch({type: 'CREATE_KID', payload: kid});
+  } 
+
+  kidClicked(kid:Kid) {
+    console.log(kid.family);
+    // this.router.navigate([``]);
   }
 
 }

@@ -1,11 +1,13 @@
 <h2>Families:</h2>
+<button (click)="createFamily()">Create Family</button>
 <ul>
-  <li *ngFor="let family of families$ | async" (click)="familyClicked(family)">
-    <p>{{ family.name }}</p>
+  <li *ngFor="let family of families$ | async" >
+    <p (click)="familyClicked(family)">{{ family.name }}</p>
     <ul>
       <p>Kids:</p>
+      <button (click)="createKid(family)">Create Kid</button>
       <li *ngFor="let kid of family.kids">
-        <p>{{ kid.name }}</p>
+        <p (click)="kidClicked(kid)">{{ kid.name }}</p>
       </li>
     </ul>
   </li>

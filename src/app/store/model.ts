@@ -16,7 +16,7 @@ import 'rxjs/add/observable/forkJoin';
 import 'rxjs/add/operator/catch';
 
 // state
-export type Kid = { _id: string, name: string, password: string, minutesPerWeek: number, bedTimes: number[], viewings: Viewing[] };
+export type Kid = { _id: string, name: string, password: string, family: Family, minutesPerWeek: number, bedTimes: number[], viewings: Viewing[] };
 export type Family = { _id: string, name: string, password: string, kids: Kid[] }
 export type Viewing = { _id: string, showId: string, title: string, startTime: number, endTime: number };
 export type AppState = { family: Family, kid: Kid, families:Family[], kids: Kid[] };
@@ -43,17 +43,43 @@ export type KidsLoaded = { type: 'KIDS_LOADED', payload: Kid[] };
 export type LoadFamilies = { type: 'LOAD_FAMILIES', payload: Family[] };
 export type LoadKids = { type: 'LOAD_KIDS', payload: Kid[] };
 export type LoadFamilyAndSelectKid = { type: 'LOAD_FAMILY_AND_SELECT_KID', payload: {}};
+export type CreateFamily = { type: 'CREATE_FAMILY', payload: Family};
+export type CreateKid = { type: 'CREATE_KID', payload: Kid};
+export type FamilyCreated = { type: 'FAMILY_CREATED', payload: Family};
+export type KidCreated = { type: 'KID_CREATED', payload: Kid};
 
 // TODO: effects only actions needed in this list?
-type Action = RouterAction<State> | AddKid | KidUpdated | KidAdded | KidSelected | LoadKids | FamilyLoaded | FamiliesLoaded | KidsLoaded | LoadFamilies | LoadFamilyAndSelectKid;
+type Action = RouterAction<State> | FamilyCreated | KidCreated | AddKid | KidUpdated | KidAdded | KidSelected | LoadKids | FamilyLoaded | FamiliesLoaded | KidsLoaded | LoadFamilies | LoadFamilyAndSelectKid;
 
 // reducer
 export function appReducer(state: AppState, action: Action): AppState {
 
     let kid: Kid;
     let family: Family;
+    let kids: Kid[];
+    let families: Family[];
 
     switch (action.type) {
+
+        case 'FAMILY_CREATED' :
+
+            console.log('FAMILY_CREATED', action.payload);
+
+            families = [...state.families];
+
+            families.push(action.payload);
+
+            return {...state, families};
+
+        case 'KID_CREATED' :
+
+            console.log('KID_CREATED', action.payload);
+
+            kids = [...state.kids];
+
+            kids.push(action.payload);
+
+            return {...state, kids};
 
         case 'KID_UPDATED':
 
@@ -80,7 +106,7 @@ export function appReducer(state: AppState, action: Action): AppState {
             console.log('KID_SELECTED');
             // DANGER: state.family may be empty!!!
 
-            kid = {_id:"1",name:'foo',password:'pass', minutesPerWeek:0, bedTimes:[], viewings:[]}; 
+            kid = {_id:"1",name:'foo',password:'pass', family:null, minutesPerWeek:0, bedTimes:[], viewings:[]}; 
             
             //state.family.kids.find( k => k.id === action.payload);
 
@@ -96,13 +122,13 @@ export function appReducer(state: AppState, action: Action): AppState {
 
         case 'FAMILIES_LOADED':
 
-            const families = action.payload;
+            families = action.payload;
 
             return { ...state, families };
 
         case 'KIDS_LOADED':
 
-            const kids = action.payload;
+            kids = action.payload;
 
             return { ...state, kids };
 
@@ -197,6 +223,16 @@ export class ScreenEffects {
     @Effect() loadKids = this.actions.ofType('LOAD_KIDS').switchMap((a: LoadKids) => {
         console.log('loadKids action');
         return this.backend.fetchKids().map( resp => ({type: 'KIDS_LOADED', payload: resp}));
+    });
+
+    @Effect() createFamily = this.actions.ofType('CREATE_FAMILY').switchMap((a: CreateFamily) => {
+        console.log('createFamily action');
+        return this.backend.createFamily(a.payload).map( resp => ({type: 'FAMILY_CREATED', payload: resp}));
+    });
+
+    @Effect() createKid = this.actions.ofType('CREATE_KID').switchMap((a: CreateKid) => {
+        console.log('createKid action');
+        return this.backend.createKid(a.payload).map( resp => ({type: 'KID_CREATED', payload: resp}));
     });
 
     constructor(private actions: Actions, private store: Store<State>, private backend: BackendService) { }
