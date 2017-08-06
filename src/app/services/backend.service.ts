@@ -34,8 +34,20 @@ export class BackendService {
     return this.http.post(`api/families`, family).delay(2000).map( data => data.json());
   }
 
+  signUpFamily(creds:any) {
+    console.log('createFamily', creds);
+    return this.http.post(`auth/signup`, creds).map( data => data.json());
+  }
+
+  logInFamily(creds:any) {
+    console.log('logInFamily', creds);
+    creds.username = creds.name; // DANGER
+    return this.http.post(`auth/login`, creds).map( data => data.json());
+  }
+
   createKid(kid:Kid) {
-    console.log('createKid', kid);
+    
     return this.http.post(`api/kids`, kid).map( data => data.json());
   }
+
 }
