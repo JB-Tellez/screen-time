@@ -22,4 +22,12 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(['/']);
   }
 
+  gotoKidHome() {
+    this.router.navigate(['family/1/kid/1'])
+  }
+
+   gotoFamilyHome() {
+    this.router.navigate(['/family/1']);
+  }
+
 }
