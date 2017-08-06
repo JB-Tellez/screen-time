@@ -30,4 +30,7 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(['/family/1']);
   }
 
+  gotoFamilyDashboard() {
+    this.router.navigate(['/family/1/dashboard']);
+  }
 }
