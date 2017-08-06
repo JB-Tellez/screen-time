@@ -2,6 +2,7 @@ import { Observable } from 'rxjs/Observable';
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/observable/of';
+import 'rxjs/add/observable/delay';
 import { Kid, Family } from "../store/model";
 
 @Injectable()
@@ -29,7 +30,8 @@ export class BackendService {
   }
 
   createFamily(family:Family) {
-    return this.http.post(`api/families`, family).map( data => data.json());
+    console.log('createFamily', family);
+    return this.http.post(`api/families`, family).delay(1000).map( data => data.json());
   }
 
   createKid(kid:Kid) {

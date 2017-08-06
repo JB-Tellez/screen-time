@@ -1,3 +1,4 @@
+import { AuthService } from './../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -9,12 +10,21 @@ import { Router } from '@angular/router';
 })
 export class FamilySignupComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  model = { name: '', password: '' }
+
+  constructor(private router: Router, private auth:AuthService) { }
 
   ngOnInit() {
   }
 
-    gotoLogin() {
+  gotoLogin() {
     this.router.navigate(['/login']);
+  }
+
+  onSubmit() { 
+    
+    this.auth.signup(this.model.name, this.model.password);
+
+    return false;
   }
 }
