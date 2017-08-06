@@ -1,57 +1,69 @@
-<h1>
-  Family: {{ (family$ | async).name }}
-</h1>
+<!-- ANIMATION CONTROLS -->
+<main class="container-fluid main-container jumbotron">
+  <div class="stars">
+    <div class="twinkling">
+      <!-- NAVBAR -->
+      <app-navbar></app-navbar>
+      <!-- FUNCTIONALITIES -->
+      <div class="container old">
+        <h1>
+          Family: {{ (family$ | async).name }}
+        </h1>
 
-<button class="btn btn-primary" (click)="addKid()">Add Kid</button>
-<form *ngIf="false" class="form-horizontal">
-  <fieldset>
+        <button class="btn btn-primary" (click)="addKid()">Add Kid</button>
+        <form *ngIf="false" class="form-horizontal">
+          <fieldset>
 
-    <!-- Form Name -->
-    <legend>Add Kid</legend>
+            <!-- Form Name -->
+            <legend>Add Kid</legend>
 
-    <!-- Text input-->
-    <div class="form-group">
-      <label class="col-md-4 control-label" for="Name">Name</label>
-      <div class="col-md-4">
-        <input id="Name" name="Name" type="text" placeholder="name" class="form-control input-md" required="">
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="Name">Name</label>
+              <div class="col-md-4">
+                <input id="Name" name="Name" type="text" placeholder="name" class="form-control input-md" required="">
+
+              </div>
+            </div>
+
+            <!-- Button -->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="submit"></label>
+              <div class="col-md-4">
+                <button id="submit" name="submit" class="btn btn-primary">Go</button>
+              </div>
+            </div>
+
+          </fieldset>
+        </form>
+        <ul>
+          <li *ngFor="let kid of (family$ | async).kids">
+            <p>{{ kid.name }}</p>
+            <p>{{ kid.minutesPerWeek }} minutes per week</p>
+            <p>Minutes spent: {{getMinutesSpent(kid)}}</p>
+            <button class="btn btn-primary" (click)="showDetails = !showDetails">details</button>
+
+            <div *ngIf="showDetails">
+              <h2>Viewings:</h2>
+              <ul>
+                <li *ngFor="let viewing of kid.viewings">
+                  <span>{{ viewing.title }}</span>
+                  <span>{{ viewing.startTime * 1000 | date }}</span>
+                  <span>{{ getViewingDuration(viewing) }} minutes</span>
+                </li>
+              </ul>
+              <h2>Bedtimes:</h2>
+              <ul>
+                <li *ngFor="let bedTime of kid.bedTimes; let i = index">
+                  {{ getDay(i) }}
+                    <timepicker [(ngModel)]="kid['bts'][i]" minuteStep="1"></timepicker>  
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
 
       </div>
     </div>
-
-    <!-- Button -->
-    <div class="form-group">
-      <label class="col-md-4 control-label" for="submit"></label>
-      <div class="col-md-4">
-        <button id="submit" name="submit" class="btn btn-primary">Go</button>
-      </div>
-    </div>
-
-  </fieldset>
-</form>
-<ul>
-  <li *ngFor="let kid of (family$ | async).kids">
-    <p>{{ kid.name }}</p>
-    <p>{{ kid.minutesPerWeek }} minutes per week</p>
-    <p>Minutes spent: {{getMinutesSpent(kid)}}</p>
-    <button class="btn btn-primary" (click)="showDetails = !showDetails">details</button>
-
-    <div *ngIf="showDetails">
-      <h2>Viewings:</h2>
-      <ul>
-        <li *ngFor="let viewing of kid.viewings">
-          <span>{{ viewing.title }}</span>
-          <span>{{ viewing.startTime * 1000 | date }}</span>
-          <span>{{ getViewingDuration(viewing) }} minutes</span>
-        </li>
-      </ul>
-      <h2>Bedtimes:</h2>
-      <ul>
-        <li *ngFor="let bedTime of kid.bedTimes; let i = index">
-          {{ getDay(i) }}
-            <timepicker [(ngModel)]="kid['bts'][i]" minuteStep="1"></timepicker>  
-        </li>
-      </ul>
-    </div>
-
-  </li>
-</ul>
+  </div>
+</main>

@@ -1,9 +1,38 @@
-<h1>Family Home</h1>
-<hr>
-<h2>Family: {{ (family$ | async).name }}</h2>
-<button class="btn btn-primary" (click)="gotoDashboard()">dashboard</button>
-<ul>
-    <li *ngFor="let kid of (family$ | async).kids" (click)="gotoKid(kid)">
-        <p>{{kid.name}}</p>
-    </li>
-</ul>
+<main class="container-fluid main-container jumbotron">
+  <div class="stars">
+    <div class="twinkling">
+      <!-- NAVBAR -->
+      <app-navbar></app-navbar>
+      <!-- TITLE -->
+      <div class="row title-row">
+        <h1 class="title col-sm-12 col-md-12 col-lg-12"> Welcome Family ...</h1>
+      </div>
+      <!-- ICONS -->
+      <div class="wrapper">
+        <div class="row icons-row">
+          <!-- FIRST ICON -->
+          <div class="col-sm-12 col-md-4 col-lg-4 icon-col" >
+            <a (click)="gotoFamilyDashboard()">
+              <img class="responsive-image icons" src="../../../assets/images/family-icon-big.png">
+              <p class="icon-p"> Family Dashboard </p>
+            </a>
+          </div>
+          <!-- SECOND ICON -->
+          <div class="col-sm-12 col-md-4 col-lg-4 icon-col" >
+            <a (click)="gotoKidHome()">
+              <img class="responsive-image icons" src="../../../assets/images/little-girl-icon.png">
+              <p class="icon-p"> Emma </p>
+            </a>
+          </div>
+          <!-- THIRD ICON -->
+          <div class="col-sm-12 col-md-4 col-lg-4 icon-col" >
+            <a (click)="gotoKidHome()">
+              <img class="responsive-image icons" src="../../../assets/images/teen-boy-icon.png">
+              <p class="icon-p"> Tom </p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

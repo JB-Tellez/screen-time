@@ -36,4 +36,13 @@ export class FamilyHomeComponent implements OnInit {
     this.router.navigate([`/family/${id}/kid/${kid._id}`]);
   }
 
+  gotoFamilyDashboard() {
+    this.router.navigate(['/family/1/dashboard']);
+  }
+
+  gotoKidHome() {
+    this.router.navigate(['family/1/kid/1'])
+  }
+
+
 }
