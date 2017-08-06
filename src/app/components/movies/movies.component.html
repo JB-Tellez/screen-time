@@ -1,4 +1,4 @@
-<carousel>
+<carousel [interval]="false">
 
   <slide *ngFor="let movie of movies | async" (click)="movieClicked(movie)">
     <img [src]="getPosterPath(movie)" alt="First slide">

@@ -6,6 +6,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { TimepickerModule } from 'ngx-bootstrap/timepicker';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
@@ -27,6 +29,7 @@ import { FamilyHomeComponent } from './components/family-home/family-home.compon
 import { FamilyDashboardComponent } from './components/family-dashboard/family-dashboard.component';
 import { FamilySignupComponent } from './components/family-signup/family-signup.component';
 import { KidHomeComponent } from './components/kid-home/kid-home.component';
+import { AdminComponent } from './components/admin/admin.component';
 
 
 @NgModule({
@@ -43,6 +46,7 @@ import { KidHomeComponent } from './components/kid-home/kid-home.component';
     FamilyDashboardComponent,
     FamilySignupComponent,
     KidHomeComponent,
+    AdminComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,6 +60,8 @@ import { KidHomeComponent } from './components/kid-home/kid-home.component';
     ]),
     StoreRouterConnectingModule,
     TimepickerModule.forRoot(),
+    BsDropdownModule.forRoot(),
+    CarouselModule.forRoot(),
   ],
   providers: [MoviesService, BackendService, ScreenEffects],
   bootstrap: [AppComponent]
