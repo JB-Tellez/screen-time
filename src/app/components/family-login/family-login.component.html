@@ -8,10 +8,10 @@
         <div class="container">
           <h1>Screen Time Login</h1>
           
-          <form class="form">
-            <input type="text" placeholder="Name">
-            <input type="password" placeholder="Password">
-            <button type="submit" id="login-button" (click)="gotoFamilyHome()">Login</button>
+          <form class="form" #loginForm="ngForm" (ngSubmit)="onSubmit()">
+            <input type="text" placeholder="Name" [(ngModel)]="model.name" name="name">
+            <input type="password" placeholder="Password" [(ngModel)]="model.password" name="password">
+            <button type="submit" id="login-button">Login</button>
             <p class="signup"> If your family is not registered. <a (click)="gotoSignup()">Sign Up Here</a></p>
           </form>
         </div>

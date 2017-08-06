@@ -1,3 +1,4 @@
+import { ScreenEffects } from './store/screen-effects';
 import { AuthService } from './services/auth.service';
 import { BackendService } from './services/backend.service';
 import { MoviesService } from './services/movies.service';
@@ -21,7 +22,7 @@ import { NavbarComponent } from './components/landing/navbar/navbar.component';
 
 import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
 import { StoreModule, Action } from '@ngrx/store';
-import { appReducer, initialState, State, ScreenEffects } from './store/model';
+import { initialState, State } from './store/model';
 import { EffectsModule } from "@ngrx/effects";
 
 import { routes } from './app.routes';
@@ -31,6 +32,7 @@ import { FamilyDashboardComponent } from './components/family-dashboard/family-d
 import { FamilySignupComponent } from './components/family-signup/family-signup.component';
 import { KidHomeComponent } from './components/kid-home/kid-home.component';
 import { AdminComponent } from './components/admin/admin.component';
+import { appReducer } from "./store/app-reducer";
 
 
 @NgModule({

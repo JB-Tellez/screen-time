@@ -1,3 +1,4 @@
+import { SignUpFamilyAction, CreateKidAction } from './../../store/actions';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
@@ -29,11 +30,10 @@ export class AdminComponent implements OnInit {
 
   createFamily() {
 
-    const familyName = 'family_' + Math.floor(Math.random() * 1000);
+    const name = 'family_' + Math.floor(Math.random() * 1000);
+    const password = 'pass';
 
-    const family:Family = {_id: undefined, name: familyName, password:'pass', kids:[]}
-
-    this.store.dispatch({type:'CREATE_FAMILY', payload:family});
+    this.store.dispatch(new SignUpFamilyAction({ name, password}));
   }
 
   createKid(family:Family) {
@@ -42,7 +42,8 @@ export class AdminComponent implements OnInit {
 
     const kid:Kid = {_id: undefined, name:kidName, password:'pass', family:family, minutesPerWeek:400, viewings:[], bedTimes:[]}
     
-    this.store.dispatch({type: 'CREATE_KID', payload: kid});
+    this.store.dispatch(new CreateKidAction(kid));
+
   } 
 
   kidClicked(kid:Kid) {
