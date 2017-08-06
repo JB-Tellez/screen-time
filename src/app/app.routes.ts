@@ -13,5 +13,4 @@ export const routes:Routes = [
   {path: 'family/:family_id/kid/:kid_id', component: KidHomeComponent},
   {path: 'login', component:FamilyLoginComponent}, 
   {path: 'signup', component:FamilySignupComponent}, 
-
 ]
