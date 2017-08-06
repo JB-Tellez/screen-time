@@ -15,9 +15,8 @@ export class LandingComponent implements OnInit {
   ngOnInit() {
   }
 
-  gotoHome() {
-    this.router.navigate(['/home']);
+  gotoSignup() {
+    this.router.navigate(['/signup']);
   }
-
 
 }

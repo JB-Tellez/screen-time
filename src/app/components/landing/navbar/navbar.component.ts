@@ -18,4 +18,8 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(['/login']);
   }
 
+  gotoLanding() {
+    this.router.navigate(['/']);
+  }
+
 }
