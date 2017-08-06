@@ -148,11 +148,41 @@ p.today {
 /* INTERACTIVE ROW  */
 
 .interactive-row {
-    background-color: #0D0C15;
+    background-color: #010F20;
     position: absolute;
     top: 40%;
     height: 60vh;
     width: 100%;
     left: 0;
     margin: 0;
+    opacity: 0.8;
+    text-align: center;
+
+}
+
+.select-show-icon {
+    margin-top: 100px;
+    cursor: pointer;
+}
+.select-show-icon:hover {
+    height: 380px;
+}
+
+.img-select {
+    padding: 10px;
+}
+
+img.movie:hover {opacity: 1;
+    -moz-box-shadow: 0 8px 30px 3px #000000;
+    -webkit-box-shadow: 0 8px 30px 3px #000000;
+    box-shadow: 0 8px 30px 3px #000000;
+    padding-top: 20px;
+}
+
+img.tvshow:hover {
+    opacity: 1;
+    -moz-box-shadow: 0 8px 30px 3px #000000;
+    -webkit-box-shadow: 0 8px 30px 3px #000000;
+    box-shadow: 0 8px 30px 3px #000000;
+    padding-top: 20px;
 }
