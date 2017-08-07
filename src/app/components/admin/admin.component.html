@@ -7,7 +7,7 @@
       <p>Kids:</p>
       <button (click)="createKid(family)">Create Kid</button>
       <li *ngFor="let kid of family.kids">
-        <p (click)="kidClicked(kid)">{{ kid.name }}</p>
+        <p (click)="kidClicked(family, kid)">{{ kid.name }}</p>
       </li>
     </ul>
   </li>

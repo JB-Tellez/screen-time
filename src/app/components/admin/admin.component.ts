@@ -46,9 +46,9 @@ export class AdminComponent implements OnInit {
 
   } 
 
-  kidClicked(kid:Kid) {
-    console.log(kid.family);
-    // this.router.navigate([``]);
+  kidClicked(family: Family, kid:Kid) {
+    console.log('family', family, 'kid', kid);
+    this.router.navigate([`/family/${family._id}/kid/${kid._id}`]);
   }
 
 }
