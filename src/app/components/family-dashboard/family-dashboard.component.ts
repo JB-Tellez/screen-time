@@ -2,7 +2,7 @@ import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { State, Family, Kid, Viewing, KidAdded } from '../../store/model';
+import { State, Family, Kid, Viewing } from '../../store/model';
 import * as moment from 'moment';
 import 'rxjs/add/operator/first';
 
