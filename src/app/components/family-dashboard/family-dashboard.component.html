@@ -48,7 +48,7 @@
               <ul>
                 <li *ngFor="let viewing of kid.viewings">
                   <span>{{ viewing.title }}</span>
-                  <span>{{ viewing.startTime * 1000 | date }}</span>
+                  <span>{{ viewing.startTime | date }}</span>
                   <span>{{ getViewingDuration(viewing) }} minutes</span>
                 </li>
               </ul>
