@@ -1,11 +1,52 @@
-<carousel [interval]="false">
+<div class="container wrapper"> 
+  <div class="col-md-12">
+    <h1>Movie Slider</h1>
+      <div class="well">
 
-  <slide *ngFor="let movie of movies | async" (click)="movieClicked(movie)">
-    <img [src]="getPosterPath(movie)" alt="First slide">
-    <div class="carousel-caption">
-      <h3>{{movie.title}}</h3>
-      <p>{{movie.overview}}</p>
-    </div>
-  </slide>
+        <carousel [interval]="false" id="myCarousel" class="carousel slide">
+          <div class="carousel-inner">
+            
+                <slide *ngFor="let movie of movies | async" (click)="movieClicked(movie)">
+                  <div class="item active">
+                    <div class="row">
+                       <div class="col-sm-3">
+                        <img [src]="getPosterPath(movie)" alt="First slide" class="img-responsive">
+                        <div class="carousel-caption">
+                          <h3>{{movie.title}}</h3>
+                        </div>
+                      </div>
 
-</carousel>
+                      <div class="col-sm-3">
+                        <img [src]="getPosterPath(movie)" alt="First slide" class="img-responsive">
+                        <div class="carousel-caption">
+                          <h3>{{movie.title}}</h3>
+                        </div>
+                      </div>
+
+                       <div class="col-sm-3">
+                        <img [src]="getPosterPath(movie)" alt="First slide" class="img-responsive">
+                        <div class="carousel-caption">
+                          <h3>{{movie.title}}</h3>
+                        </div>
+                       </div> 
+
+                      <div class="col-sm-3">
+                        <img [src]="getPosterPath(movie)" alt="First slide" class="img-responsive">
+                        <div class="carousel-caption">
+                          <h3>{{movie.title}}</h3>
+                        </div>
+                       </div> 
+
+                    </div>
+                  </div>
+                  
+                </slide>
+              
+          </div>
+        </carousel> 
+
+      </div>  
+  </div>
+</div>
+
+

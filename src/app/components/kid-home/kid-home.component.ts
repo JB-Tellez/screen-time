@@ -3,13 +3,14 @@ import { Store } from '@ngrx/store';
 import { Component, OnInit } from '@angular/core';
 import { State } from "../../store/model";
 import { NavbarComponent } from '../landing/navbar/navbar.component';
-
+import { MoviesComponent } from '../movies/movies.component';
 
 @Component({
   selector: 'app-kid-home',
   templateUrl: './kid-home.component.html',
   styleUrls: ['./kid-home.component.css']
 })
+
 export class KidHomeComponent implements OnInit {
 
   public kid$;
@@ -31,5 +32,6 @@ export class KidHomeComponent implements OnInit {
   gotoParentSettings() {
     this.router.navigate(['/parent-settings']);
   }
-
+ 
 }
+

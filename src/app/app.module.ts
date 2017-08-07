@@ -33,6 +33,7 @@ import { FamilySignupComponent } from './components/family-signup/family-signup.
 import { KidHomeComponent } from './components/kid-home/kid-home.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { appReducer } from "./store/app-reducer";
+import { InteractiveWrapperComponent } from './components/kid-home/interactive-wrapper/interactive-wrapper.component';
 
 
 @NgModule({
@@ -50,14 +51,15 @@ import { appReducer } from "./store/app-reducer";
     FamilySignupComponent,
     KidHomeComponent,
     AdminComponent,
+    InteractiveWrapperComponent,
   ],
   imports: [
     BrowserModule,
     HttpModule,
     FormsModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot(routes),
     StoreModule.forRoot(<any>{app: appReducer}, {initialState}),
-    BrowserAnimationsModule,
     EffectsModule.forRoot([
       ScreenEffects
     ]),

@@ -1,3 +1,9 @@
-.carousel-item img {
-    margin-left: 25%;
-}
+.carousel-control {
+  padding-top:10%;
+  width:5%;
+  }
+
+carousel {
+  height: 500px;
+
+  }
