@@ -210,8 +210,8 @@ a.robot-anchor {
   margin: 0 auto;
   line-height: 100px;
   position: relative;
-  left: 46%;
-  top: 48%;
+  left: 47%;
+  top: 44%;
   width: 100px;
   z-index: 3;
 }
@@ -280,6 +280,7 @@ div.section-two-row-one {
   margin: 0 auto;
   border: 2px dotted #EF4D7B;
   padding: 40px 20px;
+  background: #130721;
 }
 
 .why-icons {
@@ -300,6 +301,7 @@ div.section-two-row-one {
   margin: 80px auto 40px auto;
   border: 2px dotted #EF4D7B;
   padding: 40px 20px;
+  background: #130721;
 }
 
 .why-icons-second-row {

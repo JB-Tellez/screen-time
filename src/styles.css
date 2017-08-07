@@ -17,7 +17,7 @@ font-family: 'Merriweather', serif;
 /* ---- reset ---- */
 html, body, canvas { 
   background-color: #15131B;
-  font-family: 'Merriweather Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif; 
   margin: 0;
   padding: 0;
   color: #EF4D7B;
