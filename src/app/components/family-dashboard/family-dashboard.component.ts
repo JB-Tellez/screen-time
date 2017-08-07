@@ -65,9 +65,9 @@ export class FamilyDashboardComponent implements OnInit {
 
       let minutesSpent = 0;
 
-      if (moment.unix(cur.startTime).isAfter(sunday)) {
+      if (moment(cur.startTime).isAfter(sunday)) {
 
-        const secondsSpent = cur.endTime - cur.startTime;
+        const secondsSpent = moment(cur.endTime).diff(moment(cur.startTime), 'seconds');
 
         minutesSpent = Math.floor(secondsSpent / 60);
       }

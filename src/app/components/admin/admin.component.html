@@ -8,6 +8,19 @@
       <button (click)="createKid(family)">Create Kid</button>
       <li *ngFor="let kid of family.kids">
         <p (click)="kidClicked(family, kid)">{{ kid.name }}</p>
+        <p>Bed times</p>
+        <ul>
+          <li *ngFor="let bedTime of kid.bedTimes">
+            {{ bedTime | date : 'mediumTime'}}
+          </li>
+        </ul>
+        <p>Viewings</p>
+        <ul>
+          <li *ngFor="let viewing of kid.viewings" (click)="viewingClicked(viewing)">
+            <p>{{ viewing.title }}</p>
+            <p>time spent: {{ getTimeSpent(viewing)}}</p>
+          </li>
+        </ul>
       </li>
     </ul>
   </li>
