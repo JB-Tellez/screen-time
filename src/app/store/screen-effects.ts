@@ -34,7 +34,7 @@ export class ScreenEffects {
 
             console.log('already got right family loaded');
 
-            return of({ type: 'SELECT_FAMILY' });
+            return of({type:ActionTypes.FAMILY_SELECTED});
         }
 
         return of({ type: 'LOAD_FAMILY', payload: id });
