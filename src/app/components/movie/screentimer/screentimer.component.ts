@@ -52,9 +52,15 @@ export class ScreentimerComponent implements OnInit {
         return digit <= 9 ? '0' + digit : digit;
     }
 
+    private stopTimer() {
+        //this.sub = timer.unsubscribe();
+
+    }
   
   ngOnInit() {
     this.startTimer();
   }
+  
+
   
 }

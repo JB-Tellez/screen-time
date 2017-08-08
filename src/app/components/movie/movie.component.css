@@ -49,8 +49,6 @@ body {
     height: 50px;
 }
 
-
-
 .back-btn:active {
   background-color: #F37055; 
   transform: translateY(4px);

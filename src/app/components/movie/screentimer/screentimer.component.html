@@ -1,6 +1,8 @@
 <div class="movie-card">
   <div class="container">
-     <div class="hero"></div>
+     <div class="hero">
+        <a><img src='../../../assets/images/back-btn.png' alt="go back button" class="back-btn" (click)="gotoMovies()"> </a>
+     </div>
 
      <div class="description">
       <div class="column1">
@@ -8,11 +10,11 @@
         <h1>
             {{hoursDisplay ? hoursDisplay : '00'}} : {{(minutesDisplay) && (minutesDisplay <= 59) ? minutesDisplay : '00'}} : {{(secondsDisplay) && (secondsDisplay <= 59) ? secondsDisplay : '00'}} <br/>
         </h1>
-        <a><span class="stopclock"> STOP SCREENTIME </span></a>
+        <a><span class="stopclock" (click)="stopTimer()"> STOP SCREENTIME </span></a>
       </div>
 
       <div class="column2">
-        <img src="../../../../assets/images/bedtime-small.png" alt="bedtime icon" class="bedtime-icn">
+        <img src="../../../../assets/images/bedtime.png" alt="bedtime icon" class="bedtime-icn">
         <p> Your bedtime will be in </p>
           <h3 class="minutes-countdown"><span>.time</span> minutes</h3>
 

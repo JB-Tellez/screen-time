@@ -57,6 +57,19 @@ font-family: 'Merriweather', serif;
   -webkit-backface-visibility: hidden;
 }
 
+.back-btn {
+    vertical-align: middle;
+    position: absolute;
+    left: 15px;
+    top: 20px;
+    height: 50px;
+}
+
+.back-btn:active {
+  background-color: #F37055; 
+  transform: translateY(4px);
+}
+
 /* TIMER STYLES */
 .description {
   bottom: 0px;
