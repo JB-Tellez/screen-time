@@ -21,7 +21,7 @@
 <button (click)="startMovieAnim()">start movie anim</button>
             
             <!-- CAROUSEL INTERACTIVE  -->
-             <div [@movieAnim]="movieState" class="lined"> 
+             <div [@movieAnim]="movieState" class="lined" (click)="startMovieAnim()"> 
              <app-movies ></app-movies> 
               </div> 
             

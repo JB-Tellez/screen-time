@@ -26,7 +26,7 @@ import { bounceOutRight, fadeIn } from 'ng-animate';
 export class InteractiveWrapperComponent implements OnInit {
 
   state : string = 'on-screen';
-  movieState : string = 'on-screen';
+  movieState : string = 'off-screen';
   
   constructor(private router:Router) { }
 

@@ -13,6 +13,8 @@ import { MoviesComponent } from '../movies/movies.component';
 
 export class KidHomeComponent implements OnInit {
 
+  currentComponent = "movies"
+
   public kid$;
 
   constructor(private router:Router, private store:Store<State>) { }
