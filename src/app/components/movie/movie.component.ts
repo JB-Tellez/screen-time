@@ -1,4 +1,5 @@
 import { MoviesService } from './../../services/movies.service';
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
@@ -11,7 +12,7 @@ export class MovieComponent implements OnInit {
 
   movie;
 
-  constructor(private route: ActivatedRoute, private moviesService: MoviesService) { }
+  constructor(private route: ActivatedRoute, private moviesService: MoviesService, private router:Router) { }
 
   ngOnInit() {
 
@@ -29,4 +30,17 @@ export class MovieComponent implements OnInit {
     return `https://image.tmdb.org/t/p/w154/${movie.poster_path}`;
   }
 
+  getBackdropPath(movie) {
+    if (!this.movie) return '';
+
+    return `https://image.tmdb.org/t/p/w154/${movie.backdrop_path}`;
+  }
+
+  gotoScreenTimer() {
+        this.router.navigate(['/screentimer']);
+  }
+   
+  gotoMovies() {
+    this.router.navigate(['/movies'])
+  }
 }
