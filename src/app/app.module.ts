@@ -34,6 +34,9 @@ import { KidHomeComponent } from './components/kid-home/kid-home.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { appReducer } from "./store/app-reducer";
 import { InteractiveWrapperComponent } from './components/kid-home/interactive-wrapper/interactive-wrapper.component';
+import { BedtimeListComponent } from './components/bedtime-list/bedtime-list.component';
+import { ViewingListComponent } from './components/viewing-list/viewing-list.component';
+import { KidCardComponent } from './components/kid-card/kid-card.component';
 
 
 @NgModule({
@@ -52,6 +55,9 @@ import { InteractiveWrapperComponent } from './components/kid-home/interactive-w
     KidHomeComponent,
     AdminComponent,
     InteractiveWrapperComponent,
+    BedtimeListComponent,
+    ViewingListComponent,
+    KidCardComponent,
   ],
   imports: [
     BrowserModule,
