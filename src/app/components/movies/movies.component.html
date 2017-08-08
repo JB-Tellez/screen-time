@@ -1,50 +1,42 @@
-  <div class="col-md-12">
-    <h1>Movie Slider</h1>
-      <div class="well">
-
-        <carousel [interval]="false" id="myCarousel" class="carousel slide">
-          <div class="carousel-inner">
+<carousel [interval]="false" id="myCarousel" class="carousel slide col-md-12">
+    <div class="carousel-inner">
+      <slide *ngFor="let movie of movies | async" (click)="movieClicked(movie)">
+        <div class="item active">
+          <div class="row">
             
-                <slide *ngFor="let movie of movies | async" (click)="movieClicked(movie)">
-                  <div class="item active">
-                    <div class="row">
-                       <div class="col-sm-3">
-                        <img [src]="getPosterPath(movie)" alt="First slide" class="img-responsive">
-                        <div class="carousel-caption">
-                          <h3>{{movie.title}}</h3>
-                        </div>
-                      </div>
+            <div class="col-sm-3">
+              <img [src]="getPosterPath(movie)" alt="First slide" class="img-responsive">
+                <div class="carousel-caption">
+                  <h3>{{movie.title}}</h3>
+                </div>
+            </div>
 
-                      <div class="col-sm-3">
-                        <img [src]="getPosterPath(movie)" alt="First slide" class="img-responsive">
-                        <div class="carousel-caption">
-                          <h3>{{movie.title}}</h3>
-                        </div>
-                      </div>
+            <div class="col-sm-3">
+                              <img [src]="getPosterPath(movie)" alt="First slide" class="img-responsive">
+                              <div class="carousel-caption">
+                                <h3>{{movie.title}}</h3>
+                              </div>
+                            </div>
 
-                       <div class="col-sm-3">
-                        <img [src]="getPosterPath(movie)" alt="First slide" class="img-responsive">
-                        <div class="carousel-caption">
-                          <h3>{{movie.title}}</h3>
-                        </div>
-                       </div> 
+                            <div class="col-sm-3">
+                              <img [src]="getPosterPath(movie)" alt="First slide" class="img-responsive">
+                              <div class="carousel-caption">
+                                <h3>{{movie.title}}</h3>
+                              </div>
+                            </div> 
 
-                      <div class="col-sm-3">
-                        <img [src]="getPosterPath(movie)" alt="First slide" class="img-responsive">
-                        <div class="carousel-caption">
-                          <h3>{{movie.title}}</h3>
-                        </div>
-                       </div> 
+                            <div class="col-sm-3">
+                              <img [src]="getPosterPath(movie)" alt="First slide" class="img-responsive">
+                              <div class="carousel-caption">
+                                <h3>{{movie.title}}</h3>
+                              </div>
+                            </div> 
 
-                    </div>
-                  </div>
-                  
-                </slide>
+                          </div>
+                        </div>
+                        
+                      </slide>
+                    
+                </div>
+              </carousel> 
               
-          </div>
-        </carousel> 
-
-      </div>  
-  </div>
-
-
