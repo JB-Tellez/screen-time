@@ -85,6 +85,11 @@ export class FamilyLoggedInAction implements Action {
     constructor(public payload: Family) { }
 }
 
+export class FamilySelectedAction implements Action {
+    type = ActionTypes.FAMILY_SELECTED;
+    constructor(public payload: Family) { }
+}
+
 export class CreateKidAction implements Action {
     type = ActionTypes.CREATE_KID;
     constructor(public payload: Kid) { }
