@@ -42,6 +42,6 @@ export class FamilyDashboardComponent implements OnInit {
       bedTimes}
     
       
-    this.store.dispatch(new CreateKidAction(kid));
+    this.store.dispatch(new CreateKidAction({kid,family}));
   } 
 }
