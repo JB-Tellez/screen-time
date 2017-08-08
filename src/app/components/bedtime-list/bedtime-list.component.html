@@ -1,0 +1,9 @@
+<div>
+  <h2>Bedtimes:</h2>
+  <ul>
+    <li *ngFor="let bedTime of bedtimes; let i = index">
+      {{ getDay(i) }}
+      <timepicker [(ngModel)]="bedtimes[i]" minuteStep="1"></timepicker>
+    </li>
+  </ul>
+</div>
