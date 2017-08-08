@@ -13,10 +13,6 @@ export class BackendService {
     return this.http.get(`api/families`).map(data => data.json());
   }
 
-  fetchKids() {
-    return this.http.get(`api/kids`).map(data => data.json());
-  }
-
   fetchFamily(id) {
 
     return this.http.get(`api/families/${id}`).map( data => data.json() );
