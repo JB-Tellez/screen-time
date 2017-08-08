@@ -1,9 +1,10 @@
-import { SignUpFamilyAction, CreateKidAction, DeleteKidAction } from './../../store/actions';
+import { SignUpFamilyAction, CreateKidAction, DeleteKidAction, FamilySelectedAction } from './../../store/actions';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
 import { Component, OnInit } from '@angular/core';
 import { State, Family, Kid, Viewing } from "../../store/model";
+import 'rxjs/add/operator/take';
 
 @Component({
   selector: 'app-admin',
@@ -24,6 +25,9 @@ export class AdminComponent implements OnInit {
     this.family$ = this.store.select('app', 'family');
   }
 
+  familySelected(family:Family) {
+    this.store.dispatch(new FamilySelectedAction(family));
+  }
   familyClicked(family:Family) {
     this.router.navigate([`/family/${family['_id']}`]);
   }
@@ -36,13 +40,17 @@ export class AdminComponent implements OnInit {
     this.store.dispatch(new SignUpFamilyAction({ name, password}));
   }
 
-  createKid(family:Family) {
+  createKid() {
 
     const kidName = 'kid_' + Math.floor(Math.random() * 1000);
 
     const viewing:Viewing = {_id:undefined, showId: "foo", movieId: "bar", title:"Gone with the Wind", startTime: new Date(), endTime: new Date()};
     const bedTimes = [new Date(), new Date(), new Date(), new Date(), new Date(), new Date(), new Date()];
     const viewings: Viewing[] = []; // WARNING: no viewings yet because back end errors
+
+    let family;
+    
+    this.family$.take(1).subscribe( f => family = f).unsubscribe();
 
     const kid:Kid = {_id: undefined, name:kidName, password:'pass', 
       minutesPerWeek:400, 
@@ -57,9 +65,9 @@ export class AdminComponent implements OnInit {
 
   } 
 
-  kidClicked(family: Family, kid:Kid) {
-    console.log('family', family, 'kid', kid);
-    this.router.navigate([`/family/${family._id}/kid/${kid._id}`]);
+  kidClicked(kid:Kid) {
+    console.log('kid clicked', kid);
+    this.router.navigate([`/family/${kid.family}/kid/${kid._id}`]);
   }
 
   viewingClicked(viewing:Viewing) {
