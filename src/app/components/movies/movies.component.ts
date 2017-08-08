@@ -11,17 +11,55 @@ export class MoviesComponent implements OnInit {
 
   movies;
 
-  constructor(private router:Router, private moviesService:MoviesService) { }
+  constructor(private router: Router, private moviesService: MoviesService) { }
 
   ngOnInit() {
-    this.movies = this.moviesService.getMovies()
+    this.moviesService.getMovies().subscribe(movies => this.movies = movies);
   }
 
-  getPosterPath(movie) {
-    return `https://image.tmdb.org/t/p/w780${movie.poster_path}`;
+  getMovie(slideIndex, colIndex) {
+
+    let movie;
+
+    if (this.movies) {
+
+      let index = slideIndex * 4 + colIndex;
+
+      movie = this.movies[index];
+    }
+
+    return movie;
+
   }
 
-  movieClicked(movie) {
+  getMovieTitle(slideIndex, colIndex) {
+
+    let movie = this.getMovie(slideIndex, colIndex);
+
+    return movie ? movie.title : '';
+  }
+
+  getPosterPath(slideIndex, colIndex) {
+
+    let path = '';
+
+    if (this.movies) {
+
+      let index = slideIndex * 4 + colIndex;
+
+      let movie = this.movies[index];
+
+      path = `https://image.tmdb.org/t/p/w780${movie.poster_path}`;
+    }
+
+    return path;
+
+  }
+
+  movieClicked(slideIndex, colIndex) {
+    
+    let movie = this.getMovie(slideIndex, colIndex);
+
     this.router.navigate(['/movie', movie.id])
   }
 
