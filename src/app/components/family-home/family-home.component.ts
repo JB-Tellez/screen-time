@@ -19,8 +19,8 @@ export class FamilyHomeComponent implements OnInit {
     this.family$ = this.store.select('app', 'family');
   }
 
-  gotoDashboard() {
-    
+  gotoFamilyDashboard() {
+
     // WARNING: snapshot safe?
     const id = this.route.snapshot.params['id'];
 
@@ -28,20 +28,12 @@ export class FamilyHomeComponent implements OnInit {
     this.router.navigate([`/family/${id}/dashboard`]);
   }
 
-  gotoKid(kid:Kid) {
+  gotoKidHome(kid: Kid) {
 
     // WARNING: snapshot safe?
     const id = this.route.snapshot.params['id'];
 
     this.router.navigate([`/family/${id}/kid/${kid._id}`]);
-  }
-
-  gotoFamilyDashboard() {
-    this.router.navigate(['/family/1/dashboard']);
-  }
-
-  gotoKidHome() {
-    this.router.navigate(['family/1/kid/1'])
   }
 
 
