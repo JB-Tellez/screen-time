@@ -39,5 +39,8 @@ export class MovieComponent implements OnInit {
   gotoScreenTimer() {
         this.router.navigate(['/screentimer']);
   }
-  
+   
+  gotoMovies() {
+    this.router.navigate(['/movies'])
+  }
 }
