@@ -17,8 +17,6 @@ export const routes:Routes = [
   {path: 'login', component:FamilyLoginComponent}, 
   {path: 'signup', component:FamilySignupComponent}, 
   {path: 'admin', component:AdminComponent}, 
-  
-  
   {path: 'movies', component:MoviesComponent}, 
 
 

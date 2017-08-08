@@ -4,26 +4,26 @@
 
             <!-- FIRST COLUMN -->
 
-                 <div class="col-sm-12 col-md-6 col-lg-6 select-show-icon img-responsive" [@bounceOutRight]='state' (@bounceOutRight.done)="animDone()" (click)="startAnimation()">
-              <!-- disabled to render movies here (click)="gotoMovies()"   -->
-              <a  class="movie-selection">
+                 <div class="col-sm-12 col-md-6 col-lg-6 select-show-icon img-responsive" >
+              <!-- disabled to render movies here (click)="gotoMovies()"  [@bounceOutRight]='state' (@bounceOutRight.done)="animDone()" -->
+              <a  class="movie-selection" (click)="gotoMovies">
                 <img src="../../../assets/images/movie-icon.png" class="movie img-select">
               </a>
             </div>
             <!-- SECOND COLUMN -->
-            <div class="col-sm-12 col-md-6 col-lg-6 select-show-icon img-responsive" [@bounceOutRight]='state'>
+            <div class="col-sm-12 col-md-6 col-lg-6 select-show-icon img-responsive" >
               <!-- disabled to render movies here (click)="gotoMovies()"   -->
               <a  class="tvshow-selection">
-                <img src="../../../assets/images/tvshow-icon.png" class="tvshow img-select">
+                <img src="../../../assets/images/tvshow-icon.png" class="tvshow img-select" [@bounceOutRight]='state'>
               </a>
             </div>
    
-<button (click)="startMovieAnim()">start movie anim</button>
+<!-- <button (click)="startMovieAnim()">start movie anim</button> -->
             
             <!-- CAROUSEL INTERACTIVE  -->
-             <div [@movieAnim]="movieState" class="lined" (click)="startMovieAnim()"> 
+             <!-- <div [@movieAnim]="movieState" class="lined" (click)="startMovieAnim()"> 
              <app-movies ></app-movies> 
-              </div> 
+              </div>  -->
             
           </div>
         </div>

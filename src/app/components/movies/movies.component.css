@@ -1,3 +1,11 @@
+/* CONTAINER */
+.well {
+  background-color: black;
+  border-color: #0CB49B;
+}
+
+
+
 .carousel-control {
   padding-top:10%;
   width:5%;
@@ -6,5 +14,4 @@
 
 carousel {
   height: 500px;
-  position: fixed;
   }
