@@ -1,3 +1,5 @@
+<h1>Current family: {{ (family$ | async).name }}</h1>
+<h1>Current kid: {{ (kid$ | async).name }}</h1>
 <h2>Families:</h2>
 <button (click)="createFamily()">Create Family</button>
 <ul>

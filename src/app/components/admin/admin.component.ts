@@ -13,14 +13,14 @@ import { State, Family, Kid, Viewing } from "../../store/model";
 export class AdminComponent implements OnInit {
 
   public families$: Observable<Family[]>
-  public kids$: Observable<Kid[]>
+  public kid$: Observable<Kid>
   public family$: Observable<Family>;
 
   constructor(private store:Store<State>, private router: Router) { }
 
   ngOnInit() {
     this.families$ = this.store.select('app', 'families');
-    this.kids$ = this.store.select('app', 'kids');
+    this.kid$ = this.store.select('app', 'kid');
     this.family$ = this.store.select('app', 'family');
   }
 
@@ -40,15 +40,20 @@ export class AdminComponent implements OnInit {
 
     const kidName = 'kid_' + Math.floor(Math.random() * 1000);
 
-                          // { _id: string, showId: string, movieId: string, title: string, startTime: Date, endTime: Date };
-    const viewing:Viewing = {_id:undefined, showId: undefined, movieId: undefined, title:'Gone with the Wind', startTime: new Date(), endTime: new Date()};
+    const viewing:Viewing = {_id:undefined, showId: "foo", movieId: "bar", title:"Gone with the Wind", startTime: new Date(), endTime: new Date()};
+    const bedTimes = [new Date(), new Date(), new Date(), new Date(), new Date(), new Date(), new Date()];
+    const viewings: Viewing[] = []; // WARNING: no viewings yet because back end errors
 
-    const kid:Kid = {_id: undefined, name:kidName, password:'pass', family:family, 
+    const kid:Kid = {_id: undefined, name:kidName, password:'pass', 
       minutesPerWeek:400, 
-      viewings:[viewing], 
-      bedTimes:[new Date(), new Date(), new Date(), new Date(), new Date(), new Date(), new Date()]}
+      family,
+      viewings, 
+      bedTimes}
     
+      
     this.store.dispatch(new CreateKidAction(kid));
+
+
 
   } 
 

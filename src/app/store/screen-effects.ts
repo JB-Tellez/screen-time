@@ -1,7 +1,7 @@
 import { ROUTER_NAVIGATION, RouterNavigationAction } from '@ngrx/router-store';
 import { BackendService } from '../services/backend.service';
 import { Store } from '@ngrx/store';
-import { AddKidAction, LoadFamilyAction, LoadFamiliesAction, LoadKidsAction, SignUpFamilyAction, LogInFamilyAction, CreateKidAction, GotoFamilyAction } from './actions';
+import { AddKidAction, LoadFamilyAction, LoadFamiliesAction, SignUpFamilyAction, LogInFamilyAction, CreateKidAction, GotoFamilyAction, ActionTypes } from './actions';
 import { Effect, Actions } from '@ngrx/effects';
 import { ActivatedRouteSnapshot, Router } from '@angular/router';
 import { Injectable } from '@angular/core';
@@ -34,7 +34,7 @@ export class ScreenEffects {
 
             console.log('already got right family loaded');
 
-            return of();
+            return of({ type: 'SELECT_FAMILY' });
         }
 
         return of({ type: 'LOAD_FAMILY', payload: id });
@@ -50,7 +50,7 @@ export class ScreenEffects {
 
             console.log('already got right family loaded');
 
-            return of();
+            return of({type:ActionTypes.FAMILY_SELECTED});
         }
 
         return of({ type: 'LOAD_FAMILY', payload: id });
@@ -87,11 +87,6 @@ export class ScreenEffects {
         return this.backend.fetchFamilies().map(resp => ({ type: 'FAMILIES_LOADED', payload: resp }));
     });
 
-    @Effect() loadKids = this.actions.ofType('LOAD_KIDS').switchMap((a: LoadKidsAction) => {
-        console.log('loadKids action');
-        return this.backend.fetchKids().map(resp => ({ type: 'KIDS_LOADED', payload: resp }));
-    });
-
     @Effect() signUpFamily = this.actions.ofType('SIGN_UP_FAMILY').switchMap((a: SignUpFamilyAction) => {
         
         console.log(a.type);
@@ -114,7 +109,7 @@ export class ScreenEffects {
 
 
     @Effect() createKid = this.actions.ofType('CREATE_KID').switchMap((a: CreateKidAction) => {
-        console.log('createKid action');
+        console.log('createKid action', a.payload);
         return this.backend.createKid(a.payload).map(resp => ({ type: 'KID_CREATED', payload: resp }));
     });
 
