@@ -11,8 +11,7 @@ export function appReducer(state: AppState, action: AppAction): AppState {
     switch (action.type) {
 
         case ActionTypes.FAMILY_SIGNED_UP:
-        case ActionTypes.FAMILY_LOGGED_IN:
-
+        
             console.log(action.type);
 
             let families = [...state.families];
@@ -23,15 +22,28 @@ export function appReducer(state: AppState, action: AppAction): AppState {
 
             return { ...state, families, family };
 
+            case ActionTypes.FAMILY_SIGNED_UP:
+            
+        case ActionTypes.FAMILY_LOGGED_IN:
+        case ActionTypes.FAMILY_SELECTED:
+
+            console.log(action.type);
+
+            family = action.payload;
+
+            return { ...state, families, family };
+
         case ActionTypes.KID_CREATED:
 
             console.log(action.type);
 
-            kids = [...state.kids];
+            return state; // DANGER: need to set current kid???
 
-            kids.push(action.payload);
+            // kids = [...state.kids];
 
-            return { ...state, kids };
+            // kids.push(action.payload);
+
+            // return { ...state, kids };
 
         case ActionTypes.KID_UPDATED:
 
@@ -84,14 +96,6 @@ export function appReducer(state: AppState, action: AppAction): AppState {
             families = action.payload;
 
             return { ...state, families };
-
-        case ActionTypes.KIDS_LOADED:
-
-            console.log(action.type);
-
-            kids = action.payload;
-
-            return { ...state, kids };
 
         case ActionTypes.LOAD_FAMILY_AND_SELECT_KID:
 
