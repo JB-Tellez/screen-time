@@ -11,7 +11,7 @@
 
 <button class="btn btn-warning" (click)="createFamily()">Create Family</button>
 
-<h1>Current family: {{ (family$ | async).name }}</h1>
+<h1 (click)="familyClicked()">Current family: {{ (family$ | async).name }}</h1>
 
 <div *ngIf="(family$ | async).name">
   <h2>Kids:</h2>

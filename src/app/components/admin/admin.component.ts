@@ -28,7 +28,12 @@ export class AdminComponent implements OnInit {
   familySelected(family:Family) {
     this.store.dispatch(new FamilySelectedAction(family));
   }
-  familyClicked(family:Family) {
+  familyClicked() {
+
+    let family;
+    
+    this.family$.take(1).subscribe( f => family = f).unsubscribe();
+
     this.router.navigate([`/family/${family['_id']}`]);
   }
 
