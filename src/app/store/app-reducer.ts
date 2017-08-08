@@ -39,13 +39,15 @@ export function appReducer(state: AppState, action: AppAction): AppState {
 
             console.log(action.type);
 
-            return state; // DANGER: need to set current kid???
+            kid = action.payload;
 
-            // kids = [...state.kids];
+            // TODO: best to do here or separate call
+            // as long as the family stays up to date with kid changes
+            family = {...state.family};
 
-            // kids.push(action.payload);
+            family.kids.push(kid);
 
-            // return { ...state, kids };
+            return {...state, kid, family};
 
         case ActionTypes.KID_UPDATED:
 
