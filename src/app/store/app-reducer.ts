@@ -31,7 +31,9 @@ export function appReducer(state: AppState, action: AppAction): AppState {
 
             family = action.payload;
 
-            return { ...state, families, family };
+            console.log('family', family);
+
+            return { ...state, family };
 
         case ActionTypes.KID_CREATED:
 

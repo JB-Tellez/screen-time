@@ -34,7 +34,7 @@ export class ScreenEffects {
 
             console.log('already got right family loaded');
 
-            return of({type:ActionTypes.FAMILY_SELECTED});
+            return of({type:ActionTypes.FAMILY_SELECTED, payload: state.app.family});
         }
 
         return of({ type: 'LOAD_FAMILY', payload: id });
@@ -50,7 +50,7 @@ export class ScreenEffects {
 
             console.log('already got right family loaded');
 
-            return of({type:ActionTypes.FAMILY_SELECTED});
+            return of({type:ActionTypes.FAMILY_SELECTED, payload: state.app.family});
         }
 
         return of({ type: 'LOAD_FAMILY', payload: id });
@@ -102,6 +102,7 @@ export class ScreenEffects {
         console.log('logInFamily action');
 
         return this.backend.logInFamily(a.payload).concatMap(resp => {
+            console.log('loginFamily', resp);
             return of({ type: 'FAMILY_LOGGED_IN', payload: resp }, { type: 'GOTO_FAMILY_ACTION', payload: resp });
         })
 
