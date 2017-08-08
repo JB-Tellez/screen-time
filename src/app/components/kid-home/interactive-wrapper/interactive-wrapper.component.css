@@ -40,4 +40,6 @@ img.tvshow:hover {
     padding-top: 20px;
 }
 
-/* CAROUSEL */
+.lined {
+    border: 3px solid white;
+}

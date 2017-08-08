@@ -5,5 +5,7 @@
 
 carousel {
   height: 500px;
+  position: fixed;
+  border: 2px solid white;
 
   }

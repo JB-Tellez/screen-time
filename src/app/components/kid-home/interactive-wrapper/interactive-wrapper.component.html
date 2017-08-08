@@ -1,22 +1,29 @@
-        <div class="wrapper row interactive-row container-fluid">
+        
+  <div class="wrapper row interactive-row container-fluid">
           <div class="row">
+
             <!-- FIRST COLUMN -->
-            <div class="col-sm-12 col-md-6 col-lg-6 select-show-icon img-responsive" [@bounceOutRight]='bounceOutRight' (click)="bounceOutRight()">
+
+                 <div class="col-sm-12 col-md-6 col-lg-6 select-show-icon img-responsive" [@bounceOutRight]='state' (@bounceOutRight.done)="animDone()" (click)="startAnimation()">
               <!-- disabled to render movies here (click)="gotoMovies()"   -->
               <a  class="movie-selection">
                 <img src="../../../assets/images/movie-icon.png" class="movie img-select">
               </a>
             </div>
             <!-- SECOND COLUMN -->
-            <div class="col-sm-12 col-md-6 col-lg-6 select-show-icon img-responsive" [@bounceOutRight]='bounceOutRight'>
+            <div class="col-sm-12 col-md-6 col-lg-6 select-show-icon img-responsive" [@bounceOutRight]='state'>
               <!-- disabled to render movies here (click)="gotoMovies()"   -->
               <a  class="tvshow-selection">
                 <img src="../../../assets/images/tvshow-icon.png" class="tvshow img-select">
               </a>
             </div>
-
+   
+<button (click)="startMovieAnim()">start movie anim</button>
+            
             <!-- CAROUSEL INTERACTIVE  -->
-             <app-movies></app-movies> 
+             <div [@movieAnim]="movieState" class="lined"> 
+             <app-movies ></app-movies> 
+              </div> 
             
           </div>
         </div>

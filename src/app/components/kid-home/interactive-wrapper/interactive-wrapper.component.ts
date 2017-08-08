@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { trigger,transition, useAnimation, state } from '@angular/animations';
-import { bounceOutRight } from 'ng-animate';
+import { trigger,transition, useAnimation, state, style } from '@angular/animations';
+import { bounceOutRight, fadeIn } from 'ng-animate';
 
 
 @Component({
@@ -9,24 +9,43 @@ import { bounceOutRight } from 'ng-animate';
   templateUrl: './interactive-wrapper.component.html',
   styleUrls: ['./interactive-wrapper.component.css'],
   animations: [
-    trigger('bounceOutRight', [transition('* => *', useAnimation(bounceOutRight,{
-      params: { timing: 5 }
+    trigger('bounceOutRight', [
+      state('on-screen', style({transform: 'translateX(0%)'})),
+      state('off-screen', style({transform: 'translateX(200%)'})),
+      transition('on-screen => off-screen', useAnimation(bounceOutRight,{
+    }
+    ))]),
+  trigger('movieAnim', [
+      state('on-screen', style({transform: 'translateY(0%)'})),
+      state('off-screen', style({transform: 'translateY(200%)'})),
+      transition('on-screen => off-screen', useAnimation(fadeIn,{
     }
     ))])
   ]
 })
 export class InteractiveWrapperComponent implements OnInit {
 
-  bounceOutRight: any;
+  state : string = 'on-screen';
+  movieState : string = 'on-screen';
   
   constructor(private router:Router) { }
 
   ngOnInit() {
   }
 
-bounceOut() {
-  this.bounceOutRight = 'bounceOutRight';
-}
+  startAnimation(){
+    this.state = 'off-screen';
+  }
+
+  animDone() {
+    // alert('yo');
+    //this.state = 'off-screen';
+  }
+
+  startMovieAnim() {
+    this.movieState = 'off-screen';
+  }
+  
 
 }
 
