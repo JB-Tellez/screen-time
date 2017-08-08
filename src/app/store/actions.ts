@@ -6,15 +6,14 @@ export type AppAction = {type:string, payload?:any}
 
 export const ActionTypes = {
     KID_SELECTED: 'KID_SELECTED',
+    FAMILY_SELECTED: 'FAMILY_SELECTED',
     KID_UPDATED: 'KID_UPDATED',
     KID_ADDED: 'KID_ADDED',
     ADD_KID: 'ADD_KID',
     LOAD_FAMILY: 'LOAD_FAMILY',
     FAMILY_LOADED: 'FAMILY_LOADED',
     FAMILIES_LOADED: 'FAMILIES_LOADED',
-    KIDS_LOADED: 'KIDS_LOADED',
     LOAD_FAMILIES: 'LOAD_FAMILIES',
-    LOAD_KIDS: 'LOAD_KIDS',
     LOAD_FAMILY_AND_SELECT_KID: 'LOAD_FAMILY_AND_SELECT_KID',
     SIGN_UP_FAMILY: 'SIGN_UP_FAMILY',
     LOG_IN_FAMILY: 'LOG_IN_FAMILY',
@@ -60,17 +59,8 @@ export class FamiliesLoadedAction implements Action {
     constructor(public payload: Family[]) { }
 }
 
-export class KidsLoadedAction implements Action {
-    type = ActionTypes.KIDS_LOADED;
-    constructor(public payload: Kid[]) { }
-}
-
 export class LoadFamiliesAction implements Action {
     type = ActionTypes.LOAD_FAMILIES;
-}
-
-export class LoadKidsAction implements Action {
-    type = ActionTypes.LOAD_KIDS;
 }
 
 export class LoadFamilyAndSelectKidAction implements Action {
@@ -120,9 +110,7 @@ export type AppActions =
     AddKidAction |
     FamilyLoadedAction |
     FamiliesLoadedAction |
-    KidsLoadedAction |
     LoadFamiliesAction |
-    LoadKidsAction |
     LoadFamilyAndSelectKidAction |
     SignUpFamilyAction |
     LogInFamilyAction |
