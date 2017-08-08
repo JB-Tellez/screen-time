@@ -19,6 +19,8 @@ export const ActionTypes = {
     LOG_IN_FAMILY: 'LOG_IN_FAMILY',
     FAMILY_LOGGED_IN: 'FAMILY_LOGGED_IN',
     CREATE_KID: 'CREATE_KID',
+    DELETE_KID: 'DELETE_KID',
+    KID_DELETED: 'KID_DELETED',
     FAMILY_SIGNED_UP: 'FAMILY_SIGNED_UP',
     KID_CREATED: 'KID_CREATED',
     GOTO_FAMILY_ACTION: 'GOTO_FAMILY_ACTION',
@@ -88,6 +90,11 @@ export class CreateKidAction implements Action {
     constructor(public payload: Kid) { }
 }
 
+export class DeleteKidAction implements Action {
+    type = ActionTypes.DELETE_KID;
+    constructor(public payload: Kid) {}
+}
+
 export class FamilySignedUpAction implements Action {
     type = ActionTypes.FAMILY_SIGNED_UP;
     constructor(public payload: Family) { }
@@ -116,6 +123,7 @@ export type AppActions =
     LogInFamilyAction |
     FamilyLoggedInAction |
     CreateKidAction |
+    DeleteKidAction |
     FamilySignedUpAction |
     KidCreatedAction |
     GotoFamilyAction;

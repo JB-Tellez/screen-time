@@ -10,6 +10,7 @@
       <button (click)="createKid(family)">Create Kid</button>
       <li *ngFor="let kid of family.kids">
         <p (click)="kidClicked(family, kid)">{{ kid.name }}</p>
+        <button class="btn btn-warning" (click)="deleteKid(kid)">delete</button>
         <p>Bed times</p>
         <ul>
           <li *ngFor="let bedTime of kid.bedTimes">

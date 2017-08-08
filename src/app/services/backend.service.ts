@@ -40,4 +40,9 @@ export class BackendService {
     return this.http.post(`api/kids`, kid).map( data => data.json());
   }
 
+  deleteKid(kid:Kid) {
+ 
+    return this.http.delete(`api/kids/${kid._id}`).map( data => data.json());
+  }
+
 }

@@ -1,4 +1,4 @@
-import { SignUpFamilyAction, CreateKidAction } from './../../store/actions';
+import { SignUpFamilyAction, CreateKidAction, DeleteKidAction } from './../../store/actions';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
@@ -68,6 +68,11 @@ export class AdminComponent implements OnInit {
 
   getTimeSpent(viewing: Viewing) {
     return +viewing.endTime - +viewing.startTime;
+  }
+
+  deleteKid(kid:Kid) {
+    // alert('delete kid ' + kid.name);
+    this.store.dispatch(new DeleteKidAction(kid));
   }
 
 }
