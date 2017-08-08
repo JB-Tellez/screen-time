@@ -35,9 +35,9 @@ export class BackendService {
     return this.http.post(`auth/login`, creds).map( data => data.json());
   }
 
-  createKid(kid:Kid) {
+  createKid(info: {kid:Kid, family:Family}) {
     
-    return this.http.post(`api/kids`, kid).map( data => data.json());
+    return this.http.post(`api/kids`, {kid:info.kid, familyId:info.family._id}).map( data => data.json());
   }
 
   deleteKid(kid:Kid) {
