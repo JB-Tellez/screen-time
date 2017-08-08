@@ -64,7 +64,7 @@ export class AdminComponent implements OnInit {
       bedTimes}
     
       
-    this.store.dispatch(new CreateKidAction(kid));
+    this.store.dispatch(new CreateKidAction({kid, family}));
   } 
 
   kidClicked(kid:Kid) {
