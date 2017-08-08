@@ -37,6 +37,7 @@ import { InteractiveWrapperComponent } from './components/kid-home/interactive-w
 import { BedtimeListComponent } from './components/bedtime-list/bedtime-list.component';
 import { ViewingListComponent } from './components/viewing-list/viewing-list.component';
 import { KidCardComponent } from './components/kid-card/kid-card.component';
+import { ScreentimerComponent } from './components/movie/screentimer/screentimer.component';
 
 
 @NgModule({
@@ -58,6 +59,7 @@ import { KidCardComponent } from './components/kid-card/kid-card.component';
     BedtimeListComponent,
     ViewingListComponent,
     KidCardComponent,
+    ScreentimerComponent,
   ],
   imports: [
     BrowserModule,

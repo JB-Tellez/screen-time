@@ -32,7 +32,7 @@
       <div class="column2">
         <p class="runtime"> {{ movie?.runtime }} minutes</p>
         <p> {{ movie?.overview }}</p>
-        <span class="start"> START SCREENTIME </span>
+        <a (click)="gotoScreenTimer()"><span class="start"> START SCREENTIME </span></a>
       </div>
     </div> <!-- end description -->
   </div> <!-- end container -->

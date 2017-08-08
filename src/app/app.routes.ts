@@ -1,4 +1,5 @@
 import { MovieComponent } from './components/movie/movie.component';
+import { ScreentimerComponent } from './components/movie/screentimer/screentimer.component';
 import { MoviesComponent } from './components/movies/movies.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { KidHomeComponent } from './components/kid-home/kid-home.component';
@@ -20,7 +21,5 @@ export const routes:Routes = [
   {path: 'admin', component:AdminComponent}, 
   {path: 'movies', component:MoviesComponent}, 
   {path: 'movie/:id', component:MovieComponent}, 
-
-
-
+  {path: 'screentimer', component:ScreentimerComponent}, 
 ]
