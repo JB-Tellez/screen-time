@@ -1,0 +1,8 @@
+<h2>Viewings:</h2>
+<ul>
+  <li *ngFor="let viewing of viewings">
+    <span>{{ viewing.title }}</span>
+    <span>{{ viewing.startTime | date }}</span>
+    <span>{{ getViewingDuration(viewing) }} minutes</span>
+  </li>
+</ul>
