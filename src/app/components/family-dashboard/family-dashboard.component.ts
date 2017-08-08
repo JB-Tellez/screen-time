@@ -1,10 +1,9 @@
+import { CreateKidAction } from './../../store/actions';
 import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { State, Family, Kid, Viewing } from '../../store/model';
-import * as moment from 'moment';
-import 'rxjs/add/operator/first';
 
 @Component({
   selector: 'app-family-dashboard',
@@ -15,70 +14,34 @@ export class FamilyDashboardComponent implements OnInit {
 
   family$: Observable<Family>;
 
-  public showDetails: false;
+  public showBedtimes: false;
+  public showViewings: false;
 
   constructor(private route: ActivatedRoute, private router: Router, private store: Store<State>) { }
 
   ngOnInit() {
-
     this.family$ = this.store.select('app', 'family');
-
-    // need to inject date objects
-    // this.family$.forEach(family => {
-    //   if (family.kids) {
-    //     family.kids.forEach(kid => {
-    //       kid['bts'] = kid.bedTimes.map(bedTime => new Date(bedTime * 1000));
-    //     })
-    //   }
-    // });
-
   }
 
-  public addKid() {
-    const kid: Kid = {
-      _id: undefined,
-      name: 'Johnny',
-      password: 'pass',
-      minutesPerWeek: 400,
-      bedTimes: [],
-      viewings: [],
-      family: null
-    };
-    this.store.dispatch({ type: 'ADD_KID', payload: kid });
+  createKid() {
 
-  }
+    const kidName = 'kid_' + Math.floor(Math.random() * 1000);
 
-  public getDay(index) {
-    return ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][index];
-  }
+    const viewing:Viewing = {_id:undefined, showId: "foo", movieId: "bar", title:"Gone with the Wind", startTime: new Date(), endTime: new Date()};
+    const bedTimes = [new Date(), new Date(), new Date(), new Date(), new Date(), new Date(), new Date()];
+    const viewings: Viewing[] = []; // WARNING: no viewings yet because back end errors
 
-  public getMinutesSpent(kid: Kid) {
+    let family;
+    
+    this.family$.take(1).subscribe( f => family = f).unsubscribe();
 
-    if (true === true) return 0; // DANGER
-
-    // TODO: handle missing endTime
-
-
-    const sunday = moment().startOf('week');
-
-    return kid.viewings.reduce((acc, cur) => {
-
-      let minutesSpent = 0;
-
-      if (moment(cur.startTime).isAfter(sunday)) {
-
-        const secondsSpent = moment(cur.endTime).diff(moment(cur.startTime), 'seconds');
-
-        minutesSpent = Math.floor(secondsSpent / 60);
-      }
-
-      return acc + minutesSpent;
-
-    }, 0)
-  }
-
-  public getViewingDuration(viewing: Viewing) {
-    return 0; //Math.floor((viewing.endTime - viewing.startTime) / 60);
-  }
-
+    const kid:Kid = {_id: undefined, name:kidName, password:'pass', 
+      minutesPerWeek:400, 
+      family,
+      viewings, 
+      bedTimes}
+    
+      
+    this.store.dispatch(new CreateKidAction(kid));
+  } 
 }

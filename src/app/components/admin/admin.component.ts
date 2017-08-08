@@ -65,9 +65,6 @@ export class AdminComponent implements OnInit {
     
       
     this.store.dispatch(new CreateKidAction(kid));
-
-
-
   } 
 
   kidClicked(kid:Kid) {
