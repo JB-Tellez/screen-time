@@ -11,6 +11,5 @@ export const initialState = {
 
         // TODO: remove and/or move to adminState
         families: [],
-        kids: []
     }
 }
