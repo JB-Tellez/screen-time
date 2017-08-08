@@ -41,6 +41,14 @@ body {
   position: relative;
 }
 
+.back-btn {
+    vertical-align: middle;
+    position: absolute;
+    left: 15px;
+    top: 20px;
+    height: 50px;
+}
+
 .hero {
   height: 342px;
   margin: 0;
