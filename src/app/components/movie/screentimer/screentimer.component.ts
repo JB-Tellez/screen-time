@@ -61,6 +61,8 @@ export class ScreentimerComponent implements OnInit {
     this.startTimer();
   }
   
+ gotoKidHome() {
+    this.router.navigate(['family/1/kid/1'])
+  }
 
-  
 }
