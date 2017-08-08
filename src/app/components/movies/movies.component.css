@@ -1,3 +1,18 @@
+/*
+Name: Screen Time Web App
+Description: Common Styles
+Authors: Micaela Linda Villani & JBTellez
+Tags: Ironhack Final Project - Full Stack Javascript App + Angularjs for the Front-end
+*/
+
+/* Fonts
+---headings
+font-family: 'Montserrat Alternates', sans-serif;
+font-family: 'Merriweather Sans', sans-serif;
+--paragraphs
+font-family: 'Montserrat', sans-serif; 
+font-family: 'Merriweather', serif;
+*/
 /* CONTAINER */
 .well {
   background-color: black;

@@ -29,4 +29,12 @@ export class MovieComponent implements OnInit {
     return `https://image.tmdb.org/t/p/w154/${movie.poster_path}`;
   }
 
+  getBackdropPath(movie) {
+    if (!this.movie) return '';
+
+    return `https://image.tmdb.org/t/p/w154/${movie.backdrop_path}`;
+  }
+
+
+  
 }
