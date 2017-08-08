@@ -1,2 +1,19 @@
-<script src="../../animations/timer.js"></script>
-<output class="clip-text" id="time"></output>
+<div class="movie-card">
+  <div class="container">
+     <div class="hero"></div>
+
+     <div class="description">
+      <div class="column1">
+        <a><span class="startclock"> START SCREENTIME </span></a>
+        <h1>
+            {{hoursDisplay ? hoursDisplay : '00'}} : {{(minutesDisplay) && (minutesDisplay <= 59) ? minutesDisplay : '00'}} : {{(secondsDisplay) && (secondsDisplay <= 59) ? secondsDisplay : '00'}} <br/>
+        </h1>
+        <a><span class="stopclock"> STOP SCREENTIME </span></a>
+      </div>
+
+      <div class="column2">
+        <p></p>
+      </div>
+
+  </div>
+</div>

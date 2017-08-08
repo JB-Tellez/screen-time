@@ -1,60 +1,112 @@
-html, body {
-  height: 100%;
-}
+/*
+Name: Screen Time Web App
+Description: Common Styles
+Authors: Micaela Linda Villani & JBTellez
+Tags: Ironhack Final Project - Full Stack Javascript App + Angularjs for the Front-end
+*/
 
-body {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background: black;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  font: 10vw/1 "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
+/* Fonts
+---headings
+font-family: 'Montserrat Alternates', sans-serif;
+font-family: 'Merriweather Sans', sans-serif;
+--paragraphs
+font-family: 'Montserrat', sans-serif; 
+font-family: 'Merriweather', serif;
+*/
 
-.clip-text {
-  /* background-image: ; */
-  font-weight: bold;
-  position: relative;
-  display: inline-block;
-  margin: .25em;
-  padding: .5em .75em;
-  text-align: center;
+.movie-card {
+  font: 14px/22px 'Montserrat', sans-serif; 
   color: white;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  padding: 40px 0;
 }
 
-.clip-text:before,
-.clip-text:after {
+.container {
+  margin: 0 auto;
+  width: 780px;
+  height: 620px;
+  background: #010F20;
+  border-radius: 5px;
+  position: relative;
+}
+
+.hero {
+  height: 342px;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.hero:before {
+  content: '';
+  width: 100%;
+  height: 90%;
   position: absolute;
-  content: "";
-}
-
-.clip-text:before {
-  z-index: -2;
+  overflow: hidden;
   top: 0;
-  right: 0;
-  bottom: 0;
   left: 0;
-  background-image: inherit;
+  background: red;
+  background: url('http://img4.hostingpics.net/pics/144421stars.png');
+  z-index: -1;
+  -webkit-transform: skewY(-2.2deg);
+          transform: skewY(-2.2deg);
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-backface-visibility: hidden;
 }
 
-.clip-text:after {
-  position: absolute;
-  z-index: -1;
-  top: .125em;
-  right: .125em;
-  bottom: .125em;
-  left: .125em;
-  background-color: #000;
+/* TIMER STYLES */
+h1 {
+  font-family: 'Montserrat', sans-serif; 
+  color: #0CB49B;
+  text-align: center;   
+  margin-right: 400px;
+}    
+
+.startclock {
+  background: #EF4D7B;
+  border-radius: 10px;
+  margin-left: 93px;
+  padding: 3px 8px;
+  font-size: 14px;
+  line-height: 35px;
+  cursor: pointer;
+  color: white;
+}
+
+.stopclock {
+  background: #EF4D7B;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-left: 93px;
+  padding: 3px 8px;
+  font-size: 14px;
+  line-height: 35px;
+  cursor: pointer;
+  color: white;
+}
+
+.description {
+  bottom: 0px;
+  height: 200px;
+  font-size: 16px;
+  line-height: 26px;
+  color: white;
+}
+
+.column1 {
+  padding-left: 0px;
+  padding-top: 120px;
+  width: 220px;
+  float: left;
+  text-align: center;
+}
+
+.column2 {
+  padding-left: 41px;
+  margin-left: 20px;
+  width: 480px;
+  float: left;
 }
