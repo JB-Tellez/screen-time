@@ -4,7 +4,7 @@
 
      <div class="description">
       <div class="column1">
-        <a><span class="startclock"> START SCREENTIME </span></a>
+        <!-- <a><span class="startclock"> START SCREENTIME </span></a> -->
         <h1>
             {{hoursDisplay ? hoursDisplay : '00'}} : {{(minutesDisplay) && (minutesDisplay <= 59) ? minutesDisplay : '00'}} : {{(secondsDisplay) && (secondsDisplay <= 59) ? secondsDisplay : '00'}} <br/>
         </h1>
@@ -12,7 +12,10 @@
       </div>
 
       <div class="column2">
-        <p></p>
+        <img src="../../../../assets/images/bedtime-small.png" alt="bedtime icon" class="bedtime-icn">
+        <p> Your bedtime will be in </p>
+          <h3 class="minutes-countdown"><span>.time</span> minutes</h3>
+
       </div>
 
   </div>

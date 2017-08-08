@@ -58,29 +58,35 @@ font-family: 'Merriweather', serif;
 }
 
 /* TIMER STYLES */
+.description {
+  bottom: 0px;
+  height: 200px;
+  font-size: 16px;
+  line-height: 26px;
+  color: white;
+}
+
+.column1 {
+  width: 400px;
+  float: left;
+}
+
 h1 {
   font-family: 'Montserrat', sans-serif; 
   color: #0CB49B;
   text-align: center;   
-  margin-right: 400px;
-}    
-
-.startclock {
-  background: #EF4D7B;
-  border-radius: 10px;
-  margin-left: 93px;
-  padding: 3px 8px;
-  font-size: 14px;
-  line-height: 35px;
-  cursor: pointer;
-  color: white;
-}
+  margin-right: 50px;
+  margin-bottom: 27px;
+  border: 2px dotted #2EF9A0;
+  padding: 20px 10px;
+} 
 
 .stopclock {
   background: #EF4D7B;
   border-radius: 10px;
   margin-top: 10px;
-  margin-left: 93px;
+  margin-top: 50px;
+  margin-left: 100px;
   padding: 3px 8px;
   font-size: 14px;
   line-height: 35px;
@@ -96,17 +102,24 @@ h1 {
   color: white;
 }
 
-.column1 {
-  padding-left: 0px;
-  padding-top: 120px;
-  width: 220px;
-  float: left;
-  text-align: center;
+.column2 {
+    width: 300px;
+    padding: 40px 0px;
+    float: left;
+    text-align: left;
+    font-size: 20px;
+    color: white;
 }
 
-.column2 {
-  padding-left: 41px;
-  margin-left: 20px;
-  width: 480px;
-  float: left;
+.bedtime-icn {
+  height: 50px;
+}
+
+p {
+  display: inline;
+  padding-left: 5px;
+}
+
+.minutes-countdown {
+margin-left: 70px !important;
 }
