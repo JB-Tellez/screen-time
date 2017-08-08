@@ -1,3 +1,4 @@
+import { MovieComponent } from './components/movie/movie.component';
 import { MoviesComponent } from './components/movies/movies.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { KidHomeComponent } from './components/kid-home/kid-home.component';
@@ -18,6 +19,7 @@ export const routes:Routes = [
   {path: 'signup', component:FamilySignupComponent}, 
   {path: 'admin', component:AdminComponent}, 
   {path: 'movies', component:MoviesComponent}, 
+  {path: 'movie/:id', component:MovieComponent}, 
 
 
 
