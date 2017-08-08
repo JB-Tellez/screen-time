@@ -36,11 +36,6 @@ export class MovieComponent implements OnInit {
     return `https://image.tmdb.org/t/p/w154/${movie.backdrop_path}`;
   }
 
-  gotoMovies() {
-        this.router.navigate(['/movies']);
-
-  }
-
   gotoScreenTimer() {
         this.router.navigate(['/screentimer']);
   }

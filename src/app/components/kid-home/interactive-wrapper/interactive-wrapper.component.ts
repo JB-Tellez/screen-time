@@ -48,6 +48,7 @@ export class InteractiveWrapperComponent implements OnInit {
   
   gotoMovies() {
     this.router.navigate(['/movies']);
+
   }
 
 }
