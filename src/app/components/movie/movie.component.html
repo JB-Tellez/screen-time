@@ -4,7 +4,7 @@
      <!-- COVER IMAGE <img [src]="getBackdropPath(movie)" alt="cover" class="cover">  -->
      <img [src]="getPosterPath(movie)" alt="poster" class="cover"> 
      <div class="hero">
-        <img src='../../../assets/images/back-btn.png' alt="go back button" class="back-btn" (click)="gotoMovies()"> 
+        <a> <img src='../../../assets/images/back-btn.png' alt="go back button" class="back-btn" (click)="gotoMovies()"> </a>
       <div class="details">
         <h2>{{ movie?.title}}</h2>
             <fieldset class="rating">
