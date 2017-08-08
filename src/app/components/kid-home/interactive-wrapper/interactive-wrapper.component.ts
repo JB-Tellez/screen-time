@@ -33,19 +33,22 @@ export class InteractiveWrapperComponent implements OnInit {
   ngOnInit() {
   }
 
-  startAnimation(){
-    this.state = 'off-screen';
-  }
+  // startAnimation(){
+  //   this.state = 'off-screen';
+  // }
 
-  animDone() {
-    // alert('yo');
-    //this.state = 'off-screen';
-  }
+  // animDone() {
+  //   // alert('yo');
+  //   //this.state = 'off-screen';
+  // }
 
-  startMovieAnim() {
-    this.movieState = 'off-screen';
-  }
+  // startMovieAnim() {
+  //   this.movieState = 'off-screen';
+  // }
   
+  gotoMovies() {
+    this.router.navigate(['/movies']);
+  }
 
 }
 
