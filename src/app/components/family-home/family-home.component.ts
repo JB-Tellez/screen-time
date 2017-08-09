@@ -19,6 +19,10 @@ export class FamilyHomeComponent implements OnInit {
     this.family$ = this.store.select('app', 'family');
   }
 
+  getKids(family: Family) {
+    return family.kids ? family.kids.slice(0,2) : [];
+  }
+
   gotoFamilyDashboard() {
 
     // WARNING: snapshot safe?

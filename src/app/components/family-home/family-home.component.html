@@ -1,4 +1,4 @@
-<main class="container-fluid main-container jumbotron">
+<main class="container-fluid main-container jumbotron" *ngIf="family$ | async as family">
   <div class="stars">
     <div class="twinkling">
       <!-- NAVBAR -->
@@ -6,9 +6,8 @@
 
       <!-- TITLE -->
       <div class="row title-row">
-        <!-- <h1>Kid count: {{ (family$ | async).kids.length }}</h1> -->
       
-        <h1 class="title col-sm-12 col-md-12 col-lg-12"> Welcome Family {{ (family$ | async).name }}</h1>
+        <h1 class="title col-sm-12 col-md-12 col-lg-12"> Welcome Family {{ family.name }}</h1>
       </div>
       <!-- ICONS -->
       <div class="wrapper">
@@ -21,7 +20,7 @@
             </a>
           </div>
           <!-- SECOND ICON -->
-          <div *ngFor="let kid of (family$ | async).kids" class="col-sm-12 col-md-4 col-lg-4 icon-col" >
+          <div *ngFor="let kid of getKids(family)" class="col-sm-12 col-md-4 col-lg-4 icon-col" >
             <a (click)="gotoKidHome(kid)">
               <img class="responsive-image icons" src="../../../assets/images/little-girl-icon.png">
               <p class="icon-p"> {{ kid.name }} </p>
