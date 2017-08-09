@@ -45,4 +45,9 @@ export class FamilyDashboardComponent implements OnInit {
       
     this.store.dispatch(new CreateKidAction({kid,family}));
   } 
+
+  gotoKidSettings() {
+    this.router.navigate['/kid-settings'];
+  }
+
 }
