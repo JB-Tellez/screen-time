@@ -77,11 +77,7 @@ export function appReducer(state: AppState, action: AppAction): AppState {
 
             console.log(action.type);
 
-            // DANGER: state.family may be empty!!!
-
-            kid = { _id: "1", name: 'foo', password: 'pass', family: null, minutesPerWeek: 0, bedTimes: [], viewings: [] };
-
-            //state.family.kids.find( k => k.id === action.payload);
+            kid = action.payload;
 
             return { ...state, kid };
 
@@ -117,8 +113,16 @@ export function appReducer(state: AppState, action: AppAction): AppState {
 
             console.log(action.type);
 
-            // DANGER: what do now, best to add viewing to kid.viewings, but what kid
-            // and/or load a fresh kid with updated viewings from backend
+            // DANGER: watch for race condition
+            // DANGER: safer to do fresh load of kid
+
+            let viewing = action.payload;
+
+            // TODO: best to do here or separate call
+            // as long as the family stays up to date with kid changes
+            kid = {...state.kid};
+
+            kid.viewings.push(viewing);
 
             return {...state};
 

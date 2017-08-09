@@ -35,9 +35,14 @@ export class BackendService {
     return this.http.post(`auth/login`, creds).map( data => data.json());
   }
 
-  createKid(info: {kid:Kid, family:Family}) {
+  createKid(kid:Kid) {
     
-    return this.http.post(`api/kids`, {kid:info.kid, familyId:info.family._id}).map( data => data.json());
+    let dto:any = {...kid};
+
+    // server wants just the id
+    dto.family = kid.family._id;
+    
+    return this.http.post(`api/kids`, dto).map( data => data.json());
   }
 
   deleteKid(kid:Kid) {
@@ -47,7 +52,12 @@ export class BackendService {
 
    createViewing(viewing:Viewing) {
     
-    return this.http.post(`api/viewings`, viewing).map( data => data.json());
+    let dto:any = {...viewing};
+
+    // server wants just the id
+    dto.viewing = viewing._id;
+
+    return this.http.post(`api/viewings`, dto).map( data => data.json());
   }
 
 }

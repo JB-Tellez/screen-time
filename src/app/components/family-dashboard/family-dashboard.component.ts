@@ -32,16 +32,21 @@ export class FamilyDashboardComponent implements OnInit {
     const viewings: Viewing[] = []; // WARNING: no viewings yet because back end errors
 
     let family;
-    
-    this.family$.take(1).subscribe( f => family = f).unsubscribe();
 
-    const kid:Kid = {_id: undefined, name:kidName, password:'pass', 
-      minutesPerWeek:400, 
+    this.family$.take(1).subscribe(f => family = f).unsubscribe();
+
+    const kid: Kid = {
+      _id: undefined,
+      name: kidName,
+      password: 'pass',
+      minutesPerWeek: 400,
       family,
-      viewings, 
-      bedTimes}
-    
-      
-    this.store.dispatch(new CreateKidAction({kid,family}));
-  } 
+      viewings,
+      bedTimes,
+      currentViewing: undefined
+    }
+
+
+    this.store.dispatch(new CreateKidAction(kid));
+  }
 }
