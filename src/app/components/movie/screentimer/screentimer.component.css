@@ -23,14 +23,14 @@ font-family: 'Merriweather', serif;
 .container {
   margin: 0 auto;
   width: 780px;
-  height: 620px;
+  height: 520px;
   background: #010F20;
   border-radius: 5px;
   position: relative;
 }
 
 .hero {
-  height: 342px;
+  height: 302px;
   margin: 0;
   position: relative;
   overflow: hidden;
@@ -84,14 +84,18 @@ font-family: 'Merriweather', serif;
   float: left;
 }
 
+
+/* TIMER HANDLER */
 h1 {
-  font-family: 'Montserrat', sans-serif; 
-  color: #0CB49B;
-  text-align: center;   
-  margin-right: 50px;
-  margin-bottom: 27px;
-  border: 2px dotted #2EF9A0;
-  padding: 20px 10px;
+    font-family: 'Montserrat', sans-serif;
+    color: #0CB49B;
+    text-align: center;
+    margin-left: 50px;
+    margin-bottom: 27px;
+    height: 80px;
+    width: 250px;
+    border: 2px dotted #1D99AE;
+    padding: 16px 0px;
 } 
 
 .stopclock {
