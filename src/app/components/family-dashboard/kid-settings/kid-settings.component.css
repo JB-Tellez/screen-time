@@ -22,15 +22,16 @@ font-family: 'Merriweather', serif;
 .kid-settings {
     /* border: 2px solid white;  */
     height: 100%;
-    width: 55vw;
+    width: 30vw;
     margin: 0px 50px 10px 50px;
     padding: 7px 0px 0px 10px;
     background-color: #010F20;
+    /* opacity: 0.8; */
     overflow: scroll;
 }
 
 h4.avatar {
-    color: #F79432;
+    color:#A166AB;
 }
 
 .kid-avatar {
@@ -92,27 +93,37 @@ label.age {
     float: left;
     padding: 5px;
     margin-left: 5px;
-    color: #A166AB;
+    color: #F79432;
     font-size: 20px;
 }
 
 /* TIMEPICK TABLE */
 .bedtime-sel-container {
-    padding: 2% 14%;
-    border: 2px dotted #0CB49B;   
+    border: 2px dotted #0CB49B;    
     margin: 0 auto;
-
 }
 .timepick {
     width: 200px;
-    border: 2px  solid white; 
-    margin: 10px 10px;   
+    /* border: 1px dotted #6CBC82;  */
+    margin: 3% 3%;   
     float: left;
-    /* margin: 10px; */
 }
-
 
 .timepick-p {
     color: #4CC1FC;
 }
 
+/* SUBMIT BUTTON */
+
+.submit-btn {
+    background-color: #EF4D7B;
+    color: white;
+    margin: 20px;
+    border: none;
+    font-style: 20px;
+    height: 30px;
+    text-transform: uppercase;
+    font-family: 'Godsown';
+
+
+}
