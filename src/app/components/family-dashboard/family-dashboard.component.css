@@ -95,10 +95,11 @@ font-family: 'Merriweather', serif;
 
 /* ---------------------------------------------------------BODY */
 /*  TITLES  */
-.container {
-    margin: 100px 50px 50px 50px;
+.title-div {
+    margin: 100px 50px 10px 50px;
     padding: 30px 30px;
-    /* border: 2px solid white; */
+    /* border: 2px solid white;  */
+    height: 20%;
     width: 95vw;
 }
 
@@ -136,3 +137,30 @@ font-family: 'Merriweather', serif;
     height: 50px;
     margin-top: 10px;
 }
+
+/* KID STATISTICS */
+.kid-stat {
+    border: 2px solid white; 
+    height: 33%;
+    width: 95vw;
+    margin: 0px 50px 10px 50px;
+
+}
+
+/* KID SETTINGS */
+.kid-settings {
+    border: 2px solid white; 
+    height: 33%;
+    width: 95vw;
+    margin: 0px 50px 10px 50px;
+
+}
+
+.kid-avatar {
+    height: 80px;
+}
+
+/* .checkMenu > input {
+    visibility: hidden;
+} */
+

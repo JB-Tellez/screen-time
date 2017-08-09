@@ -7,7 +7,7 @@
       <app-navbar></app-navbar>
 
       <!-- TITLES -->
-      <div class="container row">
+      <div class="container row title-div">
         <!-- LEFT COLUMN - WELCOME FAMILY -->
         <div class="column1 col-sm-12 col-md-8 col-lg-8">
           <h2 class="titles"> Welcome, </h2>
@@ -35,35 +35,88 @@
         </div>
       </div>
 
-      <!-- KID CARDS -->
+      <!-- KID STATS -->
 
       <!-- CREATE A KID FORM -->
-       <div class="container row">
+       <div class="container row kid-stat">
+      
 
+       </div>
 
-
-
+      <!-- SET KID SETTINGS -->
+       <div class="container row kid-settings">
+        <form *ngIf="true" class="form"> 
+        <!-- LEFT COLUMN -->
+          <div class="column-left col-sm-12 col-md-4 col-lg-4">
+               <!-- AVATAR -->
+                <div class="form-group">
+                  <label class="checkMenu" for="icon-one">
+                    <input type="radio" name="avatar" value="icon_one" id="icon-one">
+                  <img src="../../../assets/images/100-icon.png" alt="kid avatar" class="kid-avatar">
+                  </label>
+                </div>
+                <!-- AVATAR -->
+                <div class="form-group">
+                  <label class="checkMenu" for="icon-two">
+                    <input type="radio" name="avatar" value="icon_two" id="icon-two">
+                  <img src="../../../assets/images/teen-boy-icon.png" alt="kid avatar" class="kid-avatar">
+                  </label>
+                </div>
+                <!-- AVATAR -->
+                <div class="form-group">
+                  <label class="checkMenu" for="icon-three">
+                    <input type="radio" name="avatar" value="icon_three" id="icon-three">
+                  <img src="../../../assets/images/family-icon.png" alt="kid avatar" class="kid-avatar">
+                  </label>
+                </div>
+                <!-- AVATAR -->
+                <div class="form-group">
+                  <label class="checkMenu" for="icon-four">
+                    <input type="radio" name="avatar" value="icon_four" id="icon-four">
+                  <img src="../../../assets/images/100-icon.png" alt="kid avatar" class="kid-avatar">
+                  </label>
+                </div>
+                  <!-- NAME INPUT -->
+                <div class="form-group">
+                  <label class="control-label" for="Name">Name</label>
+                  <input id="Name" name="Name" type="text" placeholder="name" class="form-control input-md" required="" [(ngModel)]="user.name">
+                </div>
+                  <!-- AGE INPUT -->
+                <div class="form-group">
+                  <label class="control-label" for="Age">Age</label>
+                  <input id="Age" name="Age" type="number" placeholder="age" class="form-control input-md" required="" [(ngModel)]="user.age">
+                </div>
+          </div>
         
-          <!-- <form *ngIf="false" class="form-horizontal"> 
-          <fieldset>
-             Form Name 
-            <legend>Create Kid</legend>
-             Text input
-            <div class="form-group">
-              <label class="col-md-4 control-label" for="Name">Name</label>
-              <div class="col-md-4">
-                <input id="Name" name="Name" type="text" placeholder="name" class="form-control input-md" required="">
-              </div>
-            </div>
-             Button 
+        <!-- RIGHT COLUMN -->
+        <div class="column-right col-sm-12 col-md-8 col-lg-8">
+          <!-- SCREEN TIME  -->
+          <div class="form-group">
+            <label>ScreenTime</label>
+            <input type="number" class="form-control" name="screentime">
+          </div>
+          <!-- BEDTIME -->
+
+
+
             <div class="form-group">
               <label class="col-md-4 control-label" for="submit"></label>
               <div class="col-md-4">
                 <button id="submit" name="submit" class="btn btn-primary">Go</button>
               </div>
             </div>
-          </fieldset>
-        </form> -->
+        </div>
+      
+      
+      </form>
+      </div>
+
+
+
+
+
+
+          
         
         <!-- KID'S CARD
           <ul>
@@ -73,7 +126,6 @@
           </li>
         </ul> -->
 
-      </div>
     </div>
   </div>
 </main>
