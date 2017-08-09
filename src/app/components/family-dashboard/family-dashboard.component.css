@@ -211,3 +211,11 @@ input:checked {
     float: left;
     margin: 20px 0px 0px 130px;
 }
+
+.bedtime {
+    float: left;
+}
+
+.bedtime-icn {
+    height: 50px;
+}

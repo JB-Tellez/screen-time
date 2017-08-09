@@ -80,12 +80,12 @@
                   <!-- NAME INPUT -->
                 <div class="form-group control">
                   <label class="control-label" for="Name" >Name</label>
-                  <input id="Name" name="Name" type="text" placeholder="name" class="form-control input-md" required="" [(ngModel)]="user.name">
+                  <input id="Name" name="Name" type="text" placeholder="name" class="form-control input-md" required="">
                 </div>
                   <!-- AGE INPUT -->
                 <div class="form-group">
                   <label class="control-label" for="Age">Age</label>
-                  <input id="Age" name="Age" type="number" placeholder="age" class="form-control input-md" required="" [(ngModel)]="user.age">
+                  <input id="Age" name="Age" type="number" placeholder="age" class="form-control input-md" required="">
                 </div>
           </div>
         
@@ -98,8 +98,12 @@
             </label>
             <input type="number" class="form-control screentime-input" name="screentime">
           </div>
-          <!-- BEDTIME -->
 
+          <!-- BEDTIME -->
+          <img src="../../../assets/images/bedtime.png" alt="bedtime icon" class="bedtime-icn"> 
+          <p class="control-label"> Bedtime</p>
+          <!-- <timepicker [(ngModel)]="myTime1" [mousewheel]="true"></timepicker> -->
+          
 
 
             <!-- <div class="form-group">
