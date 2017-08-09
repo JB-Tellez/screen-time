@@ -1,121 +1,132 @@
 <div class="container row kid-settings">
-        <form *ngIf="true" class="form"> 
-        <!-- LEFT COLUMN -->
-          <div class="column-left col-sm-12 col-md-3 col-lg-3">
-            <h4 class="control-label">Avatar</h4>
-               <!-- AVATAR -->
-                <div class="form-group check-avatar">
-                  <label class="checkMenu" for="icon-one" id="icon-one">
-                    <input type="radio" name="avatar" value="icon_one" id="icon-one">
-                  <img src="../../../assets/images/100-icon.png" alt="kid avatar" class="kid-avatar">
-                  </label>
-                </div>
-                <!-- AVATAR -->
-                <div class="form-group check-avatar">
-                  <label class="checkMenu" for="icon-two">
-                    <input type="radio" name="avatar" value="icon_two" id="icon-two">
-                  <img src="../../../assets/images/teen-boy-icon.png" alt="kid avatar" class="kid-avatar">
-                  </label>
-                </div>
-                <!-- AVATAR -->
-                <div class="form-group check-avatar">
-                  <label class="checkMenu" for="icon-three">
-                    <input type="radio" name="avatar" value="icon_three" id="icon-three">
-                  <img src="../../../assets/images/family-icon.png" alt="kid avatar" class="kid-avatar">
-                  </label>
-                </div>
-                <!-- AVATAR -->
-                <div class="form-group check-avatar">
-                  <label class="checkMenu" for="icon-four">
-                    <input type="radio" name="avatar" value="icon_four" id="icon-four">
-                  <img src="../../../assets/images/100-icon.png" alt="kid avatar" class="kid-avatar">
-                  </label>
-                </div>
-                  <!-- NAME INPUT -->
-                <div class="text-form-container">
-                  <div class="form-group control">
-                    <label class="control-label" for="Name" >Name</label>
-                    <input id="Name" name="Name" type="text" placeholder="name" class="form-control input-md" required="">
-                  </div>
-                    <!-- AGE INPUT -->
-                  <div class="form-group">
-                    <label class="control-label" for="Age">Age</label>
-                    <input id="Age" name="Age" type="number" placeholder="age" class="form-control input-md" required="">
-                  </div>
-                
-                 <!-- SCREEN TIME  -->
-
-            </div>
-          </div>
-
-        
-        <!-- RIGHT COLUMN -->
-        <div class="column-right col-sm-12 col-md-9 col-lg-9">
-         
-
-          <!-- BEDTIME --> 
-          <div class="container bedtime-container">
+  <form *ngIf="true" class="form"> 
+    <!-- LEFT COLUMN -->
+    <div class="col-sm-12 col-md-12 col-lg-12">
+      <h4 class="control-label avatar">Avatar</h4>
+      <!-- FIRST AVATAR -->
+      <div class="form-group check-avatar">
+        <label class="checkMenu" for="icon-one" id="icon-one">
+          <input type="radio" name="avatar" value="icon_one" id="icon-one">
+          <img src="../../../assets/images/100-icon.png" alt="kid avatar" class="kid-avatar">
+        </label>
+      </div>
+      <!--SECOND AVATAR -->
+      <div class="form-group check-avatar">
+        <label class="checkMenu" for="icon-two">
+          <input type="radio" name="avatar" value="icon_two" id="icon-two">
+          <img src="../../../assets/images/teen-boy-icon.png" alt="kid avatar" class="kid-avatar">
+        </label>
+      </div>
+      <!-- THIRD AVATAR -->
+      <div class="form-group check-avatar">
+        <label class="checkMenu" for="icon-three">
+          <input type="radio" name="avatar" value="icon_three" id="icon-three">
+          <img src="../../../assets/images/family-icon.png" alt="kid avatar" class="kid-avatar">
+        </label>
+      </div>
+      <!-- FOURTH AVATAR -->
+      <div class="form-group check-avatar">
+        <label class="checkMenu" for="icon-four">
+          <input type="radio" name="avatar" value="icon_four" id="icon-four">
+          <img src="../../../assets/images/100-icon.png" alt="kid avatar" class="kid-avatar">
+        </label>
+      </div>
+                  
+      <!-- NAME INPUT -->
+      <div class="text-form-container">
+        <div class="form-group control">
+          <label class="control-label" for="Name"> Name </label>
+          <input id="Name" name="Name" type="text" placeholder="name" class="form-control input-md" required="">
+        </div>
+        <!-- AGE INPUT -->
+        <div class="form-group">
+          <label class="control-label age" for="Age"> Age </label>
+          <input id="Age" name="Age" type="number" placeholder="age" class="form-control input-md" required="">
+        </div>
+        <!-- SCREEN TIME  -->
+        <div class="form-group">
+          <label class="control-label" for="screentime">
+            <img src="../../../../assets/images/xs-screentime-logo.png" class="screentime-logo">
+          </label>
+          <input id="Age" name="Age" type="number" placeholder="minutes" class="form-control input-md" required="">
+        </div>
+         <!-- BEDTIME --> 
+         <div class="form-group bedtime-container">
+          <label class="control-label bedtime-lbl" for="bedtime">
             <img src="../../../assets/images/bedtime.png" alt="bedtime icon" class="bedtime bedtime-icn"> 
-            <p class="control-label bedtime"> Bedtime</p>
-          </div>
-          <!-- FIRST ROW -->
+            <p class="bedtime-p"> bedtime </p>
+          </label>
+        </div>
+        
+        <!-- FIRST ROW -->
+        <div class="bedtime-sel-container">
           <div class="row first-row">
             <div class="timepick col-sm-4 col-md-4 col-lg-4">
-              <p> MON </p>
+              <p class="timepick-p"> MONDAY </p>
               <timepicker [(ngModel)]="myTime1" [mousewheel]="true"></timepicker> 
             </div>
-             
+                      
             <div class="timepick col-sm-4 col-md-4 col-lg-4">
-              <p> TUE </p>
+              <p class="timepick-p"> TUESDAY </p>
+              <timepicker [(ngModel)]="myTime1" [mousewheel]="true"></timepicker> 
+            </div>
+          </div>
+          
+          <!-- SECOND ROW -->
+          <div class="row second-row">
+            <div class="timepick col-sm-4 col-md-4 col-lg-4">
+              <p class="timepick-p"> WEDNESDAY </p>
               <timepicker [(ngModel)]="myTime1" [mousewheel]="true"></timepicker> 
             </div>
 
             <div class="timepick col-sm-4 col-md-4 col-lg-4">
-              <p> WED </p>
+              <p class="timepick-p"> THURSDAY </p>
+              <timepicker [(ngModel)]="myTime1" [mousewheel]="true"></timepicker> 
+            </div>
+          </div>          
+
+          <!-- THIRD ROW -->
+          <div class="row third-row">
+            <div class="timepick col-sm-4 col-md-4 col-lg-4">
+              <p class="timepick-p"> FRIDAY </p>
               <timepicker [(ngModel)]="myTime1" [mousewheel]="true"></timepicker> 
             </div>
 
             <div class="timepick col-sm-4 col-md-4 col-lg-4">
-              <p> THU </p>
-                <timepicker [(ngModel)]="myTime1" [mousewheel]="true"></timepicker> 
-              </div>
+              <p class="timepick-p"> SATURDAY </p>
+              <timepicker [(ngModel)]="myTime1" [mousewheel]="true"></timepicker> 
             </div>
-            <!-- SECOND ROW -->
-            <div class="row second-row">
-              <div class="timepick col-sm-4 col-md-4 col-lg-4">
-                <p> FRI </p>
-                <timepicker [(ngModel)]="myTime1" [mousewheel]="true"></timepicker> 
-              </div>
-
-              <div class="timepick col-sm-4 col-md-4 col-lg-4">
-                <p> SAT </p>
-                <timepicker [(ngModel)]="myTime1" [mousewheel]="true"></timepicker> 
-              </div>
-            
-              <div class="timepick ol-sm-4 col-md-4 col-lg-4">
-                <p> SUN </p>
-                <timepicker [(ngModel)]="myTime1" [mousewheel]="true"></timepicker> 
-              </div>
-            </div>
-
           </div>
 
-
-            <!-- <div class="form-group">
-              <label class="col-md-4" for="submit"></label>
-              <div class="col-md-4">
-                <button id="submit" name="submit" class="btn btn-primary">Go</button>
-              </div>
-           </div> -->
+            <!-- FOURTH ROW -->
+          <div class="row fourth-row">
+            <div class="timepick ol-sm-4 col-md-4 col-lg-4">
+              <p class="timepick-p"> SUNDAY </p>
+              <timepicker [(ngModel)]="myTime1" [mousewheel]="true"></timepicker> 
+            </div>
+          </div>
+        </div>
         
+        <p>submit btn</p>
       
-         <!-- KID'S CARD -->
-          <!-- <ul>
-          <li *ngFor="let kid of (family$ | async).kids">
-          
-            <app-kid-card [kid]="kid"></app-kid-card>
-          </li>
-        </ul>  -->
-      
-       </form>
       </div>
+    </div>
+  </form>
+</div>
+
+           <!-- <div class="form-group">
+                      <label class="col-md-4" for="submit"></label>
+                      <div class="col-md-4">
+                        <button id="submit" name="submit" class="btn btn-primary">Go</button>
+                      </div>
+                  </div> -->
+                
+              
+                <!-- KID'S CARD -->
+                  <!-- <ul>
+                  <li *ngFor="let kid of (family$ | async).kids">
+                  
+                    <app-kid-card [kid]="kid"></app-kid-card>
+                  </li>
+                </ul>  -->
+              

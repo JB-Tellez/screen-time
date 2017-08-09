@@ -7,31 +7,31 @@ Tags: Ironhack Final Project - Full Stack Javascript App + Angularjs for the Fro
 
 /* Fonts
 ---headings
-font-family: 'Montserrat Alternates', sans-serif;
-font-family: 'Merriweather Sans', sans-serif;
+font-family: 'Godsown';
 --paragraphs
 font-family: 'Montserrat', sans-serif; 
 font-family: 'Merriweather', serif;
 */
 
+@font-face {
+    font-family: Godsown;
+    src: url('../../../../assets/fonts/Godsownjunkyardfree.otf');
+}
+
 /* KID SETTINGS */
 .kid-settings {
     /* border: 2px solid white;  */
-    height: 33%;
-    width: 95vw;
+    height: 100%;
+    width: 55vw;
     margin: 0px 50px 10px 50px;
     padding: 7px 0px 0px 10px;
     background-color: #010F20;
     overflow: scroll;
 }
 
-.column-left {
-    float: left;
-    height: 100%;
-    border: 2px solid white;  
-    padding: 20px;
-    width: 30%;
-} 
+h4.avatar {
+    color: #F79432;
+}
 
 .kid-avatar {
     height: 70px;
@@ -52,21 +52,18 @@ input:checked {
 }
 
 .control-label {
-    margin: 5px;
+    margin: 10px;
     font-size: 20px;
+    text-transform: uppercase;
+    font-family: 'Godsown';
+    color: #F37055;
 }
 
-
-/* RIGHT COLUMN */
-
-.column-right {
-    float: left;
-    height: 100%;
-    width: 70%;
-    border: 2px solid white;  
-    padding: 10px 20px;
+label.age {
+    color: #EF4D7B;
 }
 
+/* SCREENTIME */
 .screentime {
     width: 10%;
     float: left;
@@ -79,41 +76,43 @@ input:checked {
     margin: 20px 0px 0px 130px;
 }
 
+/* BEDTIME */
 .bedtime-container {
-    /* border: 2px solid white;   */
-    position: absolute;
-    top: 45%;
-    height: 100%;
-    width: 95%;
-    margin-bottom: 20px;
-}
-
-.bedtime {
-    float: left;
+    /* border: 2px solid white;  */
+    height: 50px; 
 }
 
 .bedtime-icn {
     height: 30px;
-    margin-right: 10px;
+    margin: 0px;
+    float: left;
 }
 
+.bedtime-p {
+    float: left;
+    padding: 5px;
+    margin-left: 5px;
+    color: #A166AB;
+    font-size: 20px;
+}
+
+/* TIMEPICK TABLE */
+.bedtime-sel-container {
+    padding: 2% 14%;
+    border: 2px dotted #0CB49B;   
+    margin: 0 auto;
+
+}
 .timepick {
     width: 200px;
-    /* border: 2px  solid white;    */
+    border: 2px  solid white; 
+    margin: 10px 10px;   
     float: left;
-    margin: 10px;
+    /* margin: 10px; */
 }
 
-.first-row {
-    position: relative;
-    margin-top: 10%;
-    border: 2px dotted #EF4D7B;  
 
-}
-
-.second-row {
-    position: relative;
-    top: 110%;
-    border: 2px dotted #0CB49B;   
+.timepick-p {
+    color: #4CC1FC;
 }
 
