@@ -154,7 +154,7 @@ font-family: 'Merriweather', serif;
     height: 33%;
     width: 95vw;
     margin: 0px 50px 10px 50px;
-    padding: 7px;
+    padding: 7px 0px 0px 100px;
     background-color: #010F20;
 }
 
@@ -190,11 +190,22 @@ font-family: 'Merriweather', serif;
     font-size: 20px;
 }
 
-
 .column-right {
     float: right;
     height: 200px;
-    width: 300px;;
-    border: 2px solid white; 
+    width: 50%;
+    /* border: 2px solid white;  */
     padding: 10px 20px;
+}
+
+.screentime {
+    width: 10%;
+    float: left;
+    margin: 20px 0px 0px 0px;
+}
+
+.screentime-input {
+    width: 10%;
+    float: left;
+    margin: 20px 0px 0px 130px;
 }

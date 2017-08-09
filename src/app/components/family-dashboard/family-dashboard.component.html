@@ -93,40 +93,33 @@
         <div class="column-right col-sm-12 col-md-6 col-lg-6">
           <!-- SCREEN TIME  -->
           <div class="form-group">
-            <label>ScreenTime</label>
-            <input type="number" class="form-control" name="screentime">
+            <label class="control-label screentime" for="Screentime">
+              <img src="../../../assets/images/xs-screentime-logo.png" alt="screentime small logo">
+            </label>
+            <input type="number" class="form-control screentime-input" name="screentime">
           </div>
           <!-- BEDTIME -->
 
 
 
-            <div class="form-group">
-              <label class="col-md-4 control-label" for="submit"></label>
+            <!-- <div class="form-group">
+              <label class="col-md-4" for="submit"></label>
               <div class="col-md-4">
                 <button id="submit" name="submit" class="btn btn-primary">Go</button>
               </div>
-            </div>
+           </div> -->
         </div>
       
-      
-      </form>
-      </div>
-
-
-
-
-
-
-          
-        
-        <!-- KID'S CARD
+         <!-- KID'S CARD -->
           <ul>
           <li *ngFor="let kid of (family$ | async).kids">
           
             <app-kid-card [kid]="kid"></app-kid-card>
           </li>
-        </ul> -->
-
+        </ul> 
+      
+       </form>
+      </div>
     </div>
   </div>
 </main>
