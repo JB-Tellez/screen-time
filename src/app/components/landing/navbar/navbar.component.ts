@@ -1,5 +1,7 @@
+import { Store } from '@ngrx/store';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { State, Family } from "../../../store/model";
 
 
 @Component({
@@ -9,9 +11,12 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  private family: Family;
+
+  constructor(private router:Router, private store:Store<State>) { }
 
   ngOnInit() {
+    this.store.select('app', 'family').subscribe( family => this.family = family);
   }
 
   gotoLogin() {
@@ -22,15 +27,11 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(['/']);
   }
 
-  gotoKidHome() {
-    this.router.navigate(['family/1/kid/1'])
-  }
-
    gotoFamilyHome() {
-    this.router.navigate(['/family/1']);
+    this.router.navigate([`/family/${this.family._id}`]);
   }
 
   gotoFamilyDashboard() {
-    this.router.navigate(['/family/1/dashboard']);
+    this.router.navigate([`/family/${this.family._id}/dashboard`]);
   }
 }
