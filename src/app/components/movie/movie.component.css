@@ -79,7 +79,6 @@ font-family: 'Merriweather', serif;
           transform: skewY(-2.2deg);
   -webkit-transform-origin: 0 0;
           transform-origin: 0 0;
-  -webkit-backface-visibility: hidden;
 }
 
 .logo {
