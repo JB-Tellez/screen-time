@@ -6,8 +6,8 @@
       <app-navbar></app-navbar>
       <!-- FUNCTIONALITIES -->
       <div class="container old">
-        <h1>
-          Family: {{ (family$ | async).name }}
+        <h1 class="titles"> 
+          Welcome The {{ (family$ | async).name }}
         </h1>
 
         <button class="btn btn-primary" (click)="createKid()">Create Kid</button>

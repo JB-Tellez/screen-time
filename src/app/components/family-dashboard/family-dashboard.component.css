@@ -98,3 +98,8 @@ font-family: 'Merriweather', serif;
     top: 15%;
     left: 5%;
 }
+
+/*  TITLES  */
+.titles {
+    text-transform: capitalize;
+}
