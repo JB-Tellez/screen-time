@@ -140,10 +140,6 @@ body {
   color: white;
 }
 
-.tag:hover {
-  background: #ddd;
-}
-
 .column2 {
   padding-left: 41px;
   margin-left: 20px;
@@ -277,4 +273,10 @@ a[data-tooltip][data-placement="top"]::after {
   line-height: 35px;
   cursor: pointer;
   color: white;
+}
+
+a.start:hover {
+  background: #ddd;
+  color:#F37055;
+  text-decoration: none !important;
 }
