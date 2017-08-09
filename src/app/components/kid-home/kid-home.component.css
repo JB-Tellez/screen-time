@@ -130,7 +130,7 @@ font-family: 'Merriweather', serif;
 /* RIGHT COLUMN */
 .right-col {
      border: 2px dotted #0CB49B; 
-     padding: 15px 15px; 
+      padding: 15px 0px;  
     width: 28%;
     color: white;
     position: absolute;
