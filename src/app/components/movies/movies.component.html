@@ -10,7 +10,7 @@
               <div *ngFor="let colIndex of [0,1,2,3]" class="col-sm-3" (click)="movieClicked(slideIndex, colIndex)">
                 <img [src]="getPosterPath(slideIndex, colIndex)" alt="First slide" class="img-responsive">
                 <div class="carousel-caption">
-                  <h3>{{getMovieTitle(slideIndex, colIndex)}}</h3>
+                  <!-- <h3>{{getMovieTitle(slideIndex, colIndex)}}</h3> -->
                 </div>
               </div>
             </div>
