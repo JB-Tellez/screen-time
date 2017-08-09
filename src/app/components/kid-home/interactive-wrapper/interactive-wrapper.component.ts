@@ -27,6 +27,7 @@ export class InteractiveWrapperComponent implements OnInit {
 
   state : string = 'on-screen';
   movieState : string = 'off-screen';
+  showMovies = false;
   
   constructor(private router:Router) { }
 
@@ -47,7 +48,9 @@ export class InteractiveWrapperComponent implements OnInit {
   // }
   
   gotoMovies() {
-    this.router.navigate(['/movies']);
+    // this.router.navigate(['/movies']);
+    this.showMovies = true;
+    
 
   }
 

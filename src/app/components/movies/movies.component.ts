@@ -1,6 +1,7 @@
 import { Router } from '@angular/router';
 import { MoviesService } from './../../services/movies.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ModalDirective } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-movies',
@@ -9,7 +10,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MoviesComponent implements OnInit {
 
+  @ViewChild('childModal') public childModal:ModalDirective;
+
   movies;
+  selectedMovie;
 
   constructor(private router: Router, private moviesService: MoviesService) { }
 
@@ -58,9 +62,22 @@ export class MoviesComponent implements OnInit {
 
   movieClicked(slideIndex, colIndex) {
     
-    let movie = this.getMovie(slideIndex, colIndex);
+    
+    this.selectedMovie = this.getMovie(slideIndex, colIndex);
 
-    this.router.navigate(['/movie', movie.id])
+    console.log('selectedMovie', this.selectedMovie);
+
+    this.showChildModal();
+
+    // this.router.navigate(['/movie', movie.id])
+  }
+
+    public showChildModal():void {
+    this.childModal.show();
+  }
+ 
+  public hideChildModal():void {
+    this.childModal.hide();
   }
 
 }

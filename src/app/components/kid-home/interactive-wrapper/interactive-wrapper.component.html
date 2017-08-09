@@ -1,6 +1,6 @@
         
   <div class="wrapper row interactive-row container-fluid">
-          <div class="row">
+          <div class="row" *ngIf="!showMovies">
 
             <!-- FIRST COLUMN -->
 
@@ -24,6 +24,14 @@
              <!-- <div [@movieAnim]="movieState" class="lined" (click)="startMovieAnim()"> 
              <app-movies ></app-movies> 
               </div>  -->
+
+              
+              
             
           </div>
+            <div *ngIf="showMovies" class="row">
+                <div class="col-md-12">
+                  <app-movies></app-movies>
+                </div>
+              </div>
         </div>

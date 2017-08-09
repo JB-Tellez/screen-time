@@ -1,27 +1,18 @@
 import { MoviesService } from './../../services/movies.service';
-import { Router } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-movie',
   templateUrl: './movie.component.html',
   styleUrls: ['./movie.component.css']
 })
-export class MovieComponent implements OnInit {
+export class MovieComponent {
 
-  movie;
-
-  constructor(private route: ActivatedRoute, private moviesService: MoviesService, private router:Router) { }
+  @Input() movie;
+  @Output() onClose: EventEmitter<null>;
 
   ngOnInit() {
-
-    this.route.params.subscribe(params => {
-      console.log('params', params);
-      let id = params['id'];
-      // this.movie = this.moviesService.getMovie(id);
-      this.moviesService.getMovie(id).subscribe(movie => this.movie = movie);
-    });
+    console.log('movie', this.movie);
   }
 
   getPosterPath(movie) {
@@ -36,11 +27,8 @@ export class MovieComponent implements OnInit {
     return `https://image.tmdb.org/t/p/w154/${movie.backdrop_path}`;
   }
 
-  gotoScreenTimer() {
-        this.router.navigate(['/screentimer']);
+  close() {
+    this.onClose.next();
   }
-   
-  gotoMovies() {
-    this.router.navigate(['/movies'])
-  }
+
 }
