@@ -156,6 +156,7 @@ font-family: 'Merriweather', serif;
     margin: 0px 50px 10px 50px;
     padding: 7px 0px 0px 100px;
     background-color: #010F20;
+    overflow: scroll;
 }
 
 .column-left {
@@ -173,17 +174,18 @@ font-family: 'Merriweather', serif;
     margin: 5px;
 }
 
- .checkMenu > input {
+ /* .checkMenu > input {
     visibility: hidden;
-} 
-
-.checkMenu:active {
-    background-color: white;
-}
+}  */
 
 .check-avatar {
     display: inline;
 }
+
+input:checked {
+  background-color: white;
+}
+
 
 .control-label {
     margin: 5px;

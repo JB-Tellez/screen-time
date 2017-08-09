@@ -51,7 +51,7 @@
             <h4 class="control-label">Avatar</h4>
                <!-- AVATAR -->
                 <div class="form-group check-avatar">
-                  <label class="checkMenu" for="icon-one">
+                  <label class="checkMenu" for="icon-one" id="icon-one">
                     <input type="radio" name="avatar" value="icon_one" id="icon-one">
                   <img src="../../../assets/images/100-icon.png" alt="kid avatar" class="kid-avatar">
                   </label>
@@ -111,12 +111,12 @@
         </div>
       
          <!-- KID'S CARD -->
-          <ul>
+          <!-- <ul>
           <li *ngFor="let kid of (family$ | async).kids">
           
             <app-kid-card [kid]="kid"></app-kid-card>
           </li>
-        </ul> 
+        </ul>  -->
       
        </form>
       </div>
