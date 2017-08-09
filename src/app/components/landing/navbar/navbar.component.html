@@ -1,9 +1,11 @@
 <!-- NAVBAR-->
   <nav class="navbar navbar-default">
-        <a (click)="gotoLanding()">
+    <!-- LOGO -->
+        <a (click)="gotoLanding()" class="logo">
           <img src="../../../../assets/images/xs-screentime-logo.png" alt="screentime logo">
         </a>
-        <a (click)="gotoLogin()">Family login</a>
+    <!-- LOGIN -->
+        <a (click)="gotoLogin()" class="login-btn">login</a>
         <a (click)="gotoFamilyHome()">Family Home</a>
         <a (click)="gotoFamilyDashboard()">Family Dashboard</a>
   </nav>
