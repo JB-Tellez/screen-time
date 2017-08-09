@@ -24,6 +24,10 @@ export class FamilyDashboardComponent implements OnInit {
     this.family$ = this.store.select('app', 'family');
   }
 
+   gotoKidSettings() {
+    this.router.navigate['/kidsettings'];
+  }
+
   createKid() {
 
     const kidName = 'kid_' + Math.floor(Math.random() * 1000);
@@ -50,7 +54,5 @@ export class FamilyDashboardComponent implements OnInit {
     this.store.dispatch(new CreateKidAction(kid));
   }
 
-  gotoKidSettings() {
-    this.router.navigate['/kid-settings'];
-  }
+ 
 }

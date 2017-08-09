@@ -24,5 +24,5 @@ export const routes:Routes = [
   {path: 'movies', component:MoviesComponent}, 
   {path: 'movie/:id', component:MovieComponent}, 
   {path: 'screentimer', component:ScreentimerComponent}, 
-  {path: 'kid-settings', component:KidSettingsComponent}
+  {path: 'kidsettings', component:KidSettingsComponent}
 ]
