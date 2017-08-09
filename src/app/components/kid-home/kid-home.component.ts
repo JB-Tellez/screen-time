@@ -41,8 +41,6 @@ export class KidHomeComponent implements OnInit {
 
   getBedtime(kid:Kid) {
     
-    console.log('getBedtime', kid);
-
     return kid.bedTimes ? kid.bedTimes[moment(this.today).day()] : null;
   }
 
