@@ -132,8 +132,9 @@ a.family-anchor:hover {
 }
 
 div.section-one-col {
-    width: 32%;
+    width: 25%;
     float: left;
+    margin-left: 6%;
 }
 
 .screen-section {
