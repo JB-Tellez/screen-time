@@ -1,3 +1,4 @@
+import { TimeHelperService } from './services/time-helper.service';
 import { ScreenEffects } from './store/screen-effects';
 import { AuthService } from './services/auth.service';
 import { BackendService } from './services/backend.service';
@@ -76,7 +77,7 @@ import { ScreentimerComponent } from './components/movie/screentimer/screentimer
     BsDropdownModule.forRoot(),
     CarouselModule.forRoot(),
   ],
-  providers: [MoviesService, BackendService, ScreenEffects, AuthService],
+  providers: [MoviesService, BackendService, ScreenEffects, AuthService, TimeHelperService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

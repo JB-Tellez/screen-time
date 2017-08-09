@@ -6,17 +6,18 @@
 
      <div class="description">
       <div class="column1">
-        <!-- <a><span class="startclock"> START SCREENTIME </span></a> -->
+          
         <h1>
             {{hoursDisplay ? hoursDisplay : '00'}} : {{(minutesDisplay) && (minutesDisplay <= 59) ? minutesDisplay : '00'}} : {{(secondsDisplay) && (secondsDisplay <= 59) ? secondsDisplay : '00'}} <br/>
         </h1>
-        <a><span class="stopclock" (click)="stopTimer()"> STOP SCREENTIME </span></a>
+          <a *ngIf="!clockStarted"><span class="startclock" (click)="startTimer()"> START SCREENTIME </span></a>
+        <a *ngIf="clockStarted"><span class="stopclock" (click)="stopTimer()"> STOP SCREENTIME </span></a>
       </div>
 
       <div class="column2">
         <img src="../../../../assets/images/bedtime.png" alt="bedtime icon" class="bedtime-icn">
         <p> Your bedtime will be in </p>
-          <h3 class="minutes-countdown"><span>..</span> minutes</h3>
+          <h3 class="minutes-countdown"><span>{{minutesUntilBed}}</span> minutes</h3>
 
       </div>
 

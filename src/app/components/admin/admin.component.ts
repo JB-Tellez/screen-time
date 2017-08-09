@@ -29,12 +29,16 @@ export class AdminComponent implements OnInit {
     this.store.dispatch(new FamilySelectedAction(family));
   }
   familyClicked() {
+    this.router.navigate([`/family/${this.getFamilyId()}`]);
+  }
 
-    let family;
-    
-    this.family$.take(1).subscribe( f => family = f).unsubscribe();
+  private getFamilyId() {
 
-    this.router.navigate([`/family/${family['_id']}`]);
+    let familyId;
+
+    this.family$.take(1).subscribe( f => familyId = f._id);
+
+    return familyId;
   }
 
   createFamily() {
@@ -69,7 +73,7 @@ export class AdminComponent implements OnInit {
 
   kidClicked(kid:Kid) {
     console.log('kid clicked', kid);
-    this.router.navigate([`/family/${kid.family}/kid/${kid._id}`]);
+    this.router.navigate([`/family/${this.getFamilyId()}/kid/${kid._id}`]);
   }
 
   viewingClicked(viewing:Viewing) {
