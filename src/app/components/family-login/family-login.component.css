@@ -19,7 +19,6 @@ font-family: 'Merriweather', serif;
   padding: 0;
   font-weight: 300;
 }
-
 /* ANIMATION */
 /*----------- Stars animation */
 @keyframes move-twink-back {
@@ -91,20 +90,19 @@ font-family: 'Merriweather', serif;
   animation:move-twink-back 240s linear infinite;
 }
 
-
-
-
 body {
   font-family: 'Montserrat', sans-serif; 
   color: white;
   font-weight: 300;
 }
+
 body ::-webkit-input-placeholder {
   /* WebKit browsers */
   font-family: 'Montserrat', sans-serif; 
   color: white;
   font-weight: 300;
 }
+
 body :-moz-placeholder {
   /* Mozilla Firefox 4 to 18 */
   font-family: 'Montserrat', sans-serif; 
@@ -112,6 +110,7 @@ body :-moz-placeholder {
   opacity: 1;
   font-weight: 300;
 }
+
 body ::-moz-placeholder {
   /* Mozilla Firefox 19+ */
   font-family: 'Montserrat', sans-serif; 
@@ -119,25 +118,29 @@ body ::-moz-placeholder {
   opacity: 1;
   font-weight: 300;
 }
+
 body :-ms-input-placeholder {
   /* Internet Explorer 10+ */
   font-family: 'Montserrat', sans-serif; 
   color: white;
   font-weight: 300;
 }
+
 .wrapper {
   position: absolute;
-  top: 50%;
+  top: 55%;
   left: 0;
   width: 100%;
-  height: 400px;
+  height: 100%;
   margin-top: -200px;
   overflow: hidden;
 }
+
 .wrapper.form-success .container h1 {
   -webkit-transform: translateY(85px);
           transform: translateY(85px);
 }
+
 .container {
   max-width: 600px;
   margin: 0 auto;
@@ -145,6 +148,7 @@ body :-ms-input-placeholder {
   height: 400px;
   text-align: center;
 }
+
 .container h1 {
   font-size: 40px;
   -webkit-transition-duration: 1s;
@@ -153,15 +157,20 @@ body :-ms-input-placeholder {
           transition-timing-function: ease-in-put;
   font-weight: 200;
 }
+
+.img-responsive {
+  margin: 10% auto;
+}
+
 form {
   padding: 20px 0;
   position: relative;
   z-index: 2;
 }
+
 form input {
   -webkit-appearance: none;
      -moz-appearance: none;
-          appearance: none;
   outline: 0;
   border: 1px solid rgba(255, 255, 255, 0.4);
   background-color: rgba(255, 255, 255, 0.2);
@@ -177,23 +186,25 @@ form input {
           transition-duration: 0.25s;
   font-weight: 300;
 }
+
 form input:hover {
   background-color: rgba(255, 255, 255, 0.4);
 }
+
 form input:focus {
   background-color: white;
   width: 300px;
-  color: #0CB49B;
+  color: #2EF9A0;
 }
+
 form button {
   -webkit-appearance: none;
      -moz-appearance: none;
-          appearance: none;
   outline: 0;
   background-color: white;
   border: 0;
   padding: 10px 15px;
-  color: #0CB49B;
+  color: #2EF9A0;
   border-radius: 3px;
   width: 250px;
   cursor: pointer;
@@ -201,12 +212,22 @@ form button {
   -webkit-transition-duration: 0.25s;
           transition-duration: 0.25s;
 }
+
 form button:hover {
-  background-color: #f5f7f9;
+  background-image: -webkit-linear-gradient(top left, #0cb49b 0%, #4CC1FC 100%);
+  background-image: -moz-linear-gradient(top left, #0cb49b 0%, #4CC1FC 100%);
+  background-image: -o-linear-gradient(top left, #0cb49b 0%, #4CC1FC 100%);
+  background-image: linear-gradient(to bottom right, #0cb49b 0%, #4CC1FC 100%);
+  text-decoration: none !important;
 }
 
 p.signup {
   color: white;
   margin-top: 30px;
   font-size: 16px;
+}
+
+a.signup-link:hover{
+  color: #EF4D7B;
+  text-decoration: none !important;
 }

@@ -3,16 +3,19 @@
     <div class="twinkling">
     <!-- NAVBAR -->
     <app-navbar></app-navbar>
+
+   <img src="../../../assets/images/screentime_final.gif" alt="screen time logo" class="img-responsive"> 
+
     <!-- LOGIN FORM -->
       <div class="wrapper">
         <div class="container">
-          <h1>Screen Time Login</h1>
-          
+
+
           <form class="form" #loginForm="ngForm" (ngSubmit)="onSubmit()">
             <input type="text" placeholder="Name" [(ngModel)]="model.name" name="name">
             <input type="password" placeholder="Password" [(ngModel)]="model.password" name="password">
             <button type="submit" id="login-button">Login</button>
-            <p class="signup"> If your family is not registered. <a (click)="gotoSignup()">Sign Up Here</a></p>
+            <p class="signup"> If your family is not registered. <a (click)="gotoSignup()" class="signup-link">Sign Up Here</a></p>
           </form>
         </div>
       </div>
