@@ -94,7 +94,7 @@ export class FamilySelectedAction implements Action {
 
 export class CreateKidAction implements Action {
     type = ActionTypes.CREATE_KID;
-    constructor(public payload: {kid:Kid, family:Family}) { }
+    constructor(public payload: Kid) { }
 }
 
 export class DeleteKidAction implements Action {
