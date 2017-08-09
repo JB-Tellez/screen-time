@@ -20,6 +20,11 @@ font-family: 'Merriweather', serif;
   font-weight: 300;
 }
 
+@font-face {
+    font-family: Godsown;
+    src: url('../../../assets/fonts/Godsownjunkyardfree.otf');
+}
+
 /* ANIMATION */
 /*----------- Stars animation */
 @keyframes move-twink-back {
@@ -100,10 +105,14 @@ font-family: 'Merriweather', serif;
 }
 
 h1.title {
-    font-family: 'Montserrat', sans-serif; 
+    font-family: Godsown;
     color: white;
     z-index: 1;
-    font-size: 45px !important;
+    font-size: 65px !important;
+    text-transform: uppercase;
+}
+span.color {
+    color: #4CC1FC;
 }
 
 /* ICONS */
@@ -134,11 +143,13 @@ div.icon-col:hover {
 }
 
 .jumbotron p {
+    font-family: 'Montserrat', sans-serif; 
     margin-bottom: 15px;
     margin-top: 20px;
-    font-size: 21px;
+    font-size: 25px;
     font-weight: 200;
     color: white;
+    text-transform: uppercase;
 }
 
 a:hover {
