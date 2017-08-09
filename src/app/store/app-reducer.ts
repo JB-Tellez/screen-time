@@ -113,6 +113,15 @@ export function appReducer(state: AppState, action: AppAction): AppState {
 
             return { ...state, family, kid };
 
+        case ActionTypes.VIEWING_CREATED_ACTION:
+
+            console.log(action.type);
+
+            // DANGER: what do now, best to add viewing to kid.viewings, but what kid
+            // and/or load a fresh kid with updated viewings from backend
+
+            return {...state};
+
         default:
             
             console.log(action.type);

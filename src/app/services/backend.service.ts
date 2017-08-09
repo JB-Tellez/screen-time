@@ -2,7 +2,7 @@ import { Observable } from 'rxjs/Observable';
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/observable/of';
-import { Kid, Family } from "../store/model";
+import { Kid, Family, Viewing } from "../store/model";
 
 @Injectable()
 export class BackendService {
@@ -43,6 +43,11 @@ export class BackendService {
   deleteKid(kid:Kid) {
  
     return this.http.delete(`api/kids/${kid._id}`).map( data => data.json());
+  }
+
+   createViewing(viewing:Viewing) {
+    
+    return this.http.post(`api/viewings`, viewing).map( data => data.json());
   }
 
 }
