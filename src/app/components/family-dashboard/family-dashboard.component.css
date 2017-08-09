@@ -154,7 +154,7 @@ font-family: 'Merriweather', serif;
     height: 33%;
     width: 95vw;
     margin: 0px 50px 10px 50px;
-    padding: 7px 0px 0px 100px;
+    padding: 7px 0px 0px 10px;
     background-color: #010F20;
     overflow: scroll;
 }
@@ -162,7 +162,7 @@ font-family: 'Merriweather', serif;
 .column-left {
     float: left;
     height: 290px;
-    /* border: 2px solid white;  */
+     border: 2px solid white;  
     padding: 20px;
     width: 30%;
 
@@ -193,10 +193,10 @@ input:checked {
 }
 
 .column-right {
-    float: right;
-    height: 200px;
-    width: 50%;
-    /* border: 2px solid white;  */
+    float: left;
+    height: 100%;
+    width: 70%;
+    border: 2px solid white;  
     padding: 10px 20px;
 }
 
@@ -212,10 +212,40 @@ input:checked {
     margin: 20px 0px 0px 130px;
 }
 
+.bedtime-container {
+    /* border: 2px solid white;   */
+    position: absolute;
+    top: 45%;
+    height: 100%;
+    width: 95%;
+    margin-bottom: 20px;
+}
+
 .bedtime {
     float: left;
 }
 
 .bedtime-icn {
-    height: 50px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.timepick {
+    width: 200px;
+    /* border: 2px  solid white;    */
+    float: left;
+    margin: 10px;
+}
+
+.first-row {
+    position: relative;
+    margin-top: 10%;
+    border: 2px dotted #EF4D7B;  
+
+}
+
+.second-row {
+    position: relative;
+    top: 110%;
+    border: 2px dotted #0CB49B;   
 }
