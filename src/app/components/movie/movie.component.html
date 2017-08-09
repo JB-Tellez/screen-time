@@ -4,8 +4,10 @@
      <!-- COVER IMAGE <img [src]="getBackdropPath(movie)" alt="cover" class="cover">  -->
      <img [src]="getPosterPath(movie)" alt="poster" class="cover"> 
      <div class="hero">
+
         <a> <img src='../../../assets/images/back-btn.png' alt="go back button" class="back-btn" (click)="gotoMovies()"> </a>
-      <div class="details">
+      <app-screentimer></app-screentimer>
+        <div class="details">
         <h2>{{ movie?.title}}</h2>
             <fieldset class="rating">
               <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
@@ -20,6 +22,8 @@
               <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
             </fieldset>
       </div> <!-- end details -->
+
+      
     </div> <!-- end hero -->
     
     <div class="description">
@@ -32,7 +36,7 @@
       <div class="column2">
         <p class="runtime"> {{ movie?.runtime }} minutes</p>
         <p> {{ movie?.overview }}</p>
-        <a (click)="gotoScreenTimer()"><span class="start"> START SCREENTIME </span></a>
+        <!-- <a (click)="gotoScreenTimer()"><span class="start"> START SCREENTIME </span></a> -->
       </div>
     </div> <!-- end description -->
   </div> <!-- end container -->
