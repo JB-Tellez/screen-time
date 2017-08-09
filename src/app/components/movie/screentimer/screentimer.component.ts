@@ -28,7 +28,7 @@ export class ScreentimerComponent implements OnInit, OnDestroy {
     minutesUntilBed;
     clockStarted = false;
 
-    constructor(private router: Router, private store: Store<State>, private timerHelper:TimeHelperService) { }
+    constructor(private store: Store<State>, private timerHelper:TimeHelperService) { }
 
     ngOnInit() {
         
@@ -82,11 +82,6 @@ export class ScreentimerComponent implements OnInit, OnDestroy {
         this.clockStarted = false;
         this.sub.unsubscribe();
 
-    }
-
-
-    gotoKidHome() {
-        this.router.navigate([`family/${this.family._id}/kid/${this.kid._id}`])
     }
 
 }
