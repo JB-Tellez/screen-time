@@ -2,50 +2,127 @@
 <main class="container-fluid main-container jumbotron">
   <div class="stars">
     <div class="twinkling">
+
       <!-- NAVBAR -->
       <app-navbar></app-navbar>
-      <!-- FUNCTIONALITIES -->
-      <div class="container old">
-        <h1 class="titles"> 
-          Welcome The {{ (family$ | async).name }}'s
-        </h1>
 
-        <button class="btn btn-primary" (click)="createKid()">Create Kid</button>
-        <form *ngIf="false" class="form-horizontal">
-          <fieldset>
+      <!-- TITLES -->
+      <div class="container row title-div">
+        <!-- LEFT COLUMN - WELCOME FAMILY -->
+        <div class="column1 col-sm-12 col-md-8 col-lg-8">
+          <h2 class="titles"> Welcome, </h2>
+             <p class="title-name"> The {{ (family$ | async).name }}'s </p> 
+        </div>
 
-            <!-- Form Name -->
-            <legend>Create Kid</legend>
+        <!-- RIGHT COLUMN - KIDS ICONS -->
+        <div class="column2 col-sm-12 col-md-4 col-lg-4">
+          <!-- FIRST ICON -->
+          <a class="kid-img">
+            <img src="../../../assets/images/girl-xs.png" alt="small girl icon" class="kid-icons">
+            <!-- {{ kid.name }} -->
+            <!-- <p> kid.name </p> -->
+          </a>
+          <!-- SECOND ICON -->
+          <a class="kid-img">
+            <img src="../../../assets/images/boy-xs.png" alt="teen boy icon" class="kid-icons">
+            <!-- <p> kid.name </p> -->
+          </a>
+          <!-- THIRD ICON  -->
+            <a (click)="createKid()" class="kid-img">
+              <img src="../../../assets/images/add-btn.png" alt="add button" class="add-btn">
+            <!-- <p> add new </p> -->
+            </a>
+        </div>
+      </div>
 
-            <!-- Text input-->
-            <div class="form-group">
-              <label class="col-md-4 control-label" for="Name">Name</label>
-              <div class="col-md-4">
-                <input id="Name" name="Name" type="text" placeholder="name" class="form-control input-md" required="">
+      <!-- KID STATS -->
 
-              </div>
-            </div>
+      <!-- CREATE A KID FORM -->
+       <div class="container row kid-stat">
+      
 
-            <!-- Button -->
-            <div class="form-group">
-              <label class="col-md-4 control-label" for="submit"></label>
+       </div>
+
+      <!-- SET KID SETTINGS -->
+       <div class="container row kid-settings">
+        <form *ngIf="true" class="form"> 
+        <!-- LEFT COLUMN -->
+          <div class="column-left col-sm-12 col-md-6 col-lg-6">
+            <h4 class="control-label">Avatar</h4>
+               <!-- AVATAR -->
+                <div class="form-group check-avatar">
+                  <label class="checkMenu" for="icon-one" id="icon-one">
+                    <input type="radio" name="avatar" value="icon_one" id="icon-one">
+                  <img src="../../../assets/images/100-icon.png" alt="kid avatar" class="kid-avatar">
+                  </label>
+                </div>
+                <!-- AVATAR -->
+                <div class="form-group check-avatar">
+                  <label class="checkMenu" for="icon-two">
+                    <input type="radio" name="avatar" value="icon_two" id="icon-two">
+                  <img src="../../../assets/images/teen-boy-icon.png" alt="kid avatar" class="kid-avatar">
+                  </label>
+                </div>
+                <!-- AVATAR -->
+                <div class="form-group check-avatar">
+                  <label class="checkMenu" for="icon-three">
+                    <input type="radio" name="avatar" value="icon_three" id="icon-three">
+                  <img src="../../../assets/images/family-icon.png" alt="kid avatar" class="kid-avatar">
+                  </label>
+                </div>
+                <!-- AVATAR -->
+                <div class="form-group check-avatar">
+                  <label class="checkMenu" for="icon-four">
+                    <input type="radio" name="avatar" value="icon_four" id="icon-four">
+                  <img src="../../../assets/images/100-icon.png" alt="kid avatar" class="kid-avatar">
+                  </label>
+                </div>
+                  <!-- NAME INPUT -->
+                <div class="form-group control">
+                  <label class="control-label" for="Name" >Name</label>
+                  <input id="Name" name="Name" type="text" placeholder="name" class="form-control input-md" required="">
+                </div>
+                  <!-- AGE INPUT -->
+                <div class="form-group">
+                  <label class="control-label" for="Age">Age</label>
+                  <input id="Age" name="Age" type="number" placeholder="age" class="form-control input-md" required="">
+                </div>
+          </div>
+        
+        <!-- RIGHT COLUMN -->
+        <div class="column-right col-sm-12 col-md-6 col-lg-6">
+          <!-- SCREEN TIME  -->
+          <div class="form-group">
+            <label class="control-label screentime" for="Screentime">
+              <img src="../../../assets/images/xs-screentime-logo.png" alt="screentime small logo">
+            </label>
+            <input type="number" class="form-control screentime-input" name="screentime">
+          </div>
+
+          <!-- BEDTIME -->
+          <img src="../../../assets/images/bedtime.png" alt="bedtime icon" class="bedtime-icn"> 
+          <p class="control-label"> Bedtime</p>
+          <!-- <timepicker [(ngModel)]="myTime1" [mousewheel]="true"></timepicker> -->
+          
+
+
+            <!-- <div class="form-group">
+              <label class="col-md-4" for="submit"></label>
               <div class="col-md-4">
                 <button id="submit" name="submit" class="btn btn-primary">Go</button>
               </div>
-            </div>
-
-          </fieldset>
-        </form>
-        <ul>
-
-
+           </div> -->
+        </div>
+      
+         <!-- KID'S CARD -->
+          <!-- <ul>
           <li *ngFor="let kid of (family$ | async).kids">
           
             <app-kid-card [kid]="kid"></app-kid-card>
-           
           </li>
-        </ul>
-
+        </ul>  -->
+      
+       </form>
       </div>
     </div>
   </div>

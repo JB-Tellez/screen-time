@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { State, Family, Kid, Viewing } from '../../store/model';
 
+
 @Component({
   selector: 'app-family-dashboard',
   templateUrl: './family-dashboard.component.html',
