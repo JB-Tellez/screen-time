@@ -47,38 +47,39 @@
        <div class="container row kid-settings">
         <form *ngIf="true" class="form"> 
         <!-- LEFT COLUMN -->
-          <div class="column-left col-sm-12 col-md-4 col-lg-4">
+          <div class="column-left col-sm-12 col-md-6 col-lg-6">
+            <h4 class="control-label">Avatar</h4>
                <!-- AVATAR -->
-                <div class="form-group">
+                <div class="form-group check-avatar">
                   <label class="checkMenu" for="icon-one">
                     <input type="radio" name="avatar" value="icon_one" id="icon-one">
                   <img src="../../../assets/images/100-icon.png" alt="kid avatar" class="kid-avatar">
                   </label>
                 </div>
                 <!-- AVATAR -->
-                <div class="form-group">
+                <div class="form-group check-avatar">
                   <label class="checkMenu" for="icon-two">
                     <input type="radio" name="avatar" value="icon_two" id="icon-two">
                   <img src="../../../assets/images/teen-boy-icon.png" alt="kid avatar" class="kid-avatar">
                   </label>
                 </div>
                 <!-- AVATAR -->
-                <div class="form-group">
+                <div class="form-group check-avatar">
                   <label class="checkMenu" for="icon-three">
                     <input type="radio" name="avatar" value="icon_three" id="icon-three">
                   <img src="../../../assets/images/family-icon.png" alt="kid avatar" class="kid-avatar">
                   </label>
                 </div>
                 <!-- AVATAR -->
-                <div class="form-group">
+                <div class="form-group check-avatar">
                   <label class="checkMenu" for="icon-four">
                     <input type="radio" name="avatar" value="icon_four" id="icon-four">
                   <img src="../../../assets/images/100-icon.png" alt="kid avatar" class="kid-avatar">
                   </label>
                 </div>
                   <!-- NAME INPUT -->
-                <div class="form-group">
-                  <label class="control-label" for="Name">Name</label>
+                <div class="form-group control">
+                  <label class="control-label" for="Name" >Name</label>
                   <input id="Name" name="Name" type="text" placeholder="name" class="form-control input-md" required="" [(ngModel)]="user.name">
                 </div>
                   <!-- AGE INPUT -->
@@ -89,7 +90,7 @@
           </div>
         
         <!-- RIGHT COLUMN -->
-        <div class="column-right col-sm-12 col-md-8 col-lg-8">
+        <div class="column-right col-sm-12 col-md-6 col-lg-6">
           <!-- SCREEN TIME  -->
           <div class="form-group">
             <label>ScreenTime</label>

@@ -144,7 +144,8 @@ font-family: 'Merriweather', serif;
     height: 33%;
     width: 95vw;
     margin: 0px 50px 10px 50px;
-
+    padding: 10px;
+    background-color: #010F20;
 }
 
 /* KID SETTINGS */
@@ -153,14 +154,47 @@ font-family: 'Merriweather', serif;
     height: 33%;
     width: 95vw;
     margin: 0px 50px 10px 50px;
-
+    padding: 7px;
+    background-color: #010F20;
 }
+
+.column-left {
+    float: left;
+    height: 290px;
+    /* border: 2px solid white;  */
+    padding: 20px;
+    width: 30%;
+
+} 
 
 .kid-avatar {
-    height: 80px;
+    height: 70px;
+    float: left;
+    margin: 5px;
 }
 
-/* .checkMenu > input {
+ .checkMenu > input {
     visibility: hidden;
-} */
+} 
 
+.checkMenu:active {
+    background-color: white;
+}
+
+.check-avatar {
+    display: inline;
+}
+
+.control-label {
+    margin: 5px;
+    font-size: 20px;
+}
+
+
+.column-right {
+    float: right;
+    height: 200px;
+    width: 300px;;
+    border: 2px solid white; 
+    padding: 10px 20px;
+}
