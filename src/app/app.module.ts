@@ -12,6 +12,7 @@ import { TimepickerModule } from 'ngx-bootstrap/timepicker';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 import { AppComponent } from './app.component';
 import { MoviesComponent } from './components/movies/movies.component';
@@ -76,6 +77,7 @@ import { ScreentimerComponent } from './components/movie/screentimer/screentimer
     TimepickerModule.forRoot(),
     BsDropdownModule.forRoot(),
     CarouselModule.forRoot(),
+    ModalModule.forRoot(),
   ],
   providers: [MoviesService, BackendService, ScreenEffects, AuthService, TimeHelperService],
   bootstrap: [AppComponent]
