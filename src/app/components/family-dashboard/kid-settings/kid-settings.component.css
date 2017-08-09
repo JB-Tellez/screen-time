@@ -1,0 +1,119 @@
+/*
+Name: Screen Time Web App
+Description: Common Styles
+Authors: Micaela Linda Villani & JBTellez
+Tags: Ironhack Final Project - Full Stack Javascript App + Angularjs for the Front-end
+*/
+
+/* Fonts
+---headings
+font-family: 'Montserrat Alternates', sans-serif;
+font-family: 'Merriweather Sans', sans-serif;
+--paragraphs
+font-family: 'Montserrat', sans-serif; 
+font-family: 'Merriweather', serif;
+*/
+
+/* KID SETTINGS */
+.kid-settings {
+    /* border: 2px solid white;  */
+    height: 33%;
+    width: 95vw;
+    margin: 0px 50px 10px 50px;
+    padding: 7px 0px 0px 10px;
+    background-color: #010F20;
+    overflow: scroll;
+}
+
+.column-left {
+    float: left;
+    height: 100%;
+    border: 2px solid white;  
+    padding: 20px;
+    width: 30%;
+} 
+
+.kid-avatar {
+    height: 70px;
+    float: left;
+    margin: 5px;
+}
+
+ /* .checkMenu > input {
+    visibility: hidden;
+}  */
+
+.check-avatar {
+    display: inline;
+}
+
+input:checked {
+  background-color: white;
+}
+
+.control-label {
+    margin: 5px;
+    font-size: 20px;
+}
+
+
+/* RIGHT COLUMN */
+
+.column-right {
+    float: left;
+    height: 100%;
+    width: 70%;
+    border: 2px solid white;  
+    padding: 10px 20px;
+}
+
+.screentime {
+    width: 10%;
+    float: left;
+    margin: 20px 0px 0px 0px;
+}
+
+.screentime-input {
+    width: 10%;
+    float: left;
+    margin: 20px 0px 0px 130px;
+}
+
+.bedtime-container {
+    /* border: 2px solid white;   */
+    position: absolute;
+    top: 45%;
+    height: 100%;
+    width: 95%;
+    margin-bottom: 20px;
+}
+
+.bedtime {
+    float: left;
+}
+
+.bedtime-icn {
+    height: 30px;
+    margin-right: 10px;
+}
+
+.timepick {
+    width: 200px;
+    /* border: 2px  solid white;    */
+    float: left;
+    margin: 10px;
+}
+
+.first-row {
+    position: relative;
+    margin-top: 10%;
+    border: 2px dotted #EF4D7B;  
+
+}
+
+.second-row {
+    position: relative;
+    top: 110%;
+    border: 2px dotted #0CB49B;   
+}
+

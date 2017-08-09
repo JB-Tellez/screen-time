@@ -8,6 +8,8 @@ import { FamilySignupComponent } from './components/family-signup/family-signup.
 import { FamilyHomeComponent } from './components/family-home/family-home.component';
 import { FamilyLoginComponent } from './components/family-login/family-login.component';
 import { LandingComponent } from './components/landing/landing.component';
+import { KidSettingsComponent } from './components/family-dashboard/kid-settings/kid-settings.component';
+
 import { Routes } from '@angular/router';
 
 export const routes:Routes = [
@@ -22,4 +24,5 @@ export const routes:Routes = [
   {path: 'movies', component:MoviesComponent}, 
   {path: 'movie/:id', component:MovieComponent}, 
   {path: 'screentimer', component:ScreentimerComponent}, 
+  {path: 'kid-settings', component:KidSettingsComponent}
 ]

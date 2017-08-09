@@ -40,6 +40,7 @@ import { BedtimeListComponent } from './components/bedtime-list/bedtime-list.com
 import { ViewingListComponent } from './components/viewing-list/viewing-list.component';
 import { KidCardComponent } from './components/kid-card/kid-card.component';
 import { ScreentimerComponent } from './components/movie/screentimer/screentimer.component';
+import { KidSettingsComponent } from './components/family-dashboard/kid-settings/kid-settings.component';
 
 
 @NgModule({
@@ -62,6 +63,7 @@ import { ScreentimerComponent } from './components/movie/screentimer/screentimer
     ViewingListComponent,
     KidCardComponent,
     ScreentimerComponent,
+    KidSettingsComponent,
   ],
   imports: [
     BrowserModule,
