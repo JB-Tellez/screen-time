@@ -53,7 +53,6 @@ export class AdminComponent implements OnInit {
 
     const kidName = 'kid_' + Math.floor(Math.random() * 1000);
 
-    const viewing:Viewing = {_id:undefined, showId: "foo", movieId: "bar", title:"Gone with the Wind", startTime: new Date(), endTime: new Date()};
     const bedTimes = [new Date(), new Date(), new Date(), new Date(), new Date(), new Date(), new Date()];
     const viewings: Viewing[] = []; // WARNING: no viewings yet because back end errors
 

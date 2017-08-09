@@ -1,6 +1,6 @@
 import { Action } from "@ngrx/store";
 import { RouterAction } from '@ngrx/router-store';
-import { Kid, Family, State } from "./model";
+import { Kid, Family, State, Viewing } from "./model";
 
 export type AppAction = {type:string, payload?:any}
 
@@ -24,6 +24,8 @@ export const ActionTypes = {
     FAMILY_SIGNED_UP: 'FAMILY_SIGNED_UP',
     KID_CREATED: 'KID_CREATED',
     GOTO_FAMILY_ACTION: 'GOTO_FAMILY_ACTION',
+    CREATE_VIEWING_ACTION: 'CREATE_VIEWING_ACTION',
+    VIEWING_CREATED_ACTION: 'VIEWING_CREATED_ACTION',
 };
 
 export class KidUpdatedAction implements Action {
@@ -120,6 +122,16 @@ export class GotoFamilyAction implements Action {
     constructor(public payload: {}) { }
 }
 
+export class CreateViewingAction implements Action {
+    type = ActionTypes.CREATE_VIEWING_ACTION;
+    constructor(public payload: Viewing) { }
+}
+
+export class ViewingCreatedAction implements Action {
+    type = ActionTypes.VIEWING_CREATED_ACTION;
+    constructor(public payload: Viewing) { }
+}
+
 export type AppActions =
     RouterAction<State> |
     KidUpdatedAction |
@@ -136,4 +148,5 @@ export type AppActions =
     DeleteKidAction |
     FamilySignedUpAction |
     KidCreatedAction |
+    CreateViewingAction |
     GotoFamilyAction;

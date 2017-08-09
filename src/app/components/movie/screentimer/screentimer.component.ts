@@ -1,7 +1,8 @@
+import { CreateViewingAction } from './../../../store/actions';
 import { TimeHelperService } from './../../../services/time-helper.service';
 import { Store } from '@ngrx/store';
 import { Router } from '@angular/router';
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { Observable, Subscription } from 'rxjs/Rx';
 import { State, Kid, Family, Viewing } from "../../../store/model";
 
@@ -13,6 +14,8 @@ import { State, Kid, Family, Viewing } from "../../../store/model";
 
 })
 export class ScreentimerComponent implements OnInit, OnDestroy {
+
+    @Input() movie;
 
     ticks = 0;
 
@@ -58,8 +61,10 @@ export class ScreentimerComponent implements OnInit, OnDestroy {
             }
         );
 
-        // need to create viewing
-        // const viewing:Viewing = {movieId:this.movieId}
+        // create viewing
+        const viewing:Viewing = {_id: undefined, movieId:this.movie.id, showId: undefined, kid: this.kid, title: this.movie.title, startTime:new Date(), endTime: undefined }
+        
+        this.store.dispatch(new CreateViewingAction(viewing));
     }
 
     private getSeconds(ticks: number) {

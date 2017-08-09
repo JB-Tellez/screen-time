@@ -1,7 +1,7 @@
 import { ROUTER_NAVIGATION, RouterNavigationAction } from '@ngrx/router-store';
 import { BackendService } from '../services/backend.service';
 import { Store } from '@ngrx/store';
-import { AddKidAction, LoadFamilyAction, LoadFamiliesAction, SignUpFamilyAction, LogInFamilyAction, CreateKidAction, GotoFamilyAction, ActionTypes, LoadFamilyAndSelectKidAction, DeleteKidAction, KidCreatedAction } from './actions';
+import { AddKidAction, LoadFamilyAction, LoadFamiliesAction, SignUpFamilyAction, LogInFamilyAction, CreateKidAction, GotoFamilyAction, ActionTypes, LoadFamilyAndSelectKidAction, DeleteKidAction, KidCreatedAction, CreateViewingAction, ViewingCreatedAction } from './actions';
 import { Effect, Actions } from '@ngrx/effects';
 import { ActivatedRouteSnapshot, Router } from '@angular/router';
 import { Injectable } from '@angular/core';
@@ -108,6 +108,11 @@ export class ScreenEffects {
 
     });
 
+
+    @Effect() createViewing = this.actions.ofType(ActionTypes.CREATE_VIEWING_ACTION).switchMap((a: CreateViewingAction) => {
+        console.log('createKid action', a.payload);
+        return this.backend.createViewing(a.payload).map(resp => new ViewingCreatedAction(resp));
+    });
 
     @Effect() createKid = this.actions.ofType('CREATE_KID').switchMap((a: CreateKidAction) => {
         console.log('createKid action', a.payload);

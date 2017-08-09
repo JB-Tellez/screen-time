@@ -6,7 +6,7 @@
      <div class="hero">
 
         <a> <img src='../../../assets/images/back-btn.png' alt="go back button" class="back-btn" (click)="close()"> </a>
-      <app-screentimer></app-screentimer>
+      <app-screentimer [movie]="movie"></app-screentimer>
         <div class="details">
         <h2>{{ movie?.title}}</h2>
             <fieldset class="rating">
