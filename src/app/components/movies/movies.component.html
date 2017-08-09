@@ -16,47 +16,26 @@
             </div>
           </div>
         </slide>
-        <!--
-                <slide *ngFor="let movie of movies | async" (click)="movieClicked(movie)">
-                  <div class="item active">
-                    <div class="row">
-                       <div class="col-sm-3">
-                        <img [src]="getPosterPath(movie)" alt="First slide" class="img-responsive">
-                        <div class="carousel-caption">
-                          <h3>{{movie.title}}</h3>
-                        </div>
-                      </div>
-
-                      <div class="col-sm-3">
-                        <img [src]="getPosterPath(movie)" alt="First slide" class="img-responsive">
-                        <div class="carousel-caption">
-                          <h3>{{movie.title}}</h3>
-                        </div>
-                      </div>
-
-                       <div class="col-sm-3">
-                        <img [src]="getPosterPath(movie)" alt="First slide" class="img-responsive">
-                        <div class="carousel-caption">
-                          <h3>{{movie.title}}</h3>
-                        </div>
-                       </div> 
-
-                      <div class="col-sm-3">
-                        <img [src]="getPosterPath(movie)" alt="First slide" class="img-responsive">
-                        <div class="carousel-caption">
-                          <h3>{{movie.title}}</h3>
-                        </div>
-                       </div> 
-
-                    </div>
-                  </div>
-                  
-                </slide>
-
-                -->
-
+       
       </div>
     </carousel>
+
+    <!-- <button type="button" class="btn btn-primary" (click)="showChildModal()">Open child modal</button> -->
+<div bsModal #childModal="bs-modal" [config]="{backdrop: false}" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+       <!-- <div class="modal-header">
+        <h4 class="modal-title pull-left">Child modal</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="hideChildModal()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>  -->
+      <div class="modal-body">
+         <app-movie [movie]="selectedMovie"></app-movie> 
+      </div>
+    </div>
+  </div>
+</div>
 
   </div>
 </div>

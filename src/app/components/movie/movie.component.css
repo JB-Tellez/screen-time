@@ -29,7 +29,12 @@ body {
 .movie-card {
   font: 14px/22px 'Montserrat', sans-serif; 
   color: white;
-  padding: 40px 0;
+  width: 700px;
+  /* padding: 40px 0; */
+}
+
+.modal-content .modal-body {
+  padding: 0;
 }
 
 .container {

@@ -29,3 +29,10 @@ carousel {
   width:5%;
 }
 
+.modal {
+   margin-top: 100px; 
+}
+
+.modal-content .modal-body {
+  padding: 0;
+}
