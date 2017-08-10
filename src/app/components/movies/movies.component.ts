@@ -1,6 +1,6 @@
 import { Router } from '@angular/router';
 import { MoviesService } from './../../services/movies.service';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
 import { ModalDirective } from 'ngx-bootstrap/modal';
 
 @Component({
@@ -8,17 +8,22 @@ import { ModalDirective } from 'ngx-bootstrap/modal';
   templateUrl: './movies.component.html',
   styleUrls: ['./movies.component.css']
 })
-export class MoviesComponent implements OnInit {
+export class MoviesComponent implements OnInit, OnDestroy {
 
   @ViewChild('childModal') public childModal:ModalDirective;
 
   movies;
   selectedMovie;
+  getMovieSub;
 
   constructor(private router: Router, private moviesService: MoviesService) { }
 
   ngOnInit() {
     this.moviesService.getMovies().subscribe(movies => this.movies = movies);
+  }
+
+  ngOnDestroy() {
+    this.getMovieSub.unsubscribe();
   }
 
   getMovie(slideIndex, colIndex) {
@@ -70,7 +75,11 @@ export class MoviesComponent implements OnInit {
 
     console.log('selectedMovie', this.selectedMovie);
 
-    this.showChildModal();
+    this.getMovieSub = this.moviesService.getMovie(this.selectedMovie.id).subscribe( movie => {
+      this.selectedMovie.runtime = movie.runtime;
+      this.showChildModal();
+    }, error => console.log(error));
+    
 
     // this.router.navigate(['/movie', movie.id])
   }

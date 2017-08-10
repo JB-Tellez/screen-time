@@ -24,9 +24,6 @@ export class MoviesService {
 
   getMovie(id) {
     const url = `https://api.themoviedb.org/3/movie/${id}?api_key=${this.API_KEY}&language=en-US`;
-    return this.http.get(url).map( data => {
-      console.log('movie data', data.json());
-      return data.json();
-    });
+    return this.http.get(url).map( data => data.json());
   }
 }
