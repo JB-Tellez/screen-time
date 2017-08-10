@@ -1,34 +1,34 @@
 <div class="container row kid-settings">
   <h1>{{ kid?.name }}</h1>
-  <div class="form"> <!-- DANGER: make form -->
+  <form class="form" (ngSubmit)="submitForm(myForm)" #myForm="ngForm"> 
     <!-- LEFT COLUMN -->
     <div class="col-sm-12 col-md-12 col-lg-12">
       <h4 class="control-label avatar">Avatar</h4>
       <!-- FIRST AVATAR -->
       <div class="form-group check-avatar">
         <label class="checkMenu" for="icon-one" id="icon-one">
-          <input type="radio" name="avatar" value="icon_one" id="icon-one">
+          <input type="radio" name="avatar" value="icon_one" id="icon-one" [(ngModel)]="avatars[0]">
           <img src="../../../assets/images/100-icon.png" alt="kid avatar" class="kid-avatar">
         </label>
       </div>
       <!--SECOND AVATAR -->
       <div class="form-group check-avatar">
         <label class="checkMenu" for="icon-two">
-          <input type="radio" name="avatar" value="icon_two" id="icon-two">
+          <input type="radio" name="avatar" value="icon_two" id="icon-two" [(ngModel)]="avatars[1]">
           <img src="../../../assets/images/teen-boy-icon.png" alt="kid avatar" class="kid-avatar">
         </label>
       </div>
       <!-- THIRD AVATAR -->
       <div class="form-group check-avatar">
         <label class="checkMenu" for="icon-three">
-          <input type="radio" name="avatar" value="icon_three" id="icon-three">
+          <input type="radio" name="avatar" value="icon_three" id="icon-three" [(ngModel)]="avatars[2]">
           <img src="../../../assets/images/family-icon.png" alt="kid avatar" class="kid-avatar">
         </label>
       </div>
       <!-- FOURTH AVATAR -->
       <div class="form-group check-avatar">
         <label class="checkMenu" for="icon-four">
-          <input type="radio" name="avatar" value="icon_four" id="icon-four">
+          <input type="radio" name="avatar" value="icon_four" id="icon-four" [(ngModel)]="avatars[3]">
           <img src="../../../assets/images/100-icon.png" alt="kid avatar" class="kid-avatar">
         </label>
       </div>
@@ -37,19 +37,19 @@
       <div class="text-form-container">
         <div class="form-group control">
           <label class="control-label" for="Name"> Name </label>
-          <input id="Name" name="Name" type="text" placeholder="name" class="form-control input-md" required="">
+          <input id="Name" name="Name" type="text" placeholder="name" class="form-control input-md" [(ngModel)]="kid.name">
         </div>
         <!-- AGE INPUT -->
         <div class="form-group">
           <label class="control-label age" for="Age"> Age </label>
-          <input id="Age" name="Age" type="number" placeholder="age" class="form-control input-md" required="">
+          <input id="Age" name="Age" type="number" placeholder="age" class="form-control input-md" [(ngModel)]="kid.age">
         </div>
         <!-- SCREEN TIME  -->
         <div class="form-group">
           <label class="control-label" for="screentime">
             <img src="../../../../assets/images/xs-screentime-logo.png" class="screentime-logo">
           </label>
-          <input id="Age" name="Age" type="number" placeholder="minutes" class="form-control input-md" required="">
+          <input id="Age" name="Age" type="number" placeholder="minutes" class="form-control input-md" [(ngModel)]="kid.minutesPerWeek">
         </div>
          <!-- BEDTIME --> 
          <div class="form-group bedtime-container">
@@ -64,12 +64,12 @@
           <div class="row first-row">
             <div class="timepick col-sm-4 col-md-4 col-lg-4">
               <p class="timepick-p"> MONDAY </p>
-              <timepicker [(ngModel)]="myTime1" [mousewheel]="true"></timepicker> 
+              <timepicker [(ngModel)]="kid.bedTimes[0]" [mousewheel]="true"></timepicker> 
             </div>
                       
             <div class="timepick col-sm-4 col-md-4 col-lg-4">
               <p class="timepick-p"> TUESDAY </p>
-              <timepicker [(ngModel)]="myTime1" [mousewheel]="true"></timepicker> 
+              <timepicker [(ngModel)]="kid.bedTimes[1]" [mousewheel]="true"></timepicker> 
             </div>
           </div>
           
@@ -77,12 +77,12 @@
           <div class="row second-row">
             <div class="timepick col-sm-4 col-md-4 col-lg-4">
               <p class="timepick-p"> WEDNESDAY </p>
-              <timepicker [(ngModel)]="myTime1" [mousewheel]="true"></timepicker> 
+              <timepicker [(ngModel)]="kid.bedTimes[2]" [mousewheel]="true"></timepicker> 
             </div>
 
             <div class="timepick col-sm-4 col-md-4 col-lg-4">
               <p class="timepick-p"> THURSDAY </p>
-              <timepicker [(ngModel)]="myTime1" [mousewheel]="true"></timepicker> 
+              <timepicker [(ngModel)]="kid.bedTimes[3]" [mousewheel]="true"></timepicker> 
             </div>
           </div>          
 
@@ -90,12 +90,12 @@
           <div class="row third-row">
             <div class="timepick col-sm-4 col-md-4 col-lg-4">
               <p class="timepick-p"> FRIDAY </p>
-              <timepicker [(ngModel)]="myTime1" [mousewheel]="true"></timepicker> 
+              <timepicker [(ngModel)]="kid.bedTimes[4]" [mousewheel]="true"></timepicker> 
             </div>
 
             <div class="timepick col-sm-4 col-md-4 col-lg-4">
               <p class="timepick-p"> SATURDAY </p>
-              <timepicker [(ngModel)]="myTime1" [mousewheel]="true"></timepicker> 
+              <timepicker [(ngModel)]="kid.bedTimes[5]" [mousewheel]="true"></timepicker> 
             </div>
           </div>
 
@@ -103,7 +103,7 @@
           <div class="row fourth-row">
             <div class="timepick ol-sm-4 col-md-4 col-lg-4">
               <p class="timepick-p"> SUNDAY </p>
-              <timepicker [(ngModel)]="myTime1" [mousewheel]="true"></timepicker> 
+              <timepicker [(ngModel)]="kid.bedTimes[6]" [mousewheel]="true"></timepicker> 
             </div>
           </div>
         </div>
@@ -118,6 +118,6 @@
 
       </div>
     </div>
-  </div>
+  </form>
 </div>
               
