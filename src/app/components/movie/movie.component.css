@@ -97,7 +97,7 @@ font-family: 'Merriweather', serif;
   height: 20%;
   width: 50%;
   position: absolute;
-  top: 50%;
+  top: 30%;
   left: 42%;
   padding: 0;
   margin: 0;
@@ -219,7 +219,6 @@ a[data-tooltip][data-placement="top"]::after {
   font-size: 14px !important;
   line-height: 26px;
   color: white;
-  overflow: scroll;
 }
 
 .runtime {
