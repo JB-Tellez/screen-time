@@ -48,6 +48,7 @@ font-family: 'Merriweather', serif;
 img.movie {
     height: auto;
     margin: 5% auto;
+    
 }
 
 
@@ -56,5 +57,6 @@ img.movie:hover {opacity: 1;
     -webkit-box-shadow: 0 8px 30px 3px #000000;
     box-shadow: 0 8px 30px 3px #000000;
     padding-top: 20px;
+    cursor: pointer;
 }
 
