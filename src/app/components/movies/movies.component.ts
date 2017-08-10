@@ -1,7 +1,10 @@
+import { CreateViewingAction } from './../../store/actions';
+import { Store } from '@ngrx/store';
 import { Router } from '@angular/router';
 import { MoviesService } from './../../services/movies.service';
 import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
 import { ModalDirective } from 'ngx-bootstrap/modal';
+import { State, Viewing, Kid } from "../../store/model";
 
 @Component({
   selector: 'app-movies',
@@ -16,7 +19,7 @@ export class MoviesComponent implements OnInit, OnDestroy {
   selectedMovie;
   getMovieSub;
 
-  constructor(private router: Router, private moviesService: MoviesService) { }
+  constructor(private router: Router, private moviesService: MoviesService, private store:Store<State>) { }
 
   ngOnInit() {
     this.moviesService.getMovies().subscribe(movies => this.movies = movies);
@@ -26,6 +29,30 @@ export class MoviesComponent implements OnInit, OnDestroy {
     if (this.getMovieSub) this.getMovieSub.unsubscribe();
   }
 
+  onStartMovie() {
+
+    let kid:Kid;
+
+    this.store.select('app', 'kid').subscribe( k => {
+
+      console.log('k', k);
+      kid = k;
+    });
+    
+    const viewing:Viewing = {
+      _id: undefined,
+      title: this.selectedMovie.title,
+      movieId: this.selectedMovie.id,
+      showId: undefined,
+      startTime: new Date(),
+      endTime: new Date(),
+      kid: kid
+    };
+
+    console.log('onStartMovie', viewing);
+    
+    this.store.dispatch(new CreateViewingAction(viewing));
+  }
   getMovie(slideIndex, colIndex) {
 
     let movie;

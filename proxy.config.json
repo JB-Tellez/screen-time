@@ -1,12 +1,12 @@
 {
     "/api/*": {
-        "target": "https://screen-time-api.herokuapp.com/",
+        "target": "http://locahost:4200/",
 
         "secure": false,
         "logLevel": "debug"
     },
     "/auth/*": {
-        "target": "https://screen-time-api.herokuapp.com/",
+        "target": "http://localhost:4200/",
         "secure": false,
         "logLevel": "debug"
     }

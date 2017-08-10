@@ -8,9 +8,9 @@ import { State, Family, Kid, Viewing } from "../../../store/model";
 
 
 @Component({
-  selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+    selector: 'app-navbar',
+    templateUrl: './navbar.component.html',
+    styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit, OnDestroy {
 
@@ -24,46 +24,75 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
     sub: Subscription;
 
-    appSub: Subscription;
+    familySub: Subscription;
+    kidSub: Subscription;
     kid: Kid;
     family: Family;
     minutesUntilBed;
+    bedtime: Date;
     clockStarted = false;
+    screenTimeMinutes;
+    screenTimeMinutesRemaining;
 
 
-  constructor(private router:Router, private store:Store<State>, private timerHelper:TimeHelperService) { }
+    constructor(private router: Router, private store: Store<State>, private timerHelper: TimeHelperService) { }
 
-  ngOnInit() {
-    this.store.select('app', 'family').subscribe( family => this.family = family);
-    
-    this.appSub = this.store.select('app').subscribe( app => {
-            this.kid = app.kid;
-            this.family = app.family;
-            this.minutesUntilBed = this.timerHelper.getMinutesUntilBed(this.kid);
+    ngOnInit() {
+
+        this.familySub = this.store.select('app', 'family').subscribe(family => {
+            this.family = family;
         });
-  }
 
-  ngOnDestroy() {
-        this.appSub.unsubscribe();
-  }
+        this.kidSub = this.store.select('app', 'kid').subscribe(kid => {
+            this.kid = kid;
 
-  gotoLogin() {
-    this.router.navigate(['/login']);
-  }
+            if (this.kid) {
+                this.minutesUntilBed = this.timerHelper.getMinutesUntilBed(kid);
+                this.bedtime = this.timerHelper.getBedtime(kid);
+                this.screenTimeMinutesRemaining = this.timerHelper.getMinutesScreenTimeRemaining(kid);
+                this.screenTimeMinutes = kid.minutesPerWeek;
+            }
+        });
 
-  gotoLanding() {
-    this.router.navigate(['/']);
-  }
+    }
 
-   gotoFamilyHome() {
-    this.router.navigate([`/family/${this.family._id}`]);
-  }
+    ngOnDestroy() {
+        if (this.familySub) this.familySub.unsubscribe();
+        if (this.kidSub) this.kidSub.unsubscribe();
+    }
 
-  gotoFamilyDashboard() {
-    this.router.navigate([`/family/${this.family._id}/dashboard`]);
-  }
+    isViewing():boolean {
+        
+        let is = false;
 
-  private startTimer() {
+        if (this.kid && this.kid.viewings) {
+            this.kid.viewings.forEach( viewing => {
+                if (this.timerHelper.isEndTimeInFuture(viewing)) {
+                    is = true;
+                }
+            });
+        }
+
+        return is;
+    }
+
+    gotoLogin() {
+        this.router.navigate(['/login']);
+    }
+
+    gotoLanding() {
+        this.router.navigate(['/']);
+    }
+
+    gotoFamilyHome() {
+        this.router.navigate([`/family/${this.family._id}`]);
+    }
+
+    gotoFamilyDashboard() {
+        this.router.navigate([`/family/${this.family._id}/dashboard`]);
+    }
+
+    private startTimer() {
 
         this.clockStarted = true;
 
@@ -79,8 +108,8 @@ export class NavbarComponent implements OnInit, OnDestroy {
         );
 
         // create viewing
-        const viewing:Viewing = {_id: undefined, movieId:this.movie.id, showId: undefined, kid: this.kid, title: this.movie.title, startTime:new Date(), endTime: undefined }
-        
+        const viewing: Viewing = { _id: undefined, movieId: this.movie.id, showId: undefined, kid: this.kid, title: this.movie.title, startTime: new Date(), endTime: undefined }
+
         this.store.dispatch(new CreateViewingAction(viewing));
     }
 

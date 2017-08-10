@@ -17,13 +17,13 @@
   <ul>
    <!-- HOME -->
     <li>
-      <a (click)="gotoDashboard()" class="home">
+      <a (click)="gotoFamilyHome()" class="home">
         <img src="../../../../assets/images/xs-house.png" alt="home logo">
       </a>
     </li>
     <!-- BEDTIME -->
     <li>
-      <span>bedtime</span> 
+      <span>bedtime</span> {{ bedtime | date : 'shortTime'}}
     </li>
     <!-- LOGO -->
     <li>
@@ -33,20 +33,21 @@
     </li>
      <!-- SCREENTIME -->
     <li>
-      <span>screentime</span> 
+      <span>screentime</span> {{ screenTimeMinutesRemaining }} / {{ screenTimeMinutes }}
     </li>
-    <!-- SCREENTIMER -->
-    <li>
-      <p>
-        {{hoursDisplay ? hoursDisplay : '00'}} : {{(minutesDisplay) && (minutesDisplay <= 59) ? minutesDisplay : '00'}} : {{(secondsDisplay) && (secondsDisplay <= 59) ? secondsDisplay : '00'}} 
-      </p>    
-    </li>  
+     
    <!-- NOW WATCHING -->
-    <li>
+    <li *ngIf="isViewing()">
       <p>
         Now watching 
       </p>    
     </li>  
+    <!-- SCREENTIMER -->
+    <li *ngIf="isViewing()">
+      <p>
+        {{hoursDisplay ? hoursDisplay : '00'}} : {{(minutesDisplay) && (minutesDisplay <= 59) ? minutesDisplay : '00'}} : {{(secondsDisplay) && (secondsDisplay <= 59) ? secondsDisplay : '00'}} 
+      </p>    
+    </li> 
   
   
   </ul>

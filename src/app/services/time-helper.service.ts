@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Kid } from "../store/model";
+import { Kid, Viewing } from "../store/model";
 import * as moment from 'moment';
 
 @Injectable()
@@ -26,6 +26,31 @@ export class TimeHelperService {
 
       return 0;
     }
+  }
+
+  isEndTimeInFuture(viewing:Viewing):boolean {
+    return moment(viewing.endTime).isAfter(moment());
+  }
+  getMinutesScreenTimeRemaining(kid:Kid): number {
+
+    console.log('getMinutesScreenTimeRemaining', kid);
+
+    const viewings = kid.viewings || [];
+
+    // need to add up viewing end-start diffs and sum
+    let sum = viewings.reduce( (acc, cur) => {
+      
+      const start = cur.startTime;
+      
+      const end = moment(cur.endTime);
+
+      var duration = moment.duration(end.diff(cur.startTime));
+      var minutes = duration.asMinutes();
+
+      return minutes;
+    }, 0);
+
+    return 0;
   }
 
 }

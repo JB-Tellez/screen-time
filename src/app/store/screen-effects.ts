@@ -110,7 +110,7 @@ export class ScreenEffects {
 
 
     @Effect() createViewing = this.actions.ofType(ActionTypes.CREATE_VIEWING_ACTION).switchMap((a: CreateViewingAction) => {
-        console.log('createKid action', a.payload);
+        console.log('createViewing action', a.payload);
         return this.backend.createViewing(a.payload).map(resp => new ViewingCreatedAction(resp));
     });
 

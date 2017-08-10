@@ -7,7 +7,7 @@ import { Kid, Family, Viewing } from "../store/model";
 @Injectable()
 export class BackendService {
 
-  API_URL = 'https://screen-time-api.herokuapp.com/';
+  API_URL = 'http://localhost:3000/';// 'https://screen-time-api.herokuapp.com/';
   
   constructor(private http: Http) { }
 
@@ -53,6 +53,8 @@ export class BackendService {
   }
 
    createViewing(viewing:Viewing) {
+    
+    console.log('createViewing', viewing);
     
     let dto:any = {...viewing};
 
