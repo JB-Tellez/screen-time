@@ -1,4 +1,4 @@
-import { CreateKidAction } from './../../store/actions';
+import { CreateKidAction, KidSelectedAction } from './../../store/actions';
 import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -10,13 +10,14 @@ import { ModalDirective } from 'ngx-bootstrap/modal';
 @Component({
   selector: 'app-family-dashboard',
   templateUrl: './family-dashboard.component.html',
-  styleUrls: ['./family-dashboard.component.css']
+  styleUrls: ['./family-dashboard.component.css'],
 })
 export class FamilyDashboardComponent implements OnInit {
 
   @ViewChild('settingsModal') public settingsModal: ModalDirective;
 
   family$: Observable<Family>;
+  kid$: Observable<Kid>;
 
   public showBedtimes: false;
   public showViewings: false;
@@ -27,6 +28,12 @@ export class FamilyDashboardComponent implements OnInit {
 
   ngOnInit() {
     this.family$ = this.store.select('app', 'family');
+    this.kid$ = this.store.select('app', 'kid');
+  }
+
+  kidSelected(kid: Kid) {
+    console.log('kidSelected', kid);
+    this.store.dispatch(new KidSelectedAction(kid));
   }
 
   gotoKidSettings() {
@@ -59,6 +66,10 @@ export class FamilyDashboardComponent implements OnInit {
 
 
     this.store.dispatch(new CreateKidAction(kid));
+  }
+
+  showSettings() {
+    this.showSettingsModal();
   }
 
   public showSettingsModal(): void {

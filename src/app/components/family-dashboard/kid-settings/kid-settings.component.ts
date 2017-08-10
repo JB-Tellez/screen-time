@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { Kid } from "../../../store/model";
 
 
 @Component({
@@ -9,6 +10,8 @@ import { Router } from '@angular/router';
 })
 export class KidSettingsComponent implements OnInit {
 
+  @Input() kid:Kid;
+  
   myTime1 = new Date();
   
   constructor(private router:Router) {}
