@@ -1,0 +1,9 @@
+.chart-box {
+  width: 70vw;
+  float: right;
+  margin: 0 4%; 
+  /* border: 2px solid #0CB49B; */
+  padding: 10px;
+  background: RGBA(1, 9, 19, 1.00);
+  color: white;
+}
