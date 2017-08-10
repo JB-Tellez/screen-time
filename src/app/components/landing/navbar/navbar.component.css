@@ -18,12 +18,16 @@ nav {
 
 a {
   color: white;
-  margin: 25px;
   position: relative;
-  top: 20px;
+  top: 30%; 
+  left: 5%;
   font-size: 16px;
   text-transform: uppercase;
   cursor: pointer;
+}
+
+.logo {
+float: left;
 }
 
 a.logo:hover {
@@ -36,9 +40,9 @@ a.logo:hover {
   background-image: -moz-linear-gradient(top left, #0cb49b 0%, #1d99ae 100%);
   background-image: -o-linear-gradient(top left, #0cb49b 0%, #1d99ae 100%);
   background-image: linear-gradient(to bottom right, #0cb49b 0%, #1d99ae 100%); 
-  margin-left: 20px;
-  margin-top: 18px;
   padding: 5px 20px;
+  float: right;
+  left: -2%;
 }
 
 a.login-btn:hover {

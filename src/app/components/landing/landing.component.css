@@ -146,8 +146,8 @@ div.section-one-col {
 }
 
 div.section-one-row-one {
-  margin: 80px 0 130px 0;
-  height: 100px
+  margin: 40px 0 130px 0;
+  height: 100px;
 }
 
 .what-section-title {
@@ -212,7 +212,7 @@ a.robot-anchor {
   line-height: 100px;
   position: relative;
   left: 47%;
-  top: 44%;
+  top: 50%;
   width: 100px;
   z-index: 3;
 }
@@ -238,7 +238,6 @@ div.arrow-circle-section1 {
 }
 
 /* ------------------------------------------- SECTION 2 */
-
 .second-section {
   background-image: -webkit-linear-gradient(#15131b 0%, #1c0b2f 50%, #010913 100%);
   background-image: -moz-linear-gradient(#15131b 0%, #1c0b2f 50%, #010913 100%);
@@ -323,7 +322,6 @@ div.section-two-row-one {
   text-align: center;
   margin-top: 20px;
   font-size: 16px;
-
 }
 
 /* REGISTER BUTTON */
@@ -335,6 +333,15 @@ div.section-two-row-one {
   text-align: center;
 }
 
+.register-button:hover {
+  background-image: -webkit-linear-gradient(top left, #F79432 0%, #EF4D7B 100%);
+  background-image: -moz-linear-gradient(top left, #F79432 0%, #EF4D7B 100%);
+  background-image: -o-linear-gradient(top left, #F79432 0%, #EF4D7B 100%);
+  background-image: linear-gradient(to bottom right, #F79432 0%, #EF4D7B 100%);
+  color: white;
+  cursor: pointer;
+}
+
 a.family-signup {
   font-family: 'Montserrat', sans-serif; 
   text-transform: uppercase;
@@ -342,4 +349,7 @@ a.family-signup {
   font-weight: 500;
   font-size: 18px !important;
   margin-top: 18px;
+  text-decoration: none !important;
 }
+
+

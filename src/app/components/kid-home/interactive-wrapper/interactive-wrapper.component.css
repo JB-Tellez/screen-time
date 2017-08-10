@@ -1,5 +1,24 @@
-/* INTERACTIVE ROW  */
+/*
+Name: Screen Time Web App
+Description: Common Styles
+Authors: Micaela Linda Villani & JBTellez
+Tags: Ironhack Final Project - Full Stack Javascript App + Angularjs for the Front-end
+*/
 
+/* Fonts
+---headings
+font-family: 'Montserrat Alternates', sans-serif;
+font-family: 'Merriweather Sans', sans-serif;
+--paragraphs
+font-family: 'Montserrat', sans-serif; 
+font-family: 'Merriweather', serif;
+*/
+@font-face {
+    font-family: Godsown;
+    src: url('../../../../assets/fonts/Godsownjunkyardfree.otf');
+}
+
+/* INTERACTIVE ROW  */
 .interactive-row {
     background-color: #010F20;
     position: absolute;
@@ -10,20 +29,27 @@
     margin: 0;
     opacity: 0.8;
     text-align: center;
+}
+
+.icon-container {
+    margin: 50% auto;
+    text-align: center;
+
 
 }
 
-.select-show-icon {
-    margin-top: 100px;
-    cursor: pointer;
-}
-.select-show-icon:hover {
-    height: 380px;
+
+.choose-movie-p {
+    text-transform: uppercase;
+    font-family: Godsown;
+    float: left;
 }
 
-.img-select {
-    padding: 10px;
+img.movie {
+    height: auto;
+    margin: 5% auto;
 }
+
 
 img.movie:hover {opacity: 1;
     -moz-box-shadow: 0 8px 30px 3px #000000;
@@ -32,14 +58,3 @@ img.movie:hover {opacity: 1;
     padding-top: 20px;
 }
 
-img.tvshow:hover {
-    opacity: 1;
-    -moz-box-shadow: 0 8px 30px 3px #000000;
-    -webkit-box-shadow: 0 8px 30px 3px #000000;
-    box-shadow: 0 8px 30px 3px #000000;
-    padding-top: 20px;
-}
-
-.lined {
-    border: 3px solid white;
-}

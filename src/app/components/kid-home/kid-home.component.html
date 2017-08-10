@@ -4,17 +4,16 @@
       <!-- NAVBAR -->
       <app-navbar></app-navbar>
       <!-- FUNCTIONALITIES -->
-      <div class="container old" *ngIf="kid$|async as kid">
+      <div class="container main-container" *ngIf="kid$|async as kid">
 
         <div class="row greeting-row">
           <!-- LEFT COLUMN  -->
           <div class="container col-sm-12 col-md-6 col-lg-6 left-col">
-            <h1 class="greet greeting"> Hi {{ kid.name }}!</h1>
-            <p class="greet greeting-p"> What would you like to watch tonight? </p>
+            <h1 class="greet greeting"> Hi,  <span class="kidname"> {{ kid.name }} </span> </h1>
+            <p class="greet greeting-p"> What would you like to watch ? </p>
           </div>
           <!-- RIGHT COLUMN -->
-          
-          <div class="container col-sm-12 col-md-6 col-lg-6 right-col">
+          <!-- <div class="container col-sm-12 col-md-6 col-lg-6 right-col">
             <div class="row">
               <p class="recap-line-one col-sm-12 col-md-12 col-lg-12 today"> Today is <span class="date"> {{ today | date}}  </span></p>
             </div>
@@ -26,7 +25,7 @@
               <img src="../../../assets/images/xs-screentime-logo.png" class="logo-xs col-sm-3 col-md-3 col-lg-3">
               <p class="screentime-recap col-sm-9 col-md-9 col-lg-9"> <span class="minutes-count"> {{ getRemainingTime(kid) }} </span> minutes</p>
             </div>
-          </div>
+          </div> -->
         </div>
 
         <!-- interactive-wrapper here -->

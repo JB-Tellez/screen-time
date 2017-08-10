@@ -18,6 +18,8 @@ font-family: 'Merriweather', serif;
   margin: 0;
   padding: 0;
   font-weight: 300;
+  overflow: hidden;
+
 }
 
 /* ANIMATION */
@@ -224,4 +226,5 @@ p.login {
 a.login-link:hover{
   color: #EF4D7B;
   text-decoration: none !important;
+  cursor: pointer;
 }

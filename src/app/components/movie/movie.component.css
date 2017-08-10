@@ -13,22 +13,25 @@ font-family: 'Merriweather Sans', sans-serif;
 font-family: 'Montserrat', sans-serif; 
 font-family: 'Merriweather', serif;
 */
+
+/* .modal-content .modal-body {
+  padding: 0;
+} */
+
 @import url(https://fonts.googleapis.com/css?family=Lato:400,300,700);
 @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
 *, *:before, *:after {
   box-sizing: border-box;
 }
 
+/****** First Card Part *****/
 .movie-card {
-  font: 14px/22px 'Montserrat', sans-serif; 
+  font-family:  'Montserrat', sans-serif; 
+  font-size: 16px;
   color: white;
-  width: 60vw;
-  height: 70vh;
+  width: 40vw;
+  height: 60vh;
   margin: 0 auto;
-}
-
-.modal-content .modal-body {
-  padding: 0;
 }
 
 .container {
@@ -36,44 +39,32 @@ font-family: 'Merriweather', serif;
   width: 100%;
   height: 100%;
   background: black;
-  border-radius: 5px;
+  border-radius: 1rem;
   padding: 0px;
 }
 
-.back-btn {
-    vertical-align: middle;
-    position: absolute;
-    left: 15px;
-    top: 20px;
-    height: 50px;
-}
-
-.back-btn:active {
-  background-color: #F37055; 
-  transform: translateY(4px);
-}
-
 .hero {
-  height: 342px;
+  height: 60%;
   width: 100%;
   margin: 0;
   position: relative;
   overflow: hidden;
   z-index: 1;
-   border-top-left-radius: 5px;
-  border-top-right-radius: 5px; 
+  border-top-left-radius: 5rem;
+  border-top-right-radius: 5rem; 
 }
 
 .hero:before {
   content: '';
   width: 100%;
   height: 90%;
+  margin: 0;
+  padding: 0;
   position: absolute;
   overflow: hidden;
   top: 0;
   left: 0;
-  background: red;
-  background-color: #010F20;
+  background-color: #EF4D7B;
   z-index: -1;
   -webkit-transform: skewY(-2.2deg);
           transform: skewY(-2.2deg);
@@ -81,95 +72,44 @@ font-family: 'Merriweather', serif;
           transform-origin: 0 0;
 }
 
-.logo {
-  height: 270px;
-  width: auto;
+.back-btn {
+    vertical-align: middle;
+    position: absolute;
+    left: 2%;
+    top: 5%;
+    height: 3rem;
+}
+
+.back-btn:active {
+  background-color: #F37055; 
+  transform: translateY(4px);
 }
 
 .cover {
   position: absolute;
-  height: 250px;
-  top: 160px;
-  left: 40px;
+  height: 50%;
+  top: 10%;
+  left: 20%;
   z-index: 2;
 }
 
-.movie-title {
-    padding: 160px 0 0 150px;
-}
-.details .title2 {
-  color: #0CB49B;
-  font-size: 23px;
-  font-weight: 300;
-  margin-bottom: 15px;
-}
-.details .likes {
-  margin-left: 24px;
-}
-.details .likes:before {
-  content: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/icon_like.png");
-  position: relative;
-  top: 2px;
-  padding-right: 7px;
-}
-
-.runtime {
-  color: #0CB49B;
-}
-
-.description {
-  bottom: 0px;
-  height: 200px;
-  font-size: 16px;
-  line-height: 26px;
-  color: white;
-}
-
-.column1 {
-  padding-left: 0px;
-  padding-top: 120px;
-  width: 220px;
-  float: left;
-  text-align: center;
-}
-
-.tag {
-  background: #6CBC82;
-  border-radius: 10px;
-  padding: 3px 8px;
-  font-size: 14px;
-  margin-right: 6px;
-  line-height: 35px;
-  cursor: pointer;
-  color: white;
-}
-
-.column2 {
-  padding-left: 41px;
-  margin-left: 20px;
-  width: 480px;
-  float: left;
-}
-
-.avatars {
-  margin-top: 23px;
-}
-.avatars img {
-  cursor: pointer;
-}
-.avatars img:hover {
-  opacity: 0.6;
-}
-.avatars a:hover {
-  text-decoration: none;
-}
-
-fieldset, label {
- padding: 190px 0 0 240px;
+.details {
+  height: 20%;
+  width: 50%;
+  position: absolute;
+  top: 50%;
+  left: 42%;
+  padding: 0;
   margin: 0;
 }
 
-/****** Style Star Rating Widget *****/
+.movie-title {
+  float: left;
+  text-align: left;
+  width: 100%;
+}
+
+/****** Style Star Rating *****/
 .rating {
   border: none;
   float: left;
@@ -268,6 +208,24 @@ a[data-tooltip][data-placement="top"]::after {
   margin-bottom: 4px;
 }
 
+/****** Second Card Part *****/
+.description {
+  text-align: left;
+  position: relative;
+  top: 4%;
+  left: 3%;
+  width: 90%;
+  height: 100%;
+  font-size: 14px !important;
+  line-height: 26px;
+  color: white;
+}
+
+.runtime {
+  color: #0CB49B;
+}
+
+/* ---------------- START  SCREENTIME BUTTON 
 .start {
   background: #F79432;
   border-radius: 10px;
@@ -283,4 +241,4 @@ a.start:hover {
   background: #ddd;
   color:#F37055;
   text-decoration: none !important;
-}
+} */
