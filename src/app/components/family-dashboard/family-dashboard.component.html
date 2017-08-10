@@ -3,47 +3,34 @@
   <div class="stars">
     <div class="twinkling">
 
-      <!-- NAVBAR -->
+      <!-- NAVBAR ROW-->
       <app-navbar></app-navbar>
 
-      <!-- TITLES -->
+      <!-- TITLES ROW -->
       <div class="container row title-div" *ngIf="family$ | async as family">
         <!-- LEFT COLUMN - WELCOME FAMILY -->
-        <div class="column1 col-sm-12 col-md-8 col-lg-8">
+        <div class="column1 col-sm-12 col-md-4 col-lg-4">
           <h2 class="titles"> Welcome, </h2>
           <p class="title-name"> The {{ family.name }}'s </p>
         </div>
-
-        
-
-        <!-- RIGHT COLUMN - KIDS ICONS -->
-        <div class="column2 col-sm-12 col-md-4 col-lg-4">
-
+        <!-- RIGHT COLUMN -->
+        <div class="column2 col-sm-12 col-md-8 col-lg-8">
+          <!-- KIDS ICONS -->
           <a class="kid-img" *ngFor="let kid of family.kids" (click)="kidSelected(kid)">
             <img src="../../../assets/images/girl-xs.png" alt="small girl icon" class="kid-icons" >
              <!-- {{ kid.name }}  -->
             <!-- <p> kid.name </p> -->
           </a>
-
-        
-          <!-- THIRD ICON  -->
+          <!-- ADD NEW KID ICON  -->
           <a (click)="createKid()" class="kid-img">
               <img src="../../../assets/images/add-btn.png" alt="add button" class="add-btn">
             <!-- <p> add new </p> -->
             </a>
         </div>
-
-        
       </div>
 
       <!-- KID STATS -->
       <app-kid-stats *ngIf="(kid$ | async).name" [kid]="kid$ | async" (showSettings)="showSettings($event)"></app-kid-stats>
-
-      <!-- CREATE A KID FORM -->
-      <div class="container row kid-stat">
-
-
-      </div>
 
       <!-- SET KID SETTINGS -->
       <div bsModal #settingsModal="bs-modal" [config]="{backdrop: false}" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
