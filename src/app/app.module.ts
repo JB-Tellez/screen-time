@@ -42,7 +42,6 @@ import { ViewingListComponent } from './components/viewing-list/viewing-list.com
 import { KidCardComponent } from './components/kid-card/kid-card.component';
 import { ScreentimerComponent } from './components/movie/screentimer/screentimer.component';
 import { KidSettingsComponent } from './components/family-dashboard/kid-settings/kid-settings.component';
-import { KidStatsComponent } from './components/kid-stats/kid-stats.component';
 import { KidChartComponent } from './components/kid-chart/kid-chart.component';
 
 
@@ -67,7 +66,6 @@ import { KidChartComponent } from './components/kid-chart/kid-chart.component';
     KidCardComponent,
     ScreentimerComponent,
     KidSettingsComponent,
-    KidStatsComponent,
     KidChartComponent,
   ],
   imports: [
