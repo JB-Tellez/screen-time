@@ -8,7 +8,7 @@
 
       <!-- TITLES ROW -->
       <div class="container row title-div" *ngIf="family$ | async as family">
-        <!-- LEFT COLUMN - WELCOME FAMILY -->
+        <!-- LEFT COLUMN - WELCOME FAMILY --> 
         <div class="column1 col-sm-12 col-md-4 col-lg-4">
           <h2 class="titles"> Welcome, </h2>
           <p class="title-name"> The {{ family.name }}'s </p>
@@ -29,8 +29,6 @@
         </div>
       </div>
 
-      <!-- <app-kid-stats *ngIf="(kid$ | async).name" [kid]="kid$ | async" (showSettings)="showSettings($event)"></app-kid-stats>  -->
-      
       <app-kid-chart [kids]="(family$ | async).kids"></app-kid-chart>
 
       <div bsModal #settingsModal="bs-modal" [config]="{backdrop: false}" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
