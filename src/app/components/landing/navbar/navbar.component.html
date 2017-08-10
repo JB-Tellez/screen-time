@@ -15,38 +15,40 @@
 
 <!-- NAVBAR FOR KIDS HOME -->
   <ul>
+   <!-- HOME -->
+    <li>
+      <a (click)="gotoDashboard()" class="home">
+        <img src="../../../../assets/images/xs-house.png" alt="home logo">
+      </a>
+    </li>
+    <!-- BEDTIME -->
+    <li>
+      <span>bedtime</span> 
+    </li>
     <!-- LOGO -->
     <li>
       <a (click)="gotoLanding()" class="logo">
         <img src="../../../../assets/images/xs-screentime-logo.png" alt="screentime logo">
       </a>
     </li>
-    <!-- HOME -->
+     <!-- SCREENTIME -->
     <li>
-      <a (click)="gotoDashboard()" class="home">
-        <img src="../../../../assets/images/house.png" alt="home logo">
-      </a>
-    </li>
-     <!-- DATE -->
-    <li>
-      <p> date here </p>  
-    </li>
-      <!-- BEDTIME -->
-    <li>
-      <span>{{minutesUntilBed}}</span> 
+      <span>screentime</span> 
     </li>
     <!-- SCREENTIMER -->
     <li>
       <p>
         {{hoursDisplay ? hoursDisplay : '00'}} : {{(minutesDisplay) && (minutesDisplay <= 59) ? minutesDisplay : '00'}} : {{(secondsDisplay) && (secondsDisplay <= 59) ? secondsDisplay : '00'}} 
       </p>    
-    </li>
-    <!-- START SCREENTIME BTN -->
+    </li>  
+   <!-- NOW WATCHING -->
     <li>
-    <a *ngIf="!clockStarted">
-      <span class="startclock" (click)="startTimer()"> START SCREENTIME </span>
-    </a>
-  </li>
+      <p>
+        Now watching 
+      </p>    
+    </li>  
+  
+  
   </ul>
 
 </nav>
