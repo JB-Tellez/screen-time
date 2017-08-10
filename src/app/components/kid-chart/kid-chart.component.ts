@@ -55,26 +55,34 @@ export class KidChartComponent implements OnInit, OnChanges {
     responsive: true
   };
   public lineChartColors: Array<any> = [
-    { // grey
-      backgroundColor: 'rgba(148,159,177,0.2)',
-      borderColor: 'rgba(148,159,177,1)',
-      pointBackgroundColor: 'rgba(148,159,177,1)',
+    { // light blue
+      backgroundColor: 'rgba(76, 193, 252, 0.8)',
+      borderColor: 'rgba(43, 142, 176,1)',
+      pointBackgroundColor: 'rgba(43, 142, 176,1)',
       pointBorderColor: '#fff',
       pointHoverBackgroundColor: '#fff',
       pointHoverBorderColor: 'rgba(148,159,177,0.8)'
     },
     { // dark grey
-      backgroundColor: 'rgba(77,83,96,0.2)',
-      borderColor: 'rgba(77,83,96,1)',
-      pointBackgroundColor: 'rgba(77,83,96,1)',
+      backgroundColor: 'rgba(46, 249, 160, 0.8)',
+      borderColor: 'RGBA(12, 180, 155, 1.00)',
+      pointBackgroundColor: 'RGBA(12, 180, 155, 1)',
       pointBorderColor: '#fff',
       pointHoverBackgroundColor: '#fff',
       pointHoverBorderColor: 'rgba(77,83,96,1)'
     },
-    { // grey
-      backgroundColor: 'rgba(148,159,177,0.2)',
-      borderColor: 'rgba(148,159,177,1)',
-      pointBackgroundColor: 'rgba(148,159,177,1)',
+    { // orange
+      backgroundColor: 'RGBA(247, 148, 50, 0.8)',
+      borderColor: 'RGBA(243, 112, 85, 1)',
+      pointBackgroundColor: 'RGBA(247, 148, 50, 1)',
+      pointBorderColor: '#fff',
+      pointHoverBackgroundColor: '#fff',
+      pointHoverBorderColor: 'rgba(148,159,177,0.8)'
+    },
+    { // pink
+      backgroundColor: 'RGBA(239, 77, 123, 0.8)',
+      borderColor: 'RGBA(243, 112, 85, 1)',
+      pointBackgroundColor: 'RGBA(161, 102, 171, 1.00)',
       pointBorderColor: '#fff',
       pointHoverBackgroundColor: '#fff',
       pointHoverBorderColor: 'rgba(148,159,177,0.8)'
