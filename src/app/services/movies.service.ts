@@ -13,7 +13,8 @@ export class MoviesService {
   getMovies() {
     
 
-    const url = `https://api.themoviedb.org/3/movie/321612/similar?api_key=${this.API_KEY}&language=en-US&page=1`;
+
+    const url = `https://api.themoviedb.org/3/movie/283995/similar?api_key=${this.API_KEY}&language=en-US&page=1`;
     
     // mock data
     // const url = './assets/movies.json';
