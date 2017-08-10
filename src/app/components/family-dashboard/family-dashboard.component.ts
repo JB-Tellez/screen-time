@@ -31,6 +31,7 @@ export class FamilyDashboardComponent implements OnInit {
 
   gotoKidSettings() {
     // this.router.navigate['/kidsettings'];
+    this.showSettingsModal();
 
   }
 
