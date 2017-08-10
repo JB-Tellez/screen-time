@@ -11,7 +11,7 @@
         <!-- LEFT COLUMN - WELCOME FAMILY -->
         <div class="column1 col-sm-12 col-md-8 col-lg-8">
           <h2 class="titles"> Welcome, </h2>
-             <p class="title-name"> The {{ (family$ | async).name }}'s </p> 
+          <p class="title-name"> The {{ (family$ | async).name }}'s </p>
         </div>
 
         <!-- RIGHT COLUMN - KIDS ICONS -->
@@ -28,26 +28,37 @@
             <!-- <p> kid.name </p> -->
           </a>
           <!-- THIRD ICON  -->
-            <a (click)="createKid()" class="kid-img">
+          <a (click)="createKid()" class="kid-img">
               <img src="../../../assets/images/add-btn.png" alt="add button" class="add-btn">
             <!-- <p> add new </p> -->
             </a>
         </div>
 
         <a (click)="gotoKidSettings()" class="kid-set-anchor kid-set-btn kid-settings-link">Kid Settings</a>
-            
+
       </div>
 
       <!-- KID STATS -->
 
       <!-- CREATE A KID FORM -->
-       <div class="container row kid-stat">
-      
+      <div class="container row kid-stat">
 
-       </div>
+
+      </div>
 
       <!-- SET KID SETTINGS -->
-       
+      <div bsModal #settingsModal="bs-modal" [config]="{backdrop: false}" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+            <div class="modal-body">
+              <app-kid-settings></app-kid-settings>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
     </div>
   </div>
 </main>

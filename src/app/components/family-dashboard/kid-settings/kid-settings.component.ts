@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class KidSettingsComponent implements OnInit {
 
+  myTime1 = new Date();
+  
   constructor(private router:Router) {}
 
   ngOnInit() {
