@@ -24,6 +24,7 @@ font-family: 'Merriweather', serif;
   box-sizing: border-box;
 }
 
+/****** First Card Part *****/
 .movie-card {
   font-family:  'Montserrat', sans-serif; 
   font-size: 16px;
@@ -95,7 +96,6 @@ font-family: 'Merriweather', serif;
 .details {
   height: 20%;
   width: 50%;
-  /* border: 2px solid red; */
   position: absolute;
   top: 50%;
   left: 42%;
@@ -109,10 +109,8 @@ font-family: 'Merriweather', serif;
   width: 100%;
 }
 
-/****** Style Star Rating Widget *****/
+/****** Style Star Rating *****/
 .rating {
-  /* position: absolute;
-  left: 42%; */
   border: none;
   float: left;
 }
@@ -210,7 +208,7 @@ a[data-tooltip][data-placement="top"]::after {
   margin-bottom: 4px;
 }
 
-/* DESCRIPTION */
+/****** Second Card Part *****/
 .description {
   text-align: left;
   position: relative;
