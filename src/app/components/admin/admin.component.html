@@ -11,14 +11,30 @@
 
 <button class="btn btn-warning" (click)="createFamily()">Create Family</button>
 
-<h1 (click)="familyClicked()">Current family: {{ (family$ | async).name }}</h1>
+<div *ngIf="family$ | async as family">
 
-<div *ngIf="(family$ | async).name">
-  <h2>Kids:</h2>
-  <button class="btn btn-warning" (click)="createKid(family$)">Create Kid</button>
-  <ul>
-    <li *ngFor="let kid of (family$ | async).kids">
-      <p (click)="kidClicked(kid)">{{ kid.name }}</p>
+  <div *ngIf="family.name">
+
+    <h1 (click)="familyClicked()">Current family: {{ (family$ | async).name }}</h1>
+
+    <h2>Kids:</h2>
+
+    <div class="btn-group" dropdown>
+      <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
+    Select Kid <span class="caret"></span>
+  </button>
+      <ul *dropdownMenu class="dropdown-menu" role="menu">
+        <li *ngFor="let kid of family.kids" (click)="kidSelected(kid)">
+          {{ kid.name }}
+        </li>
+      </ul>
+    </div>
+
+    <button class="btn btn-warning" (click)="createKid(family)">Create Kid</button>
+    <ul *ngIf=" kid$ | async as kid">
+      <!-- <li *ngFor="let kid of (family$ | async).kids"> -->
+      <div *ngIf="kid.name">
+        <p (click)="kidClicked(kid)">{{ kid.name }}</p>
         <button class="btn btn-warning" (click)="deleteKid(kid)">delete</button>
         <p>Bed times</p>
         <ul>
@@ -33,8 +49,10 @@
             <p>time spent: {{ getTimeSpent(viewing)}}</p>
           </li>
         </ul>
-    </li>
-  </ul>
+      </div>
+      <!-- </li> -->
+    </ul>
+  </div>
 </div>
 <!-- <h1>Current kid: {{ (kid$ | async).name }}</h1> -->
 <!-- <h2>Families:</h2>
@@ -65,4 +83,3 @@
     </ul>
   </li>
 </ul> -->
-

@@ -1,4 +1,4 @@
-import { SignUpFamilyAction, CreateKidAction, DeleteKidAction, FamilySelectedAction } from './../../store/actions';
+import { SignUpFamilyAction, CreateKidAction, DeleteKidAction, FamilySelectedAction, KidSelectedAction } from './../../store/actions';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
@@ -27,7 +27,13 @@ export class AdminComponent implements OnInit {
 
   familySelected(family:Family) {
     this.store.dispatch(new FamilySelectedAction(family));
+    this.store.dispatch(new KidSelectedAction(null));
   }
+
+  kidSelected(kid:Kid) {
+    this.store.dispatch(new KidSelectedAction(kid));
+  }
+
   familyClicked() {
     this.router.navigate([`/family/${this.getFamilyId()}`]);
   }
