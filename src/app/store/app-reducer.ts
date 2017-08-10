@@ -87,7 +87,9 @@ export function appReducer(state: AppState, action: AppAction): AppState {
 
             family = action.payload;
 
-            return { ...state, family };
+            kid = null;
+
+            return { ...state, family, kid };
 
         case ActionTypes.FAMILIES_LOADED:
 
