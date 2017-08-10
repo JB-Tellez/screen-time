@@ -20,7 +20,7 @@ font-family: 'Merriweather', serif;
 
 /* KID SETTINGS */
 .kid-settings {
-    border: 2px solid red;  
+    /* border: 2px solid red;   */
     height: 100%;
     width: 35vw; 
     margin: 0px; 
@@ -101,11 +101,12 @@ label.age {
 .bedtime-sel-container {
     border: 2px dotted #0CB49B;    
     margin: 0 auto;
+    padding: 20px;
 }
 .timepick {
     width: 200px;
     /* border: 1px dotted #6CBC82;  */
-    margin: 3% 3%;   
+    margin: 0 auto;   
     float: left;
 }
 
