@@ -20,6 +20,11 @@ font-family: 'Merriweather', serif;
   font-weight: 300;
 }
 
+@font-face {
+    font-family: Godsown;
+    src: url('../../../assets/fonts/Godsownjunkyardfree.otf');
+}
+
 /* ANIMATION */
 /*----------- Stars animation */
 @keyframes move-twink-back {

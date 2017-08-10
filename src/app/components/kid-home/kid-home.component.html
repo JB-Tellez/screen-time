@@ -8,22 +8,23 @@
 
         <div class="row greeting-row">
           <!-- LEFT COLUMN  -->
-          <div class="col-sm-12 col-md-6 col-lg-6 left-col">
+          <div class="container col-sm-12 col-md-6 col-lg-6 left-col">
             <h1 class="greet greeting"> Hi {{ kid.name }}!</h1>
             <p class="greet greeting-p"> What would you like to watch tonight? </p>
           </div>
           <!-- RIGHT COLUMN -->
-          <div class="col-sm-12 col-md-6 col-lg-6 right-col">
+          
+          <div class="container col-sm-12 col-md-6 col-lg-6 right-col">
             <div class="row">
-              <p class="recap col-sm-12 col-md-12 col-lg-12 today"> Today is {{ today | date}} </p>
+              <p class="recap-line-one col-sm-12 col-md-12 col-lg-12 today"> Today is <span class="date"> {{ today | date}}  </span></p>
             </div>
             <div class="row">
-              <img src="../../../assets/images/bedtime-small.png" class="small-icon col-sm-3 col-md-3 col-lg-3">
-              <p class="recap col-sm-9 col-md-9 col-lg-9"> Bedtime is at {{ getBedtime(kid) | date :'shortTime' }} </p>
+              <img src="../../../assets/images/bedtime.png" class="small-icon col-sm-3 col-md-3 col-lg-3">
+              <p class="recap col-sm-9 col-md-9 col-lg-9"> Bedtime is at <span class="bedtime"> {{ getBedtime(kid) | date :'shortTime' }} </span> </p>
             </div>
             <div class="row">
-              <img src="../../../assets/images/screen-alarm.png" class="small-icon col-sm-3 col-md-3 col-lg-3">
-              <p class="recap col-sm-9 col-md-9 col-lg-9">  Screentime left {{ getRemainingTime(kid) }} minutes </p>
+              <img src="../../../assets/images/xs-screentime-logo.png" class="logo-xs col-sm-3 col-md-3 col-lg-3">
+              <p class="screentime-recap col-sm-9 col-md-9 col-lg-9"> <span class="minutes-count"> {{ getRemainingTime(kid) }} </span> minutes</p>
             </div>
           </div>
         </div>

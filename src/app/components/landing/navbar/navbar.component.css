@@ -16,13 +16,6 @@ nav {
   z-index: 4;
 }
 
-/* BUTTON CSS
-  background-image: -webkit-linear-gradient(top left, #0cb49b 0%, #1d99ae 100%);
-  background-image: -moz-linear-gradient(top left, #0cb49b 0%, #1d99ae 100%);
-  background-image: -o-linear-gradient(top left, #0cb49b 0%, #1d99ae 100%);
-  background-image: linear-gradient(to bottom right, #0cb49b 0%, #1d99ae 100%); 
-  margin-left: 20px;
-  margin-top: 18px; */
 a {
   color: white;
   margin: 25px;
@@ -33,6 +26,25 @@ a {
   cursor: pointer;
 }
 
-button:hover {
-  color: #2EF9A0;
+a.logo:hover {
+ text-decoration: none !important;
+ opacity: 1.3;
+}
+
+.login-btn {
+  background-image: -webkit-linear-gradient(top left, #0cb49b 0%, #1d99ae 100%);
+  background-image: -moz-linear-gradient(top left, #0cb49b 0%, #1d99ae 100%);
+  background-image: -o-linear-gradient(top left, #0cb49b 0%, #1d99ae 100%);
+  background-image: linear-gradient(to bottom right, #0cb49b 0%, #1d99ae 100%); 
+  margin-left: 20px;
+  margin-top: 18px;
+  padding: 5px 20px;
+}
+
+a.login-btn:hover {
+  background-image: -webkit-linear-gradient(top left, #0cb49b 0%, #4CC1FC 100%);
+  background-image: -moz-linear-gradient(top left, #0cb49b 0%, #4CC1FC 100%);
+  background-image: -o-linear-gradient(top left, #0cb49b 0%, #4CC1FC 100%);
+  background-image: linear-gradient(to bottom right, #0cb49b 0%, #4CC1FC 100%);
+  text-decoration: none !important;
 }

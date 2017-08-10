@@ -21,6 +21,11 @@ font-family: 'Merriweather', serif;
   overflow: hidden;
 }
 
+@font-face {
+    font-family: Godsown;
+    src: url('../../../assets/fonts/Godsownjunkyardfree.otf');
+}
+
 /* ANIMATION */
 /*----------- Stars animation */
 @keyframes move-twink-back {
@@ -93,7 +98,7 @@ font-family: 'Merriweather', serif;
 }
 
 /* --------------------------------------------BODY */
-.container.old {
+.old {
     position: absolute;
     top: 0;
     left: 0;
@@ -122,26 +127,55 @@ font-family: 'Merriweather', serif;
     margin-left: 50px;
 }
 
+/* RIGHT COLUMN */
+.right-col {
+     border: 2px dotted #0CB49B; 
+      padding: 15px 0px;  
+    width: 28%;
+    color: white;
+    position: absolute;
+    left: 68vw;
+    top: 15%;
+    /* text-align: center; */
+
+}
+
 p.today {
-    font-size: 26px !important;
+    font-size: 24px !important;
 }
 
 .recap {
-    padding-top: 18px;
+    font-size: 20px;
 }
 
-.right-col {
-    border: 2px dotted #0CB49B;
-    padding: 5px 15px;
-    width: 20%;
-    color: white;
-    position: absolute;
-    left: 76vw;
-    top: 100px;
+span.date {
+    color: #4CC1FC;
+    font-weight: 500;
 }
 
 .small-icon {
-    width: 65px;
-    padding-right: 20px;
+    width: 30px;
+    /* margin-right: 10px; */
 }
 
+.bedtime {
+    color: #4CC1FC;
+    font-weight: 500;
+}
+
+.logo-xs {
+    height: 15px;
+    width: auto;
+    float: left;
+}
+
+/* .screentime-recap {
+    position: absolute;
+    left: 24%;
+    top: 72%;
+} */
+
+.minutes-count {
+    color: #4CC1FC;
+    font-weight: 500;
+}
