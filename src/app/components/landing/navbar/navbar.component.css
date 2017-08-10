@@ -33,7 +33,7 @@ ul li {
 
 .logo {
   float: left;
-  margin-top: 20px;
+  margin-top: 7px;
 }
 
 a.logo:hover {
@@ -63,13 +63,21 @@ a.login-btn:hover {
 /**** Navbar for Kid's Home ****/
 
 li {
-  margin: 0px 10px;
+  margin: 10px 10px;
+  float: left;
 }
+
 .home {
   height: 10px;
   margin: 0px 10px;
-
+  
 }
+
+.bedtime-logo {
+  height: 40px;
+}
+
+
 
 
 
