@@ -23,7 +23,7 @@ export class MoviesComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.getMovieSub.unsubscribe();
+    if (this.getMovieSub) this.getMovieSub.unsubscribe();
   }
 
   getMovie(slideIndex, colIndex) {
