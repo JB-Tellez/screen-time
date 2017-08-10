@@ -44,7 +44,7 @@ font-family: 'Merriweather', serif;
 }
 
 .hero {
-  height: 60%;
+  height: 50%;
   width: 100%;
   margin: 0;
   position: relative;
@@ -88,7 +88,7 @@ font-family: 'Merriweather', serif;
 .cover {
   position: absolute;
   height: 50%;
-  top: 10%;
+  top: 4%;
   left: 20%;
   z-index: 2;
 }
@@ -107,7 +107,7 @@ font-family: 'Merriweather', serif;
   float: left;
   text-align: left;
   width: 100%;
-}
+  }
 
 /****** Style Star Rating *****/
 .rating {
@@ -212,33 +212,47 @@ a[data-tooltip][data-placement="top"]::after {
 .description {
   text-align: left;
   position: relative;
-  top: 4%;
+  bottom: 0px;
   left: 3%;
   width: 90%;
   height: 100%;
   font-size: 14px !important;
   line-height: 26px;
   color: white;
+  overflow: scroll;
 }
 
 .runtime {
-  color: #0CB49B;
+    color: #0CB49B;
+    position: relative;
+    font-weight: 500;
+    left: 45%; 
+    bottom: 0%;  
+    margin: 10px;
 }
 
-/* ---------------- START  SCREENTIME BUTTON 
-.start {
-  background: #F79432;
-  border-radius: 10px;
+/* ---------------- START  SCREENTIME BUTTON  */
+.startclock {
+  outline: 0;
+  background-color: white;
+  border: 0;
+  color: #F37055;
+  border-radius: 3px;
+  width: 250px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.25s;
+          transition-duration: 0.25s;
   padding: 3px 8px;
   font-size: 14px;
-  margin-right: 6px;
   line-height: 35px;
   cursor: pointer;
-  color: white;
 }
 
-a.start:hover {
-  background: #ddd;
-  color:#F37055;
+a:hover {
+  background-image: -webkit-linear-gradient(top left, #F79432 0%, #EF4D7B 100%);
+  background-image: -moz-linear-gradient(top left, #F79432 0%, #EF4D7B 100%);
+  background-image: -o-linear-gradient(top left, #F79432 0%, #EF4D7B 100%);
+  background-image: linear-gradient(to bottom right, #F79432 0%, #EF4D7B 100%);
+  color:white;
   text-decoration: none !important;
-} */
+} 
