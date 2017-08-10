@@ -9,7 +9,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class MovieComponent {
 
   @Input() movie;
-  @Output() onClose: EventEmitter<null>;
+  @Output() onStartMovie: EventEmitter<boolean> = new EventEmitter();
 
   ngOnInit() {
     console.log('movie', this.movie);
@@ -27,8 +27,12 @@ export class MovieComponent {
     return `https://image.tmdb.org/t/p/w154/${movie.backdrop_path}`;
   }
 
+  startTimer() {
+    this.onStartMovie.next(true);
+  }
+
   close() {
-    this.onClose.next();
+    this.onStartMovie.next(true);
   }
 
 }
