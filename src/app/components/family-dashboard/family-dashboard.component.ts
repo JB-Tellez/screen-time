@@ -34,11 +34,12 @@ export class FamilyDashboardComponent implements OnInit {
   kidSelected(kid: Kid) {
     console.log('kidSelected', kid);
     this.store.dispatch(new KidSelectedAction(kid));
+    this.showSettingsModal();
   }
 
   gotoKidSettings() {
     // this.router.navigate['/kidsettings'];
-    this.showSettingsModal();
+    // this.showSettingsModal();
 
   }
 
