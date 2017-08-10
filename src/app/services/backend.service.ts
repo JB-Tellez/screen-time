@@ -7,7 +7,8 @@ import { Kid, Family, Viewing } from "../store/model";
 @Injectable()
 export class BackendService {
 
-  API_URL = 'http://localhost:3000/';// 'https://screen-time-api.herokuapp.com/';
+  API_URL = 'https://screen-time-api.herokuapp.com/';
+  //'http://localhost:3000/';// 
   
   constructor(private http: Http) { }
 
