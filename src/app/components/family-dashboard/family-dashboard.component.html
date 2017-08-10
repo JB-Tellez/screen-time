@@ -29,10 +29,8 @@
         </div>
       </div>
 
-      <!-- KID STATISTICS ROW -->
       <app-kid-stats *ngIf="(kid$ | async).name" [kid]="kid$ | async" (showSettings)="showSettings($event)"></app-kid-stats>
 
-      <!-- KID SETTINGS MODAL CONTROLLER-->
       <div bsModal #settingsModal="bs-modal" [config]="{backdrop: false}" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-sm">
