@@ -26,8 +26,14 @@ a {
   cursor: pointer;
 }
 
+ul li {
+ list-style-type: none;
+ display: inline-block;
+}
+
 .logo {
-float: left;
+  float: left;
+  margin-top: 20px;
 }
 
 a.logo:hover {
@@ -43,7 +49,7 @@ a.logo:hover {
   padding: 5px 20px;
   float: right;
   left: -2%;
-  
+  margin-top: 20px;
 }
 
 a.login-btn:hover {
@@ -53,3 +59,4 @@ a.login-btn:hover {
   background-image: linear-gradient(to bottom right, #0cb49b 0%, #4CC1FC 100%);
   text-decoration: none !important;
 }
+
