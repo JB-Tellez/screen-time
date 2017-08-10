@@ -11,7 +11,7 @@ export class KidChartComponent implements OnInit, OnChanges {
   @Input() kids: Kid[];
 
   public lineChartData: Array<any> = [
-    { data: [], label: '' }
+    { data: [0], label: '' }
   ];
 
   ngOnInit() {
@@ -24,7 +24,7 @@ export class KidChartComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges) {
 
-    if (!this.kids) return;
+    if (!this.kids || !this.kids.length) return;
 
     let _lineChartData = this.kids.map(kid => {
       let obj: any = {};
