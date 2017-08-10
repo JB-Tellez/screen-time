@@ -1,12 +1,12 @@
 {
     "/api/*": {
-        "target": "https://screen-time-api.herokuapp.com/api",
+        "target": "https://screen-time-api.herokuapp.com/",
 
         "secure": false,
         "logLevel": "debug"
     },
     "/auth/*": {
-        "target": "https://screen-time-api.herokuapp.com/api",
+        "target": "https://screen-time-api.herokuapp.com/",
         "secure": false,
         "logLevel": "debug"
     }
