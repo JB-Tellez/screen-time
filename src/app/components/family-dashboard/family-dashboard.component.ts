@@ -2,8 +2,9 @@ import { CreateKidAction } from './../../store/actions';
 import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
 import { State, Family, Kid, Viewing } from '../../store/model';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ModalDirective } from 'ngx-bootstrap/modal';
 
 
 @Component({
@@ -13,10 +14,14 @@ import { State, Family, Kid, Viewing } from '../../store/model';
 })
 export class FamilyDashboardComponent implements OnInit {
 
+  @ViewChild('settingsModal') public settingsModal: ModalDirective;
+
   family$: Observable<Family>;
 
   public showBedtimes: false;
   public showViewings: false;
+
+
 
   constructor(private route: ActivatedRoute, private router: Router, private store: Store<State>) { }
 
@@ -24,8 +29,9 @@ export class FamilyDashboardComponent implements OnInit {
     this.family$ = this.store.select('app', 'family');
   }
 
-   gotoKidSettings() {
-    this.router.navigate['/kidsettings'];
+  gotoKidSettings() {
+    // this.router.navigate['/kidsettings'];
+
   }
 
   createKid() {
@@ -54,5 +60,13 @@ export class FamilyDashboardComponent implements OnInit {
     this.store.dispatch(new CreateKidAction(kid));
   }
 
- 
+  public showSettingsModal(): void {
+    this.settingsModal.show();
+  }
+
+  public hideSettingsModal(): void {
+    this.settingsModal.hide();
+  }
+
+
 }
