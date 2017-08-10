@@ -231,4 +231,5 @@ p.signup {
 a.signup-link:hover{
   color: #EF4D7B;
   text-decoration: none !important;
+  cursor: pointer;
 }
