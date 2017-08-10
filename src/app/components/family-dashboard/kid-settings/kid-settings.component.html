@@ -49,7 +49,7 @@
           <label class="control-label" for="screentime">
             <img src="../../../../assets/images/xs-screentime-logo.png" class="screentime-logo">
           </label>
-          <input id="Age" name="Age" type="number" placeholder="minutes" class="form-control input-md" [(ngModel)]="kid.minutesPerWeek">
+          <input id="screentime" name="screentime" type="number" placeholder="minutes" class="form-control input-md" [(ngModel)]="kid.minutesPerWeek">
         </div>
          <!-- BEDTIME --> 
          <div class="form-group bedtime-container">
@@ -64,12 +64,12 @@
           <div class="row first-row">
             <div class="timepick col-sm-4 col-md-4 col-lg-4">
               <p class="timepick-p"> MONDAY </p>
-              <timepicker [(ngModel)]="kid.bedTimes[0]" [mousewheel]="true"></timepicker> 
+              <timepicker [(ngModel)]="kid.bedTimes[0]" name="bedtime0" [mousewheel]="true"></timepicker> 
             </div>
                       
             <div class="timepick col-sm-4 col-md-4 col-lg-4">
               <p class="timepick-p"> TUESDAY </p>
-              <timepicker [(ngModel)]="kid.bedTimes[1]" [mousewheel]="true"></timepicker> 
+              <timepicker [(ngModel)]="kid.bedTimes[1]" name="bedtime1" [mousewheel]="true"></timepicker> 
             </div>
           </div>
           
@@ -77,12 +77,12 @@
           <div class="row second-row">
             <div class="timepick col-sm-4 col-md-4 col-lg-4">
               <p class="timepick-p"> WEDNESDAY </p>
-              <timepicker [(ngModel)]="kid.bedTimes[2]" [mousewheel]="true"></timepicker> 
+              <timepicker [(ngModel)]="kid.bedTimes[2]" name="bedtime2" [mousewheel]="true"></timepicker> 
             </div>
 
             <div class="timepick col-sm-4 col-md-4 col-lg-4">
               <p class="timepick-p"> THURSDAY </p>
-              <timepicker [(ngModel)]="kid.bedTimes[3]" [mousewheel]="true"></timepicker> 
+              <timepicker [(ngModel)]="kid.bedTimes[3]" name="bedtime3" [mousewheel]="true"></timepicker> 
             </div>
           </div>          
 
@@ -90,12 +90,12 @@
           <div class="row third-row">
             <div class="timepick col-sm-4 col-md-4 col-lg-4">
               <p class="timepick-p"> FRIDAY </p>
-              <timepicker [(ngModel)]="kid.bedTimes[4]" [mousewheel]="true"></timepicker> 
+              <timepicker [(ngModel)]="kid.bedTimes[4]" name="bedtime4" [mousewheel]="true"></timepicker> 
             </div>
 
             <div class="timepick col-sm-4 col-md-4 col-lg-4">
               <p class="timepick-p"> SATURDAY </p>
-              <timepicker [(ngModel)]="kid.bedTimes[5]" [mousewheel]="true"></timepicker> 
+              <timepicker [(ngModel)]="kid.bedTimes[5]" name="bedtime5" [mousewheel]="true"></timepicker> 
             </div>
           </div>
 
@@ -103,7 +103,7 @@
           <div class="row fourth-row">
             <div class="timepick ol-sm-4 col-md-4 col-lg-4">
               <p class="timepick-p"> SUNDAY </p>
-              <timepicker [(ngModel)]="kid.bedTimes[6]" [mousewheel]="true"></timepicker> 
+              <timepicker [(ngModel)]="kid.bedTimes[6]" name="bedtime6" [mousewheel]="true"></timepicker> 
             </div>
           </div>
         </div>
