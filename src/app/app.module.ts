@@ -21,6 +21,7 @@ import { MovieComponent } from './components/movie/movie.component';
 import { LandingComponent } from './components/landing/landing.component';
 import { FamilyLoginLinkComponent } from './components/landing/family-login-link/family-login-link.component';
 import { NavbarComponent } from './components/landing/navbar/navbar.component';
+import { ChartsModule } from 'ng2-charts';
 
 import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
 import { StoreModule, Action } from '@ngrx/store';
@@ -84,6 +85,7 @@ import { KidChartComponent } from './components/kid-chart/kid-chart.component';
     BsDropdownModule.forRoot(),
     CarouselModule.forRoot(),
     ModalModule.forRoot(),
+    ChartsModule,
   ],
   providers: [MoviesService, BackendService, ScreenEffects, AuthService, TimeHelperService],
   bootstrap: [AppComponent]
