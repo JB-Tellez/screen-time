@@ -41,6 +41,7 @@ import { ViewingListComponent } from './components/viewing-list/viewing-list.com
 import { KidCardComponent } from './components/kid-card/kid-card.component';
 import { ScreentimerComponent } from './components/movie/screentimer/screentimer.component';
 import { KidSettingsComponent } from './components/family-dashboard/kid-settings/kid-settings.component';
+import { KidChartComponent } from './components/kid-chart/kid-chart.component';
 
 
 @NgModule({
@@ -64,6 +65,7 @@ import { KidSettingsComponent } from './components/family-dashboard/kid-settings
     KidCardComponent,
     ScreentimerComponent,
     KidSettingsComponent,
+    KidChartComponent,
   ],
   imports: [
     BrowserModule,
