@@ -54,6 +54,9 @@ export class MoviesComponent implements OnInit {
       let movie = this.movies[index];
 
       path = `https://image.tmdb.org/t/p/w780${movie.poster_path}`;
+
+      // tv eg path
+      //path = 'https://image.tmdb.org/t/p/w600/knQW68IH5lFzN9D5gKVe2ScCKYu.jpg'
     }
 
     return path;
