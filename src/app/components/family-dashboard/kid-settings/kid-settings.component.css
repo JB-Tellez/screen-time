@@ -20,11 +20,11 @@ font-family: 'Merriweather', serif;
 
 /* KID SETTINGS */
 .kid-settings {
-    /* border: 2px solid white;  */
+    border: 2px solid red;  
     height: 100%;
-    width: 35vw;
-    margin: 0px 50px 10px 50px;
-    padding: 7px 0px 0px 10px;
+    width: 35vw; 
+    margin: 0px; 
+    /* padding: 7px 0px 0px 10px; */
     background-color: #010F20;
     /* opacity: 0.8; */
     overflow: scroll;
@@ -114,11 +114,14 @@ label.age {
 }
 
 /* SUBMIT BUTTON */
+.submit-row {
+    padding: 20px 0px;
+}
 
 .submit-btn {
     background-color: #EF4D7B;
     color: white;
-    margin: 20px;
+    margin: 0 auto; 
     border: none;
     font-style: 20px;
     height: 30px;
