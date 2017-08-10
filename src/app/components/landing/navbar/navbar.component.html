@@ -1,19 +1,17 @@
-  <nav class="navbar navbar-default">
-  <!-- NAVBAR FOR LANDING-->
-    <!-- <ul>
+<nav class="navbar navbar-default">
+    
+    <!-- NAVBAR FOR LANDING-->
+    <div class="landing-navbar"  *ngIf="!family.name">
       <!-- LOGO -->
-      <!-- <li>
-        <a (click)="gotoLanding()" class="logo">
-          <img src="../../../../assets/images/xs-screentime-logo.png" alt="screentime logo">
-        </a>
-      </li> -->
+      <a (click)="gotoLanding()" class="navbar-landing">
+        <img src="../../../../assets/images/xs-screentime-logo.png" alt="screentime logo">
+      </a>
       <!-- LOGIN -->
-      <!-- <li>
-        <a (click)="gotoLogin()" class="login-btn">login</a>
-      </li>
-    </ul>  -->
+      <a (click)="gotoLogin()" class="login-btn">login</a>
+    </div>
 
 <!-- NAVBAR FOR KIDS HOME -->
+<div class="navbar-kids" *ngIf="family.name">
   <ul>
    <!-- HOME -->
     <li>
@@ -22,7 +20,7 @@
       </a>
     </li>
     <!-- BEDTIME -->
-    <li>
+    <li *ngIf="kid.name">
       <img src="../../../../assets/images/bedtime.png" alt="bedtime logo" class="bedtime-logo">
       <span> {{ bedtime | date : 'shortTime'}} </span>
     </li>
@@ -33,7 +31,7 @@
       </a>
     </li>
      <!-- SCREENTIME -->
-    <li>
+      <li *ngIf="kid.name">
       <span> {{ screenTimeMinutesRemaining }} / {{ screenTimeMinutes }} </span> 
     </li>
      
@@ -49,8 +47,6 @@
         {{hoursDisplay ? hoursDisplay : '00'}} : {{(minutesDisplay) && (minutesDisplay <= 59) ? minutesDisplay : '00'}} : {{(secondsDisplay) && (secondsDisplay <= 59) ? secondsDisplay : '00'}} 
       </p>    
     </li> 
-  
-  
   </ul>
-
+</div>
 </nav>
