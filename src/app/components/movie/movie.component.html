@@ -21,7 +21,11 @@
     <div class="description">
       <p class="runtime"> {{ movie?.runtime }} minutes</p>
       <p class="overview"> {{ movie?.overview }}</p>
-        <a class="startclock" (click)="startTimer()"> START SCREENTIME </a> 
+        <!-- <a class="startclock" (click)="startTimer()"> START SCREENTIME </a>  -->
+        <app-screentimer></app-screentimer>
+        <!-- <p>
+        {{hoursDisplay ? hoursDisplay : '00'}} : {{(minutesDisplay) && (minutesDisplay <= 59) ? minutesDisplay : '00'}} : {{(secondsDisplay) && (secondsDisplay <= 59) ? secondsDisplay : '00'}} 
+      </p>     -->
     </div> <!-- end description -->
   </div> <!-- end container -->
 </div> <!-- end movie-card -->

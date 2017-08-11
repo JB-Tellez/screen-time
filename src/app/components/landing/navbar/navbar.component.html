@@ -33,23 +33,10 @@
       </a>
     </li>
      <!-- SCREENTIME -->
-      <li *ngIf="kid?.name" class="screentime-li">
+      <!-- <li *ngIf="kid?.name" class="screentime-li">
       <span> {{ screenTimeMinutesRemaining }} / {{ screenTimeMinutes }} </span> 
-    </li>
-     
-   <!-- NOW WATCHING -->
-    <li *ngIf="isViewing()" class="center-bar">
-      <p>
-        Now watching 
-      </p>    
-    </li>  
-    <!-- SCREENTIMER -->
-    <li *ngIf="isViewing()" class="center-bar-title">
-      <p class="center-bar-title-p">{{getCurrentViewing()?.title}}</p>
-      <!-- <p>
-        {{hoursDisplay ? hoursDisplay : '00'}} : {{(minutesDisplay) && (minutesDisplay <= 59) ? minutesDisplay : '00'}} : {{(secondsDisplay) && (secondsDisplay <= 59) ? secondsDisplay : '00'}} 
-      </p>     -->
-    </li> 
+    </li> -->
+
   </ul>
 </div>
 </nav>

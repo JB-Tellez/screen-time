@@ -33,6 +33,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
     clockStarted = false;
     screenTimeMinutes;
     screenTimeMinutesRemaining;
+    currentViewing: Viewing;
 
 
     constructor(private router: Router, private store: Store<State>, private timerHelper: TimeHelperService) { }
@@ -44,6 +45,9 @@ export class NavbarComponent implements OnInit, OnDestroy {
         });
 
         this.kidSub = this.store.select('app', 'kid').subscribe(kid => {
+
+            console.log('kid update', kid);
+
             this.kid = kid;
 
             if (this.kid) {
@@ -51,6 +55,9 @@ export class NavbarComponent implements OnInit, OnDestroy {
                 this.bedtime = this.timerHelper.getBedtime(kid);
                 this.screenTimeMinutesRemaining = this.timerHelper.getMinutesScreenTimeRemaining(kid);
                 this.screenTimeMinutes = kid.minutesPerWeek;
+                if (kid.viewings) {
+                    this.currentViewing = this.kid.viewings.find( viewing => this.timerHelper.isEndTimeInFuture(viewing));
+                }
             }
         });
 
@@ -59,32 +66,6 @@ export class NavbarComponent implements OnInit, OnDestroy {
     ngOnDestroy() {
         if (this.familySub) this.familySub.unsubscribe();
         if (this.kidSub) this.kidSub.unsubscribe();
-    }
-
-    isViewing():boolean {
-        
-        let is = false;
-
-        if (this.kid && this.kid.viewings) {
-            this.kid.viewings.forEach( viewing => {
-                if (this.timerHelper.isEndTimeInFuture(viewing)) {
-                    is = true;
-                }
-            });
-        }
-
-        return is;
-    }
-
-    getCurrentViewing():Viewing {
-
-        let currentViewing = undefined;
-
-        if (this.kid && this.kid.viewings) {
-            currentViewing = this.kid.viewings.find( viewing => this.timerHelper.isEndTimeInFuture(viewing));
-        }
-
-        return currentViewing;
     }
 
     gotoLogin() {

@@ -1,24 +1,24 @@
-<li>
-  <p>{{hoursDisplay ? hoursDisplay : '00'}} : {{(minutesDisplay) && (minutesDisplay <= 59) ? minutesDisplay : '00'}} : {{(secondsDisplay) && (secondsDisplay <= 59) ? secondsDisplay : '00'}} 
-  </p>
+
+  <li *ngIf="!clockStarted" class="list-type">
+    <a class="startclock" (click)="startTimer()"> START SCREENTIME </a>
   </li>
-  <li>
-    <a *ngIf="!clockStarted">
-      <span class="startclock" (click)="startTimer()"> START SCREENTIME </span>
+  <li *ngIf="clockStarted" class="list-type">
+    <a class="stopclock" (click)="stopTimer()"> STOP SCREENTIME
+      <p class="screentimer">{{hoursDisplay ? hoursDisplay : '00'}} : {{(minutesDisplay) && (minutesDisplay <= 59) ? minutesDisplay : '00'}} : {{(secondsDisplay) && (secondsDisplay <= 59) ? secondsDisplay : '00'}} 
+      </p>
     </a>
   </li>
-  <li>
-    <a *ngIf="clockStarted">
-      <span class="stopclock" (click)="stopTimer()"> STOP SCREENTIME </span>
-    </a>
-  </li>
-  <li>
+  <!-- <li *ngIf="clockStarted">
+      <p>{{hoursDisplay ? hoursDisplay : '00'}} : {{(minutesDisplay) && (minutesDisplay <= 59) ? minutesDisplay : '00'}} : {{(secondsDisplay) && (secondsDisplay <= 59) ? secondsDisplay : '00'}} 
+      </p>
+      </li> -->
+  <!-- <li>
     <p> Your bedtime will be in </p>
   </li>
   <li>
     <h3 class="minutes-countdown">
       <span>{{minutesUntilBed}}</span> 
     minutes</h3>
-  </li>
+  </li> -->
 
 

@@ -76,7 +76,7 @@ li {
 }
 
 .logo-kidhome {
-  margin: 10px 0 0 53%;
+  margin: 10px 0 0 61%;
 }
 
 .bedtime-icon-li {
@@ -118,6 +118,18 @@ p.center-bar-title-p {
   background-image: -moz-linear-gradient(top left, #0cb49b 0%, #1d99ae 100%);
   background-image: -o-linear-gradient(top left, #0cb49b 0%, #1d99ae 100%);
   background-image: linear-gradient(to bottom right, #0cb49b 0%, #1d99ae 100%); 
+  color: white;
+  padding: 5px 20px;
+}
+
+.screentimer {
+  position: absolute;
+  bottom: -2px;
+  left: 64%;
+  background-image: -webkit-linear-gradient(top left, #F79432 0%, #EF4D7B 100%);
+  background-image: -moz-linear-gradient(top left, #F79432 0%, #EF4D7B 100%);
+  background-image: -o-linear-gradient(top left, #F79432 0%, #EF4D7B 100%);
+  background-image: linear-gradient(to bottom right, #F79432 0%, #EF4D7B 100%);
   color: white;
   padding: 5px 20px;
 }

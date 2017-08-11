@@ -14,7 +14,45 @@ font-family: 'Montserrat', sans-serif;
 font-family: 'Merriweather', serif;
 */
 
-ul li {
+a.startclock {
+  background-image: -webkit-linear-gradient(top left, #0cb49b 0%, #1d99ae 100%);
+  background-image: -moz-linear-gradient(top left, #0cb49b 0%, #1d99ae 100%);
+  background-image: -o-linear-gradient(top left, #0cb49b 0%, #1d99ae 100%);
+  background-image: linear-gradient(to bottom right, #0cb49b 0%, #1d99ae 100%); 
+  color: white;
+  padding: 5px 20px;
  list-style-type: none;
  display: inline-block;
+ text-decoration: none;
 }
+
+a.stopclock {
+  background-image: -webkit-linear-gradient(top left, #0cb49b 0%, #1d99ae 100%);
+  background-image: -moz-linear-gradient(top left, #0cb49b 0%, #1d99ae 100%);
+  background-image: -o-linear-gradient(top left, #0cb49b 0%, #1d99ae 100%);
+  background-image: linear-gradient(to bottom right, #0cb49b 0%, #1d99ae 100%); 
+  color: white;
+  padding: 5px 20px;
+  list-style-type: none;
+  display: inline-block;
+  text-decoration: none; 
+}
+
+p.screentimer {
+  list-style-type: none;
+  display: inline-block;
+  text-decoration: none; 
+  margin-left: 10px;
+  background-image: -webkit-linear-gradient(top left, #F79432 0%, #EF4D7B 100%);
+  background-image: -moz-linear-gradient(top left, #F79432 0%, #EF4D7B 100%);
+  background-image: -o-linear-gradient(top left, #F79432 0%, #EF4D7B 100%);
+  background-image: linear-gradient(to bottom right, #F79432 0%, #EF4D7B 100%);
+  color: white;
+  padding: 5px 20px;
+}
+
+li.list-type {
+  list-style-type: none;
+  
+}
+

@@ -32,7 +32,7 @@ export class MovieComponent {
   }
 
   close() {
-    this.onStartMovie.next(true);
+    // this.onStartMovie.next(true);
   }
 
 }

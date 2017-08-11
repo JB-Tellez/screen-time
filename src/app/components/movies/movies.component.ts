@@ -55,7 +55,7 @@ export class MoviesComponent implements OnInit, OnDestroy {
 
     console.log('onStartMovie', viewing, this.selectedMovie);
 
-    this.hideChildModal();
+    // this.hideChildModal();
     
     this.store.dispatch(new CreateViewingAction(viewing));
   }
