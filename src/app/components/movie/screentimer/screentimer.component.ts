@@ -43,7 +43,8 @@ export class ScreentimerComponent implements OnInit, OnDestroy {
     }
 
     ngOnDestroy() {
-        this.appSub.unsubscribe();
+       if (this.appSub) this.appSub.unsubscribe();
+        if (this.sub) this.sub.unsubscribe();
     }
 
     private startTimer() {
@@ -84,7 +85,7 @@ export class ScreentimerComponent implements OnInit, OnDestroy {
     }
 
     private stopTimer() {
-        this.clockStarted = false;
+        // this.clockStarted = false;
         this.sub.unsubscribe();
 
     }

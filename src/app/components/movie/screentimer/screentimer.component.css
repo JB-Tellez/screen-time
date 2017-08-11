@@ -24,6 +24,7 @@ a.startclock {
  list-style-type: none;
  display: inline-block;
  text-decoration: none;
+ cursor: pointer;
 }
 
 a.stopclock {
@@ -36,6 +37,7 @@ a.stopclock {
   list-style-type: none;
   display: inline-block;
   text-decoration: none; 
+  cursor: pointer;
 }
 
 p.screentimer {
@@ -49,10 +51,23 @@ p.screentimer {
   background-image: linear-gradient(to bottom right, #F79432 0%, #EF4D7B 100%);
   color: white;
   padding: 5px 20px;
+  cursor: pointer;
 }
+
+
+p.screentimer:hover {
+  cursor: pointer;
+}
+
+a.stopclock:hover {
+  cursor: pointer;
+}
+
 
 li.list-type {
   list-style-type: none;
   
 }
+
+
 
