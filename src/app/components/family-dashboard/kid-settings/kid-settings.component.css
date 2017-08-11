@@ -30,8 +30,16 @@ font-family: 'Merriweather', serif;
     overflow: scroll;
 }
 
-h4.avatar {
+.kid-title {
+    text-transform: uppercase;
+    font-family: 'Godsown';
+    color: RGBA(76, 193, 252, 1.00);
+    text-align: center;
+}
+
+p.avatar {
     color:#A166AB;
+    font-size: 22px !important;
 }
 
 .kid-avatar {

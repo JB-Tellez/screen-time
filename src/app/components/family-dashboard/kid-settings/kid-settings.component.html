@@ -1,9 +1,9 @@
 <div class="container row kid-settings">
-  <h1>{{ kid?.name }}</h1>
+  <h2 class="kid-title">{{ kid?.name }}</h2>
   <form class="form" (ngSubmit)="submitForm(myForm)" #myForm="ngForm"> 
     <!-- LEFT COLUMN -->
     <div class="col-sm-12 col-md-12 col-lg-12">
-      <h4 class="control-label avatar">Avatar</h4>
+      <p class="control-label avatar">Avatar</p>
       <!-- FIRST AVATAR -->
       <div class="form-group check-avatar">
         <label class="checkMenu" for="icon-one" id="icon-one">
@@ -22,14 +22,14 @@
       <div class="form-group check-avatar">
         <label class="checkMenu" for="icon-three">
           <input type="radio" name="avatar" value="icon_three" id="icon-three" [(ngModel)]="avatars[2]">
-          <img src="../../../assets/images/family-icon.png" alt="kid avatar" class="kid-avatar">
+          <img src="../../../../assets/images/heartlogo.png" alt="kid avatar" class="kid-avatar">
         </label>
       </div>
       <!-- FOURTH AVATAR -->
       <div class="form-group check-avatar">
         <label class="checkMenu" for="icon-four">
           <input type="radio" name="avatar" value="icon_four" id="icon-four" [(ngModel)]="avatars[3]">
-          <img src="../../../assets/images/100-icon.png" alt="kid avatar" class="kid-avatar">
+          <img src="../../../assets/images/robot-green.png" alt="kid avatar" class="kid-avatar">
         </label>
       </div>
                   

@@ -62,22 +62,33 @@ a.login-btn:hover {
 /**** Navbar for Kid's Home ****/
 
 li {
-  margin: 10px 10px;
-  float: left;
-}
-
-.home {
-  height: 10px;
   margin: 0px 10px;
-  
+  float: left;
 }
 
 .bedtime-logo {
   height: 40px;
 }
 
+.logo-kidhome {
+  margin: 10px 0 0 10%;
+}
 
+.bedtime-icon-li {
+  margin-left: 10%;
+}
 
+.bedtime-li {
+  padding-top: 5px;
+}
 
+.bedtime-time {
+  font-size: 25px;
+}
 
+.screentime-li {
+  font-size: 25px;
+  padding-top: 5px;
+  margin-left: 20px;
+}
 
