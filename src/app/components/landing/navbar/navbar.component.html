@@ -20,9 +20,11 @@
       </a>
     </li>
     <!-- BEDTIME -->
-    <li *ngIf="kid?.name">
+    <li *ngIf="kid?.name" class="bedtime-icon-li">
       <img src="../../../../assets/images/bedtime.png" alt="bedtime logo" class="bedtime-logo">
-      <span> {{ bedtime | date : 'shortTime'}} </span>
+    </li>      
+    <li *ngIf="kid?.name" class="bedtime-li">
+      <span class="bedtime-time"> {{ bedtime | date : 'shortTime'}} </span>
     </li>
     <!-- LOGO -->
     <li class="logo-kidhome" >
@@ -31,7 +33,7 @@
       </a>
     </li>
      <!-- SCREENTIME -->
-      <li *ngIf="kid?.name">
+      <li *ngIf="kid?.name" class="screentime-li">
       <span> {{ screenTimeMinutesRemaining }} / {{ screenTimeMinutes }} </span> 
     </li>
      

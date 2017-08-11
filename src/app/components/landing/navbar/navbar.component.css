@@ -71,8 +71,24 @@ li {
 }
 
 .logo-kidhome {
-  margin-top: 10px !important;
+  margin: 10px 0 0 10%;
 }
 
+.bedtime-icon-li {
+  margin-left: 10%;
+}
 
+.bedtime-li {
+  padding-top: 5px;
+}
+
+.bedtime-time {
+  font-size: 25px;
+}
+
+.screentime-li {
+  font-size: 25px;
+  padding-top: 5px;
+  margin-left: 20px;
+}
 
