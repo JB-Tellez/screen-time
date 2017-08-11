@@ -23,6 +23,11 @@ a {
   cursor: pointer;
 }
 
+
+.logo-{
+  float: right;
+}
+
 ul li {
  list-style-type: none;
  display: inline-block;
@@ -71,7 +76,7 @@ li {
 }
 
 .logo-kidhome {
-  margin: 10px 0 0 10%;
+  margin: 10px 0 0 40%;
 }
 
 .bedtime-icon-li {
