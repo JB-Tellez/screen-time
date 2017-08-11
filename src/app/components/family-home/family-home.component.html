@@ -16,16 +16,17 @@
           <div class="col-sm-12 col-md-4 col-lg-4 icon-col" >
             <a (click)="gotoFamilyDashboard()">
               <img class="responsive-image icons" src="../../../assets/images/family-icon-big.png">
-              <p class="icon-p"> Dashboard </p>
             </a>
+            <p class="icon-p"> Dashboard </p>
+            
           </div>
           <!-- KID ICONS -->
           <div *ngFor="let kid of getKids(family); let i = index" class="col-sm-12 col-md-4 col-lg-4 icon-col" >
             <a (click)="gotoKidHome(kid)">
               <img *ngIf="i == 0" class="responsive-image icons" src="../../../assets/images/little-girl-icon.png">
               <img *ngIf="i == 1" class="responsive-image icons" src="../../../assets/images/robot-big.png">
-              <p class="icon-p"> {{ kid.name }} </p>
             </a>
+            <p class="icon-p"> {{ kid.name }} </p>            
           </div>
         </div>
       </div>
