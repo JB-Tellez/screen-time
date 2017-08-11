@@ -20,6 +20,10 @@ import 'rxjs/add/operator/catch';
 @Injectable()
 export class ScreenEffects {
 
+    @Effect() navigateToLanding = this.handleNavigation('', (r: ActivatedRouteSnapshot, state: State) => {
+        return of({ type: 'RESET_STATE'});
+    });
+
     @Effect() navigateToAdmin = this.handleNavigation('admin', (r: ActivatedRouteSnapshot, state: State) => {
 
         return of({ type: 'LOAD_FAMILIES' }, { type: 'LOAD_KIDS' });

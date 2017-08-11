@@ -10,8 +10,15 @@ export function appReducer(state: AppState, action: AppAction): AppState {
 
     switch (action.type) {
 
+        case 'RESET_STATE': // DANGER: better name needed and make ActionType
+
+            family = null;
+            kid = null;
+
+            return { ...state, family, kid };
+
         case ActionTypes.FAMILY_SIGNED_UP:
-        
+
             console.log(action.type);
 
             let families = [...state.families];
@@ -22,8 +29,8 @@ export function appReducer(state: AppState, action: AppAction): AppState {
 
             return { ...state, families, family };
 
-            case ActionTypes.FAMILY_SIGNED_UP:
-            
+        case ActionTypes.FAMILY_SIGNED_UP:
+
         case ActionTypes.FAMILY_LOGGED_IN:
         case ActionTypes.FAMILY_SELECTED:
 
@@ -33,7 +40,9 @@ export function appReducer(state: AppState, action: AppAction): AppState {
 
             console.log('family', family);
 
-            return { ...state, family };
+            kid = null;
+
+            return { ...state, family, kid };
 
         case ActionTypes.KID_CREATED:
 
@@ -43,11 +52,11 @@ export function appReducer(state: AppState, action: AppAction): AppState {
 
             // TODO: best to do here or separate call
             // as long as the family stays up to date with kid changes
-            family = {...state.family};
+            family = { ...state.family };
 
             family.kids.push(kid);
 
-            return {...state, kid, family};
+            return { ...state, kid, family };
 
         case ActionTypes.KID_UPDATED:
 
@@ -122,14 +131,14 @@ export function appReducer(state: AppState, action: AppAction): AppState {
 
             // TODO: best to do here or separate call
             // as long as the family stays up to date with kid changes
-            kid = {...state.kid};
+            kid = { ...state.kid };
 
             kid.viewings.push(viewing);
 
-            return {...state};
+            return { ...state };
 
         default:
-            
+
             console.log(action.type);
 
             return state;
