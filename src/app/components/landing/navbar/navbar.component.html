@@ -1,7 +1,7 @@
 <nav class="navbar navbar-default">
     
     <!-- NAVBAR FOR LANDING-->
-    <div class="landing-navbar"  *ngIf="!family.name">
+    <div class="landing-navbar"  *ngIf="!family?.name">
       <!-- LOGO -->
       <a (click)="gotoLanding()" class="navbar-landing">
         <img src="../../../../assets/images/xs-screentime-logo.png" alt="screentime logo">
@@ -11,27 +11,27 @@
     </div>
 
 <!-- NAVBAR FOR KIDS HOME -->
-<div class="navbar-kids" *ngIf="family.name">
+<div class="navbar-kids" *ngIf="family?.name">
   <ul>
    <!-- HOME -->
     <li>
-      <a *ngIf="family.name" (click)="gotoFamilyHome()" class="home">
-        <img src="../../../../assets/images/xs-house.png" alt="home logo">
+      <a *ngIf="family?.name" (click)="gotoFamilyHome()" class="home-a">
+        <img src="../../../../assets/images/xs-house.png" alt="home logo" class="home">
       </a>
     </li>
     <!-- BEDTIME -->
-    <li *ngIf="kid.name">
+    <li *ngIf="kid?.name">
       <img src="../../../../assets/images/bedtime.png" alt="bedtime logo" class="bedtime-logo">
       <span> {{ bedtime | date : 'shortTime'}} </span>
     </li>
     <!-- LOGO -->
-    <li>
-      <a (click)="gotoLanding()" class="logo">
+    <li class="logo-kidhome" >
+      <a (click)="gotoLanding()">
         <img src="../../../../assets/images/xs-screentime-logo.png" alt="screentime logo">
       </a>
     </li>
      <!-- SCREENTIME -->
-      <li *ngIf="kid.name">
+      <li *ngIf="kid?.name">
       <span> {{ screenTimeMinutesRemaining }} / {{ screenTimeMinutes }} </span> 
     </li>
      
