@@ -140,9 +140,11 @@ div.icon-col:hover {
 
 .icons {
     height: 280px;
+    margin: 0 auto;
+    position: relative;
 }
 
-.jumbotron p {
+.icon-p {
     font-family: 'Montserrat', sans-serif; 
     margin-bottom: 15px;
     margin-top: 20px;
@@ -155,3 +157,4 @@ div.icon-col:hover {
 a:hover {
     text-decoration: none !important;
 }
+
