@@ -39,17 +39,23 @@ export class MoviesComponent implements OnInit, OnDestroy {
       kid = k;
     });
     
+    const duration:number = this.selectedMovie.runtime * 60000;
+
+    const endTime = new Date(Date.now() + duration);
+
     const viewing:Viewing = {
       _id: undefined,
       title: this.selectedMovie.title,
       movieId: this.selectedMovie.id,
       showId: undefined,
       startTime: new Date(),
-      endTime: new Date(),
+      endTime: endTime,
       kid: kid
     };
 
-    console.log('onStartMovie', viewing);
+    console.log('onStartMovie', viewing, this.selectedMovie);
+
+    this.hideChildModal();
     
     this.store.dispatch(new CreateViewingAction(viewing));
   }

@@ -68,10 +68,12 @@ export class AdminComponent implements OnInit {
 
     const kid:Kid = {_id: undefined, name:kidName, password:'pass', 
       minutesPerWeek:400, 
-      currentViewing: undefined,
+      age:10,
+      avatar:0,
       family,
       viewings, 
-      bedTimes}
+      bedTimes,
+    currentViewing: undefined}
     
       
     this.store.dispatch(new CreateKidAction(kid));

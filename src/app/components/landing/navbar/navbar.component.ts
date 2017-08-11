@@ -76,6 +76,17 @@ export class NavbarComponent implements OnInit, OnDestroy {
         return is;
     }
 
+    getCurrentViewing():Viewing {
+
+        let currentViewing = undefined;
+
+        if (this.kid && this.kid.viewings) {
+            currentViewing = this.kid.viewings.find( viewing => this.timerHelper.isEndTimeInFuture(viewing));
+        }
+
+        return currentViewing;
+    }
+
     gotoLogin() {
         this.router.navigate(['/login']);
     }

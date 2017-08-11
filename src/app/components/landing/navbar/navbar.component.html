@@ -32,22 +32,24 @@
         <img src="../../../../assets/images/xs-screentime-logo.png" alt="screentime logo">
       </a>
     </li>
+    
      <!-- SCREENTIME -->
       <li *ngIf="kid?.name" class="screentime-li">
       <span> {{ screenTimeMinutesRemaining }} / {{ screenTimeMinutes }} </span> 
     </li>
      
    <!-- NOW WATCHING -->
-    <li *ngIf="isViewing()">
+    <li *ngIf="isViewing()" class="center-bar">
       <p>
         Now watching 
       </p>    
     </li>  
     <!-- SCREENTIMER -->
-    <li *ngIf="isViewing()">
-      <p>
+    <li *ngIf="isViewing()" class="center-bar-title">
+      <p class="center-bar-title-p">{{getCurrentViewing()?.title}}</p>
+      <!-- <p>
         {{hoursDisplay ? hoursDisplay : '00'}} : {{(minutesDisplay) && (minutesDisplay <= 59) ? minutesDisplay : '00'}} : {{(secondsDisplay) && (secondsDisplay <= 59) ? secondsDisplay : '00'}} 
-      </p>    
+      </p>     -->
     </li> 
   </ul>
 </div>

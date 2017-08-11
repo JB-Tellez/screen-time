@@ -76,7 +76,7 @@ li {
 }
 
 .logo-kidhome {
-  margin: 10px 0 0 40%;
+  margin: 10px 0 0 54%;
 }
 
 .bedtime-icon-li {
@@ -97,3 +97,27 @@ li {
   margin-left: 20px;
 }
 
+li.center-bar {
+  position: absolute;
+  right: 55%;
+  margin: 10px;
+  color: white;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+li.center-bar-title {
+  position: absolute;
+  right: 40%;
+  margin-top: 4px; 
+  
+}
+
+p.center-bar-title-p {
+  background-image: -webkit-linear-gradient(top left, #0cb49b 0%, #1d99ae 100%);
+  background-image: -moz-linear-gradient(top left, #0cb49b 0%, #1d99ae 100%);
+  background-image: -o-linear-gradient(top left, #0cb49b 0%, #1d99ae 100%);
+  background-image: linear-gradient(to bottom right, #0cb49b 0%, #1d99ae 100%); 
+  color: white;
+  padding: 5px 20px;
+}
