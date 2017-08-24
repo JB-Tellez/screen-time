@@ -122,11 +122,12 @@ a.family-anchor:hover {
 /* 1SECTION */
  div.jumbotron.first-section {
   background-image: linear-gradient(to top, #15131B 0%, #01132A 50%, #010B17 100%);
-  height: 100vh;  
+  height: 100vh;
   margin-top: 90px;
   padding-top: 0px;
   padding-bottom: 0px;
-  width:100vw;
+  margin-bottom: -26px;
+  width: 100vw;
   position: relative;
   overflow: scroll;
 }
