@@ -9,6 +9,7 @@ import { Kid, Family, State } from "../../../store/model";
   templateUrl: './kid-settings.component.html',
   styleUrls: ['./kid-settings.component.css']
 })
+
 export class KidSettingsComponent implements OnInit {
 
   @Input() kid:Kid;
