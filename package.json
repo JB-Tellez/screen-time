@@ -4,19 +4,21 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "node server.js",
+    "start": "node app.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "ng build"
+    "heroku-prebuild": "rm -rf node_modules && npm cache clean --force",
+    "postinstall": "ng build --aot -prod"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "^4.0.0",
-    "@angular/cli": "^1.2.3",
+    "@angular/cli": "^1.4.7",
     "@angular/common": "^4.0.0",
     "@angular/compiler": "^4.0.0",
+    "@angular/compiler-cli": "^4.0.0",
     "@angular/core": "^4.0.0",
     "@angular/forms": "^4.0.0",
     "@angular/http": "^4.0.0",
@@ -43,12 +45,11 @@
     "ngx-bootstrap": "^1.8.1",
     "particles.js": "^2.0.0",
     "rxjs": "^5.4.1",
+    "typescript": "~2.3.3",
     "web-animations-js": "^2.3.1",
     "zone.js": "^0.8.14"
   },
   "devDependencies": {
-    "@angular/cli": "^1.4.7",
-    "@angular/compiler-cli": "^4.0.0",
     "@angular/language-service": "^4.0.0",
     "@types/jasmine": "~2.5.53",
     "@types/jasminewd2": "~2.0.2",
@@ -64,8 +65,7 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "~5.1.2",
     "ts-node": "~3.0.4",
-    "tslint": "~5.3.2",
-    "typescript": "~2.3.3"
+    "tslint": "~5.3.2"
   },
   "engines": {
     "node": "6.11.0",

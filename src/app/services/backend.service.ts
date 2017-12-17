@@ -3,11 +3,14 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/observable/of';
 import { Kid, Family, Viewing } from "../store/model";
+import { environment } from '../../environments/environment';
+const apiUrl = environment.apiUrl + '/name-of-resource';
+
 
 @Injectable()
 export class BackendService {
 
-  API_URL = 'https://screen-time-api.herokuapp.com/';
+  API_URL = 'https://screen-time-server.herokuapp.com/';
   //'http://localhost:3000/';// 
   
   constructor(private http: Http) { }

@@ -1,6 +1,6 @@
 <p>{{ kid.name }}</p>
 <p>{{ kid.minutesPerWeek }} minutes per week</p>
-<p>Minutes spent: {{getMinutesSpent(kid)}}</p>
+<!-- <p>Minutes spent: {{getMinutesSpent(kid)}}</p> -->
 <button class="btn btn-primary" (click)="showViewings = !showViewings">viewings</button>
 
 <app-viewing-list *ngIf="showViewings" [viewings]="kid.viewings"></app-viewing-list>
