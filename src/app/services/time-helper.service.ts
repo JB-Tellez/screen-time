@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Kid, Viewing } from "../store/model";
 import * as moment from 'moment';
 import { environment } from '../../environments/environment';
-const apiUrl = environment.apiUrl + '/name-of-resource';
 
 @Injectable()
 export class TimeHelperService {
