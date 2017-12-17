@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'http://screen-time-app.herokuapp.com'
+  apiUrl: 'https://screen-time-server.herokuapp.com/'
 };

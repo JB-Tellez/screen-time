@@ -3,7 +3,6 @@ import { Store } from '@ngrx/store';
 import { Injectable } from '@angular/core';
 import { State } from "../store/model";
 import { environment } from '../../environments/environment';
-const apiUrl = environment.apiUrl + '/auth';
 
 
 @Injectable()
