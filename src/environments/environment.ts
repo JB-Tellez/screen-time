@@ -5,7 +5,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:3000'
-  // apiUrl: 'http://screen-time-app.herokuapp.com'
+  // apiUrl: 'http://localhost:3000'
+  apiUrl: 'http://screen-time-server.herokuapp.com'
 };
 
