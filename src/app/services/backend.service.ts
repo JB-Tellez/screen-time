@@ -3,31 +3,22 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/observable/of';
 import { Kid, Family, Viewing } from "../store/model";
-import { environment } from '../../environments/environment';
-
 
 @Injectable()
 export class BackendService {
 
-   apiUrl = environment.apiUrl + '/auth';
-
-
-  // API_URL = 'https://screen-time-server.herokuapp.com/';
+  API_URL = 'https://screen-time-api.herokuapp.com/';
   //'http://localhost:3000/';// 
-
+  
   constructor(private http: Http) { }
 
   fetchFamilies() {
-    // return this.http.get(`${this.API_URL}api/families`).map(data => data.json());
-        return this.http.get(`${this.apiUrl}api/families`).map(data => data.json());
-
+    return this.http.get(`${this.API_URL}api/families`).map(data => data.json());
   }
 
   fetchFamily(id) {
 
-    // return this.http.get(`${this.API_URL}api/families/${id}`).map( data => data.json() );
-        return this.http.get(`${this.apiUrl}api/families/${id}`).map( data => data.json() );
-
+    return this.http.get(`${this.API_URL}api/families/${id}`).map( data => data.json() );
   }
 
    addKid(kid:Kid) {
@@ -38,19 +29,14 @@ export class BackendService {
 
   signUpFamily(creds:any) {
     console.log('createFamily', creds);
-    // return this.http.post(`${this.API_URL}auth/signup`, creds).map( data => data.json());
-    return this.http.post(`${this.apiUrl}auth/signup`, creds).map( data => data.json());
-
+    return this.http.post(`${this.API_URL}auth/signup`, creds).map( data => data.json());
   }
 
   logInFamily(creds:any) {
     console.log('logInFamily', creds);
     creds.username = creds.name; // DANGER
-    // return this.http.post(`${this.API_URL}auth/login`, creds).map( data => data.json());
-    return this.http.post(`${this.apiUrl}auth/login`, creds).map( data => data.json());
-
+    return this.http.post(`${this.API_URL}auth/login`, creds).map( data => data.json());
   }
-
 
   createKid(kid:Kid) {
     
@@ -59,16 +45,12 @@ export class BackendService {
     // server wants just the id
     dto.family = kid.family._id;
     
-    // return this.http.post(`${this.API_URL}api/kids`, dto).map( data => data.json());
-    return this.http.post(`${this.apiUrl}auth/login`, creds).map( data => data.json());
-
+    return this.http.post(`${this.API_URL}api/kids`, dto).map( data => data.json());
   }
 
   deleteKid(kid:Kid) {
  
-    // return this.http.delete(`${this.API_URL}api/kids/${kid._id}`).map( data => data.json());
-    return this.http.delete(`${this.apiUrl}api/kids/${kid._id}`).map( data => data.json());
-
+    return this.http.delete(`${this.API_URL}api/kids/${kid._id}`).map( data => data.json());
   }
 
    createViewing(viewing:Viewing) {
@@ -80,10 +62,7 @@ export class BackendService {
     // server wants just the id
     dto.viewing = viewing._id;
 
-    // return this.http.post(`${this.API_URL}api/viewings`, dto).map( data => data.json());
-    return this.http.post(`${this.apiUrl}api/viewings`, dto).map( data => data.json());
-
+    return this.http.post(`${this.API_URL}api/viewings`, dto).map( data => data.json());
   }
-
 
 }
